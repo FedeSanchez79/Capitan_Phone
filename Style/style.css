@@ -7,12 +7,57 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
   }
 
 body {
-    background-image: url(../assets/images/fondoIndex.jpg);
+    background-image: url(../assets/images/windows_wallpaper.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    border-style: solid;
+    border-color: rgb(187, 187, 187);
+    border-width: 3px;
+}
+
+/* NAVBAR */
+
+.marca {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #232388;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.menuPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    list-style: none;
+    margin: 30px;
+    color: #000000;
+}
+
+.nombre {
+    color: #ffffff;
 }
