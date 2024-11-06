@@ -53,7 +53,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(to right, rgb(255, 0, 0), rgb(252, 46, 46), rgb(255, 93, 93));
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(46, 46, 46), rgb(93, 93, 93));
   z-index: 1;
   transform: scaleX(0);
   transform-origin: center;
@@ -74,12 +74,9 @@ ul li a {
     text-transform: uppercase;
 }
 
-.selected {
-  font-weight: 600;
-}
-
 .selected a {
-  color: rgb(248, 127, 127);
+  color: rgb(0, 0, 0);
+  font-weight: 700;
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* BODY *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -93,7 +90,7 @@ ul li a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 150px;
 }
 
 #tituloIndex {
@@ -105,52 +102,11 @@ ul li a {
   color: rgb(128, 126, 126);
 }
 
-.adjunto {
-  padding-right: 150px;
-}
-
-.contacto {
-  display: flex;
-  flex-direction: row;
-}
-
-.contacto p {
-  padding-left: 10px;
-}
-
-.contacto a {
-  text-decoration: none;
-  color: rgb(36, 75, 247);
-}
-
-.contacto a:hover {
-  color: rgb(103, 131, 255);
-}
-
-.ubicacion {
-  display: flex;
-  flex-direction: row;
-  padding-top: 20px;
-}
-
-.ubicacion p {
-  padding-left: 10px;
-}
-
-.ubicacion a {
-  text-decoration: none;
-  color: rgb(36, 75, 247);
-}
-
-.ubicacion a:hover {
-  color: rgb(103, 131, 255);
-}
-
 .marca {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .modeloNombre {
@@ -198,7 +154,7 @@ ul li a {
 }
 
 .seccion {
-  padding: 100px 0 0 150px;
+  margin: 150px 0 0 150px;
   font-size: 1.3rem;
 }
 
@@ -212,7 +168,7 @@ ul li a {
   display: flex;
   flex-direction: row;
   justify-content:space-around;
-  margin-bottom: 100px;
+  margin: 100px 0 200px 0;
 }
 
 .botones {
@@ -232,6 +188,15 @@ ul li a {
 
 .botones p {
   margin-top: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.botones a {
+  text-decoration: none;
+}
+
+.botones h3 {
+  color: black;
 }
 
 #auriculares {
@@ -340,4 +305,43 @@ h5:hover {
 
 #construccion {
   background: url(../assets/images/en_desarrollo.png) no-repeat center;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CONTACTO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#mainContacto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(53, 53, 53);
+}
+
+#tituloContacto {
+  color: rgb(255, 255, 255);
+}
+
+#tituloContacto2 {
+  color: rgb(255, 255, 255);
+}
+
+#parrafoContacto {
+  color: rgb(255, 255, 255);
+  margin: 20px 200px;
+  text-align: center;
+}
+
+#formulario {
+  margin: 100px 150px 20px 100px;
+}
+
+#estamos {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
 }
