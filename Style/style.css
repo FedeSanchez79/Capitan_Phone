@@ -300,3 +300,9 @@ h4 {
 h5 {
   color: rgb(255, 255, 255);
 }
+
+/* PAGINA EN CONSTRUCCION */
+
+#construccion {
+  background: url(../assets/images/en_desarrollo.png) no-repeat center;
+}
