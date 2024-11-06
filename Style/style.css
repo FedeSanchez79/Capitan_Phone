@@ -15,7 +15,7 @@ html, body {
   }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(240, 248, 255);
 }
 
 /* NAVBAR */
@@ -72,6 +72,14 @@ ul li a {
     list-style: none;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
+}
+
+.selected {
+  font-weight: 600;
+}
+
+.selected a {
+  color: rgb(253, 61, 61);
 }
 
 /* BODY */
@@ -187,4 +195,46 @@ ul li a {
 
 .seccion p {
   color: rgb(128, 126, 126);
+}
+
+/* BOTONES */
+
+#botones {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.botones {
+  border: 0.5px solid rgb(186, 186, 186);
+  padding: 20px;
+  border-radius: 15px;
+  height: 200px;
+  width: 200px;
+}
+
+.botones:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.botones p {
+  margin-top: 10px;
+}
+
+#auriculares {
+  font-weight: 700;
+  color: rgb(16, 209, 113);
+}
+
+#regalo {
+  font-weight: 700;
+  color: rgb(142, 140, 39);
+}
+
+#tarjeta {
+  font-weight: 700;
+  color: rgb(28, 84, 255);
 }
