@@ -18,7 +18,7 @@ body {
     background-color: rgb(240, 248, 255);
 }
 
-/* NAVBAR */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//* NAVBAR *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 .menuPrincipal {
     display: flex;
@@ -82,7 +82,8 @@ ul li a {
   color: rgb(248, 127, 127);
 }
 
-/* BODY */
+/*  *//*  *//*  *//*  *//*  *//*  *//* BODY *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
 
 .nombre {
     color: rgb(0, 0, 0);
@@ -122,6 +123,10 @@ ul li a {
   color: rgb(36, 75, 247);
 }
 
+.contacto a:hover {
+  color: rgb(103, 131, 255);
+}
+
 .ubicacion {
   display: flex;
   flex-direction: row;
@@ -135,6 +140,10 @@ ul li a {
 .ubicacion a {
   text-decoration: none;
   color: rgb(36, 75, 247);
+}
+
+.ubicacion a:hover {
+  color: rgb(103, 131, 255);
 }
 
 .marca {
@@ -197,12 +206,13 @@ ul li a {
   color: rgb(128, 126, 126);
 }
 
-/* BOTONES */
+/*  *//*  *//*  *//*  *//*  *//*  *//* BOTONES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 #botones {
   display: flex;
   flex-direction: row;
   justify-content:space-around;
+  margin-bottom: 100px;
 }
 
 .botones {
@@ -239,11 +249,11 @@ ul li a {
   color: rgb(28, 84, 255);
 }
 
-/* FOOTER */
+/*  *//*  *//*  *//*  *//*  *//*  *//* FOOTER *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 .footer {
   position: relative;
-  height: 400px;
+  height: 200px;
   background-color: rgb(53, 53, 53);
 }
 
@@ -301,7 +311,32 @@ h5 {
   color: rgb(255, 255, 255);
 }
 
-/* PAGINA EN CONSTRUCCION */
+h5:hover {
+  color: rgb(141, 141, 141);
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* BOTON WHATSAPP *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+.whatsapp {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+}
+
+.whatsapp a {
+  text-decoration: none;
+}
+
+.whatsapp p {
+  color: rgb(0, 0, 0);
+  background-color: rgb(240, 248, 255);
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA EN CONSTRUCCION *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 #construccion {
   background: url(../assets/images/en_desarrollo.png) no-repeat center;
