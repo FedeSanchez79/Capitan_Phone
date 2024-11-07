@@ -20,11 +20,17 @@ body {
 
 /*  *//*  *//*  *//*  *//*  *//*  *//*  *//* NAVBAR *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .menuPrincipal {
     display: flex;
     flex-direction: row;
     justify-content:center;
-    padding: 20px;
+    padding: 20px 20px 20px 500px;
 }
 
 .menuPrincipal img {
@@ -79,6 +85,25 @@ ul li a {
   font-weight: 700;
 }
 
+.log {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.botonLog {
+  border: none; 
+  color: rgb(0, 0, 0);
+  background-color: rgb(240, 248, 255);
+}
+
+.botonLog:hover {
+  border: none; 
+  color: rgb(0, 0, 0);
+  background-color: rgb(240, 248, 255);
+  box-shadow: none;
+}
+
 /*  *//*  *//*  *//*  *//*  *//*  *//* BODY *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 
@@ -105,32 +130,23 @@ ul li a {
 .marca {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.modeloNombre {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-bottom: 100px;
-}
-
-.modeloNombre p {
+.modelo p {
   font-weight: 700;
+  font-size: 1.3rem;
   color: rgb(128, 126, 126);
+  text-align: center;
 }
 
-.modeloNombre a {
+.modelo a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
 
-.modeloNombre a:hover {
+.modelo a:hover {
   text-decoration: underline;
-}
-
-.display {
-  padding-left: 20px;
 }
 
 #publicidad {
@@ -284,8 +300,8 @@ h5:hover {
 
 .whatsapp {
   position: fixed;
-  bottom: 4%;
-  right: 2%;
+  bottom: 10%;
+  right: 1%;
 }
 
 .whatsapp a {
@@ -296,7 +312,7 @@ h5:hover {
   color: rgb(0, 0, 0);
   background-color: rgb(240, 248, 255);
   margin-top: 5px;
-  padding: 5px;
+  padding: 2px;
   border-radius: 5px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
 }
@@ -313,7 +329,7 @@ h5:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 75vh;
+  height: 95vh;
 }
 
 #info {
@@ -334,8 +350,8 @@ h5:hover {
 
 #parrafoContacto {
   color: rgb(255, 255, 255);
-  margin: 20px 200px;
-  text-align: center;
+  margin: 20px 100px;
+  text-align:justify;
 }
 
 #formulario {
