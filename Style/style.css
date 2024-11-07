@@ -90,7 +90,7 @@ ul li a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 150px;
+  padding: 200px 0;
 }
 
 #tituloIndex {
@@ -106,13 +106,13 @@ ul li a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 100px;
 }
 
 .modeloNombre {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-bottom: 100px;
 }
 
 .modeloNombre p {
@@ -313,6 +313,7 @@ h5:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 75vh;
 }
 
 #info {
@@ -338,7 +339,48 @@ h5:hover {
 }
 
 #formulario {
-  margin: 100px 150px 20px 100px;
+  width: 60%;
+}
+
+form {
+  padding: 100px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  background-color: rgb(240, 248, 255);
+  border-style: none;
+  border-bottom-style: double;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  width: 300px;
+  background-color: rgb(240, 248, 255);
+}
+
+button {
+  border: none; 
+  color: rgb(255, 255, 255); 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  margin: 5px;
+  background-color: rgb(53, 53, 53);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #estamos {
