@@ -89,12 +89,15 @@ ul li a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-right: 20px;
 }
 
 .botonLog {
   border: none; 
   color: rgb(0, 0, 0);
   background-color: rgb(240, 248, 255);
+  padding-left: 5px;
+  cursor:pointer;
 }
 
 .botonLog:hover {
@@ -118,12 +121,12 @@ ul li a {
   padding: 200px 0;
 }
 
-#tituloIndex {
+.titulo {
   padding-left: 150px;
   font-size: 3rem;
 }
 
-#tituloIndex p {
+.titulo p {
   color: rgb(128, 126, 126);
 }
 
@@ -323,7 +326,32 @@ h5:hover {
   background: url(../assets/images/en_desarrollo.png) no-repeat center;
 }
 
-/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CONTACTO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA NOSOTROS *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#tituloNosotros {
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(128, 126, 126);
+  padding: 100px 0;
+
+}
+
+.nosotros {
+  display: flex;
+  flex-direction: row;
+}
+
+.nosotrosParrafo {
+  font-size: 1rem;
+  padding: 50px;
+  text-align: justify;
+}
+
+.nosotros img {
+  margin: 20px;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CONTACTO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 #mainContacto {
   display: flex;
@@ -382,7 +410,7 @@ textarea {
   background-color: rgb(240, 248, 255);
 }
 
-button {
+#enviar {
   border: none; 
   color: rgb(255, 255, 255); 
   padding: 14px 28px; 
@@ -393,7 +421,7 @@ button {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-button:hover {
+#enviar:hover {
   color: rgb(0, 0, 0);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
@@ -402,4 +430,16 @@ button:hover {
 #estamos {
   font-size: 2rem;
   color: rgb(255, 255, 255);
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CATALOGO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#precio {
+  width: 300px;
+}
+
+.displayPrecio {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
 }
