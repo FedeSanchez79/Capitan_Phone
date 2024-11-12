@@ -1,3 +1,9 @@
+:root {
+  --clr-body:rgb(240, 248, 255);
+  --clr-font:rgb(0, 0, 0);
+  --clr-text:rgb(128, 126, 126);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +21,7 @@ html, body {
   }
 
 body {
-    background-color: rgb(240, 248, 255);
+    background-color: var(--clr-body);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//*  *//* NAVBAR *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -76,12 +82,12 @@ ul li {
 ul li a {
     text-decoration: none;
     list-style: none;
-    color: rgb(0, 0, 0);
+    color: var(--clr-font);
     text-transform: uppercase;
 }
 
 .selected a {
-  color: rgb(0, 0, 0);
+  color: var(--clr-font);
   font-weight: 700;
 }
 
@@ -94,16 +100,16 @@ ul li a {
 
 .botonLog {
   border: none; 
-  color: rgb(0, 0, 0);
-  background-color: rgb(240, 248, 255);
+  color: var(--clr-font);
+  background-color: var(--clr-body);
   padding-left: 5px;
   cursor:pointer;
 }
 
 .botonLog:hover {
   border: none; 
-  color: rgb(0, 0, 0);
-  background-color: rgb(240, 248, 255);
+  color: var(--clr-font);
+  background-color: var(--clr-body);
   box-shadow: none;
 }
 
@@ -111,7 +117,7 @@ ul li a {
 
 
 .nombre {
-    color: rgb(0, 0, 0);
+    color: var(--clr-font);
 }
 
 .cabecera {
@@ -127,7 +133,7 @@ ul li a {
 }
 
 .titulo p {
-  color: rgb(128, 126, 126);
+  color: var(--clr-text);
 }
 
 .marca {
@@ -139,13 +145,13 @@ ul li a {
 .modelo p {
   font-weight: 700;
   font-size: 1.3rem;
-  color: rgb(128, 126, 126);
+  color: var(--clr-text);
   text-align: center;
 }
 
 .modelo a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: var(--clr-font);
 }
 
 .modelo a:hover {
@@ -178,7 +184,7 @@ ul li a {
 }
 
 .seccion p {
-  color: rgb(128, 126, 126);
+  color: var(--clr-text);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* BOTONES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -207,7 +213,7 @@ ul li a {
 
 .botones p {
   margin-top: 10px;
-  color: rgb(0, 0, 0);
+  color: var(--clr-font);
 }
 
 .botones a {
@@ -215,7 +221,7 @@ ul li a {
 }
 
 .botones h3 {
-  color: black;
+  color: var(--clr-font);
 }
 
 #auriculares {
@@ -288,7 +294,7 @@ ul li a {
 
 h4 {
   margin-bottom: 15px;
-  color: rgb(129, 129, 129);
+  color: var(--clr-text);
 }
 
 h5 {
@@ -312,8 +318,8 @@ h5:hover {
 }
 
 .whatsapp p {
-  color: rgb(0, 0, 0);
-  background-color: rgb(240, 248, 255);
+  color: var(--clr-font);
+  background-color: var(--clr-body);
   margin-top: 5px;
   padding: 2px;
   border-radius: 5px;
@@ -331,7 +337,7 @@ h5:hover {
 #tituloNosotros {
   text-align: center;
   font-size: 3rem;
-  color: rgb(128, 126, 126);
+  color: var(--clr-text);
   padding: 100px 0;
 
 }
@@ -396,7 +402,7 @@ form {
 input {
   width: 300px;
   height: 30px;
-  background-color: rgb(240, 248, 255);
+  background-color: var(--clr-body);
   border-style: none;
   border-bottom-style: double;
 }
@@ -407,7 +413,7 @@ input:focus {
 
 textarea {
   width: 300px;
-  background-color: rgb(240, 248, 255);
+  background-color: var(--clr-body);
 }
 
 #enviar {
@@ -422,7 +428,7 @@ textarea {
 }
 
 #enviar:hover {
-  color: rgb(0, 0, 0);
+  color: var(--clr-font);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -434,12 +440,37 @@ textarea {
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CATALOGO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
-#precio {
-  width: 300px;
+.mainCompras {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
-.displayPrecio {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 10px;
+aside {
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  /* height: 100vh; */
+}
+
+.items {
+  background-color: var(--clr-text);
+  margin: 10px;
+  margin-left: 0;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.contenedorProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.productoImagen {
+  max-width: 100%;
+  border-radius: 30px;
+}
+
+.productoInfo {
+  background-color: var(--clr-body);
 }
