@@ -449,7 +449,6 @@ aside {
   padding: 2rem;
   position: sticky;
   top: 0;
-  /* height: 100vh; */
 }
 
 .items {
@@ -457,13 +456,19 @@ aside {
   margin: 10px;
   margin-left: 0;
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 0;
+}
+
+.tituloCatalogo {
+  padding: 30px 0 30px 30px;
+  color: var(--clr-body);
 }
 
 .contenedorProductos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  justify-items: center;
 }
 
 .productoImagen {
@@ -473,4 +478,20 @@ aside {
 
 .productoInfo {
   background-color: var(--clr-body);
+  color: var(--clr-font);
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: -30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.agregar {
+  border: 0;
+  border-radius: 10px;
+  background-color:var(--clr-text);
+  color: var(--clr-body);
+  padding: 10px;
+  text-transform: uppercase;
 }
