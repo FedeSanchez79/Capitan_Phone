@@ -1,7 +1,8 @@
 :root {
-  --clr-body:rgb(240, 248, 255);
-  --clr-font:rgb(0, 0, 0);
-  --clr-text:rgb(128, 126, 126);
+  --clr-white:rgb(255, 255, 255);
+  --clr-pale:rgb(240, 248, 255);
+  --clr-black:rgb(0, 0, 0);
+  --clr-grey:rgb(128, 126, 126);
 }
 
 * {
@@ -21,7 +22,7 @@ html, body {
   }
 
 body {
-    background-color: var(--clr-body);
+    background-color: var(--clr-pale);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//*  *//* NAVBAR *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -82,12 +83,12 @@ ul li {
 ul li a {
     text-decoration: none;
     list-style: none;
-    color: var(--clr-font);
+    color: var(--clr-black);
     text-transform: uppercase;
 }
 
 .selected a {
-  color: var(--clr-font);
+  color: var(--clr-black);
   font-weight: 700;
 }
 
@@ -100,16 +101,16 @@ ul li a {
 
 .botonLog {
   border: none; 
-  color: var(--clr-font);
-  background-color: var(--clr-body);
+  color: var(--clr-black);
+  background-color: var(--clr-pale);
   padding-left: 5px;
   cursor:pointer;
 }
 
 .botonLog:hover {
   border: none; 
-  color: var(--clr-font);
-  background-color: var(--clr-body);
+  color: var(--clr-black);
+  background-color: var(--clr-pale);
   box-shadow: none;
 }
 
@@ -117,14 +118,14 @@ ul li a {
 
 
 .nombre {
-    color: var(--clr-font);
+    color: var(--clr-black);
 }
 
 .cabecera {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 200px 0;
+  padding: 200px 0 100px 0;
 }
 
 .titulo {
@@ -133,7 +134,7 @@ ul li a {
 }
 
 .titulo p {
-  color: var(--clr-text);
+  color: var(--clr-grey);
 }
 
 .marca {
@@ -145,13 +146,13 @@ ul li a {
 .modelo p {
   font-weight: 700;
   font-size: 1.3rem;
-  color: var(--clr-text);
+  color: var(--clr-grey);
   text-align: center;
 }
 
 .modelo a {
   text-decoration: none;
-  color: var(--clr-font);
+  color: var(--clr-black);
 }
 
 .modelo a:hover {
@@ -184,7 +185,7 @@ ul li a {
 }
 
 .seccion p {
-  color: var(--clr-text);
+  color: var(--clr-grey);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* BOTONES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -213,7 +214,7 @@ ul li a {
 
 .botones p {
   margin-top: 10px;
-  color: var(--clr-font);
+  color: var(--clr-black);
 }
 
 .botones a {
@@ -221,7 +222,7 @@ ul li a {
 }
 
 .botones h3 {
-  color: var(--clr-font);
+  color: var(--clr-black);
 }
 
 #auriculares {
@@ -242,63 +243,19 @@ ul li a {
 /*  *//*  *//*  *//*  *//*  *//*  *//* FOOTER *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 .footer {
-  position: relative;
-  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 150px;
   background-color: rgb(53, 53, 53);
+  align-items: center;
 }
-
-.redes {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-}
-
-.redes a {
-  padding-left: 5px;
-  text-decoration: none;
-}
-
-.item1 {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-}
-
-.item1 a {
-  text-decoration: none;
-}
-
-.item2 {
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-}
-
-.item2 a {
-  text-decoration: none;
-}
-
-.item3 {
-  position: absolute;
-  top: 50%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-}
-
-.item3 a {
-  text-decoration: none;
-}
-
 h4 {
   margin-bottom: 15px;
-  color: var(--clr-text);
+  color: var(--clr-grey);
 }
 
 h5 {
-  color: rgb(255, 255, 255);
+  color: var(--clr-white);
 }
 
 h5:hover {
@@ -318,8 +275,8 @@ h5:hover {
 }
 
 .whatsapp p {
-  color: var(--clr-font);
-  background-color: var(--clr-body);
+  color: var(--clr-black);
+  background-color: var(--clr-pale);
   margin-top: 5px;
   padding: 2px;
   border-radius: 5px;
@@ -337,7 +294,7 @@ h5:hover {
 #tituloNosotros {
   text-align: center;
   font-size: 3rem;
-  color: var(--clr-text);
+  color: var(--clr-grey);
   padding: 100px 0;
 
 }
@@ -355,6 +312,7 @@ h5:hover {
 
 .nosotros img {
   margin: 20px;
+  border-radius: 1rem;
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CONTACTO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -375,15 +333,15 @@ h5:hover {
 }
 
 #tituloContacto {
-  color: rgb(255, 255, 255);
+  color: var(--clr-white);
 }
 
 #tituloContacto2 {
-  color: rgb(255, 255, 255);
+  color: var(--clr-white);
 }
 
 #parrafoContacto {
-  color: rgb(255, 255, 255);
+  color: var(--clr-white);
   margin: 20px 100px;
   text-align:justify;
 }
@@ -402,7 +360,7 @@ form {
 input {
   width: 300px;
   height: 30px;
-  background-color: var(--clr-body);
+  background-color: var(--clr-pale);
   border-style: none;
   border-bottom-style: double;
 }
@@ -413,12 +371,12 @@ input:focus {
 
 textarea {
   width: 300px;
-  background-color: var(--clr-body);
+  background-color: var(--clr-pale);
 }
 
 #enviar {
   border: none; 
-  color: rgb(255, 255, 255); 
+  color: var(--clr-white); 
   padding: 14px 28px; 
   cursor: pointer; 
   border-radius: 5px; 
@@ -428,14 +386,14 @@ textarea {
 }
 
 #enviar:hover {
-  color: var(--clr-font);
+  color: var(--clr-black);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #estamos {
   font-size: 2rem;
-  color: rgb(255, 255, 255);
+  color: var(--clr-white);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CATALOGO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -446,7 +404,7 @@ textarea {
 }
 
 aside {
-  padding: 2rem;
+  padding: 3rem 2rem;
   padding-right: 0;
   position: sticky;
   top: 0;
@@ -457,7 +415,7 @@ aside {
 
 .botonMenu {
   background-color: transparent;
-  color: var(--clr-text);
+  color: var(--clr-black);
   border: 0;
   font-size: 1rem;
   cursor: pointer;
@@ -470,8 +428,8 @@ aside {
 }
 
 .botonMenu.active {
-background-color: var(--clr-text);
-color: var(--clr-body);
+background-color: var(--clr-white);
+color: var(--clr-black);
 width: 100%;
 border-top-left-radius: 30px;
 border-bottom-left-radius: 30px;
@@ -487,7 +445,7 @@ position: relative;
   right: 0;
   background-color: transparent;
   border-bottom-right-radius: 0.5rem;
-  box-shadow: 0 1rem 0 var(--clr-text);
+  box-shadow: 0 1rem 0 var(--clr-white);
 }
 
 .botonMenu.active::after{
@@ -499,19 +457,19 @@ position: relative;
   right: 0;
   background-color: transparent;
   border-top-right-radius: 1rem;
-  box-shadow: 0 -1rem 0 var(--clr-text);
+  box-shadow: 0 -1rem 0 var(--clr-white);
 }
 
 .botonCarrito {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--clr-font);
+  color: var(--clr-black);
   margin-top: 2rem;
 }
 
 .numero {
-  background-color: var(--clr-font);
-  color: var(--clr-body);
+  background-color: var(--clr-black);
+  color: var(--clr-pale);
   padding: .25rem;
   border-radius: .25rem;
 }
@@ -523,7 +481,7 @@ position: relative;
 }
 
 .items {
-  background-color: var(--clr-text);
+  background-color: var(--clr-white);
   margin: 10px;
   margin-left: 0;
   border-radius: 20px;
@@ -532,15 +490,16 @@ position: relative;
 
 .tituloCatalogo {
   padding: 30px 0 30px 40px;
-  color: var(--clr-body);
+  color: var(--clr-grey);
   text-transform: uppercase;
 }
 
 .contenedorProductos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   justify-items: center;
+  margin: 0 30px;
 }
 
 .productoImagen {
@@ -549,10 +508,11 @@ position: relative;
 }
 
 .productoInfo {
-  background-color: var(--clr-body);
-  color: var(--clr-font);
+  background-color: var(--clr-pale);
+  color: var(--clr-black);
   padding: 10px;
   border-radius: 20px;
+  border: 1px solid var(--clr-grey);
   margin-top: -30px;
   position: relative;
   display: flex;
@@ -568,18 +528,18 @@ position: relative;
 }
 
 .agregar {
-  border: 2px solid var(--clr-text);
+  border: 2px solid var(--clr-grey);
   border-radius: 30px;
-  background-color:var(--clr-text);
-  color: var(--clr-body);
+  background-color:var(--clr-grey);
+  color: var(--clr-pale);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .agregar:hover {
-  background-color: var(--clr-body);
-  color: var(--clr-font);
+  background-color: var(--clr-pale);
+  color: var(--clr-black);
   transition: background-color .2s, color .2s;
 }
 
@@ -599,7 +559,7 @@ position: relative;
 .carritoVacio,
 .carritoGracias {
   font-size: 1.5rem;
-  color: var(--clr-body);
+  color: var(--clr-pale);
   font-weight: 400;
 }
 
@@ -613,8 +573,8 @@ position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--clr-body);
-  color: var(--clr-text);
+  background-color: var(--clr-pale);
+  color: var(--clr-grey);
   padding: .5rem;
   padding-right: 1.5rem;
   border-radius: 10px;
@@ -639,10 +599,10 @@ position: relative;
 
 .carritoAccionesVaciar {
   border: 0;
-  background-color: var(--clr-body);
+  background-color: var(--clr-pale);
   padding: 1rem;
   border-radius: 10px;
-  color: var(--clr-text);
+  color: var(--clr-grey);
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -654,11 +614,11 @@ position: relative;
 .carritoAccionesTotal {
   display: flex;
   border: 0;
-  background-color: var(--clr-body);
+  background-color: var(--clr-pale);
   padding: 1rem;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  color: var(--clr-text);
+  color: var(--clr-grey);
   text-transform: uppercase;
   cursor: pointer;
   gap: 1rem;
@@ -666,17 +626,17 @@ position: relative;
 
 .carritoAccionesComprar {
   border: 0;
-  background-color: var(--clr-font);
+  background-color: var(--clr-black);
   padding: 1rem;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: var(--clr-body);
+  color: var(--clr-pale);
   text-transform: uppercase;
   cursor: pointer;
 }
 
 #total {
-  color: var(--clr-font);
+  color: var(--clr-black);
   font-weight: 900;
 }
 
