@@ -1,6 +1,6 @@
 :root {
   --clr-white:rgb(255, 255, 255);
-  --clr-pale:rgb(240, 248, 255);
+  --clr-pale:rgb(224, 224, 224);
   --clr-black:rgb(0, 0, 0);
   --clr-grey:rgb(128, 126, 126);
 }
@@ -198,6 +198,7 @@ ul li a {
 }
 
 .botones {
+  background-color: var(--clr-white);
   border: 0.5px solid rgb(186, 186, 186);
   padding: 20px;
   border-radius: 15px;
@@ -249,6 +250,19 @@ ul li a {
   background-color: rgb(53, 53, 53);
   align-items: center;
 }
+
+.item1 a {
+  text-decoration: none;
+}
+
+.item2 a {
+  text-decoration: none;
+}
+
+.item3 a {
+  text-decoration: none;
+}
+
 h4 {
   margin-bottom: 15px;
   color: var(--clr-grey);
@@ -559,7 +573,7 @@ position: relative;
 .carritoVacio,
 .carritoGracias {
   font-size: 1.5rem;
-  color: var(--clr-pale);
+  color: var(--clr-grey);
   font-weight: 400;
 }
 
