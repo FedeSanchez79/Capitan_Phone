@@ -33,11 +33,14 @@ header{
   justify-content: space-between;
 }
 
+.logo {
+  color: var(--clr-grey);
+}
+
 .menuPrincipal {
     display: flex;
     flex-direction: row;
-    justify-content:center;
-    padding: 20px 20px 20px 500px;
+    padding: 1rem;
 }
 
 .menuPrincipal img {
@@ -96,7 +99,7 @@ ul li a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 20px;
+  padding: 1rem;
 }
 
 .botonLog {
@@ -344,6 +347,7 @@ h5:hover {
   align-items: center;
   justify-content: center;
   background-color: rgb(53, 53, 53);
+  border-top-right-radius: 1rem;
 }
 
 #tituloContacto {
@@ -656,4 +660,29 @@ position: relative;
 
 .disabled {
   display: none;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+@media screen and (min-width: 1201px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 992px) {
+  
+}
+
+@media screen and (max-width: 768px) {
+  .menuPrincipal {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  
 }

@@ -8,5 +8,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 1. Inicio
 2. Catálogo
-3. Sobre nosotros
-4. Contacto
+3. Carrito
+4. Sobre nosotros
+5. Contacto
+6. Construcción
