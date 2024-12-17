@@ -1,3 +1,3 @@
-const titulo = document.getElementById("titulo");
+// const titulo = document.getElementById("titulo");
 
-titulo.style.color = "var(--clr-grey)";
+// titulo.style.color = "var(--clr-grey)";
