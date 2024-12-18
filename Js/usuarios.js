@@ -1,27 +1,58 @@
 // LOGIN y LOGOUT USUARIOS
 
-// 1.- ingreso usuario y contraseña en un array u objeto
+const registroUsuario = []
 
-// 2.-bucle para respetar los parametros del usuario y contraseña
+SignInUsuario = () => {
+class DatosUsuario {
+    constructor (nombre, apellido, correo){
+        this.nombre = nombre,
+        this.apellido = apellido,
+        this.correo = correo
+    }
+}
 
-// 3.- unir con la base de datos
+let usuarioNombre = prompt("Ingrese su nombre")
+let usuarioApellido = prompt("Ingrese su apellido")
+let usuarioCorreo = prompt("Ingrese su correo electrónico")
 
-// 4.- condicional para permitir el ingreso del usuario
+let nuevoUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo)
+registroUsuario.push = nuevoUsuario
+}
 
 const usuarios = []
 const contrasenas = []
 
-let altaUsuario = prompt("Por favor ingrese su correo electrónico")
+LogInUsuario = () => {
+    let altaUsuario = prompt("Por favor ingrese su correo electrónico")
+    if (altaUsuario == ""){
+        alert("Debe ingresar su correo electrónico")
+    }else{
+        alert("Usuario ingresado")
+    }
 
-let altaContrasena = prompt("Por favor ingrese su contraseña")
+    let altaContrasena = parseInt(prompt("Por favor ingrese su contraseña numérica"))
+    if (altaContrasena == ""){
+        alert("Debe ingresar una contraseña")
+    }else{
+        alert("Contraseña ingresada")
+    }
 
-let ingresoDatoUsuario = altaUsuario.push(usuarios)
-let ingresoDatoContrasena = altaContrasena.push(contrasenas)
+    let ingresoUsuario = altaUsuario.push(usuarios)
 
-while (usuarios !== isNaN && contrasenas == isNaN){
-    alert("Usuario o contraseña no válidos")
+    if(ingresoUsuario !== this.correo){
+        alert("Usuario no registrado")
+    }else{
+        alert("Bienvenido " + this.nombre)
+    }
+    let ingresoContrasena = altaContrasena.push(contrasenas)
+
+    if(ingresoContrasena !== isNaN){
+        alert("Valor ingresado no válido")
+    }else{
+        alert("Contraseña aceptada")
+    }
 }
 
-if (usuarios == ("fedesanchez" + "@" + "gmail.com") && contrasenas > 0 && contrasenas < 9999 ){
-    alert("Bienvenido FEDERICO")
-}
+SignInUsuario()
+
+LogInUsuario()
