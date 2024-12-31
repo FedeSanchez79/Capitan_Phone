@@ -1,3 +1,9 @@
+// USUARIOS:
+// 1. Crear un registro de usuario
+// 2. Una vez creado darle la posibilidad de ser admin o usuario normal
+// 3. Si es admin darle acceso a modificar el catalogo, acceso a la base de datos y a la tabla de usuarios
+
+
 // SIGNIN USUARIOS
 
 const registroUsuario = []

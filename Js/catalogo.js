@@ -1,3 +1,8 @@
+// CATALOGO:
+// 1. Permitir ingresar tipo de producto, modelo, precio en pesos y dolares
+// 2. Unir el catalogo con un carrito de compras
+
+
 const cotizacion = 1100
 
 class Celular {
@@ -50,4 +55,4 @@ while (menu !== 3){
     menu = parseInt(prompt("Bienvenido al menú de administrador: \n" + "Por favor elija una opción\n" + "1.- Agregar un celular al catálogo\n" + "2.- Ver catálogo\n" + "3.- Salir del menú"))
 }
 
-console.log("Fin del programa")
+console.log(productos)
