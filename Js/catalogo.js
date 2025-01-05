@@ -15,11 +15,11 @@ class Celular {
         this.precio = precio
     }       
     calcularSubtotal() {
-        return this.cantidad * (this.precio * cotizacion);
+        return this.cantidad * (this.precio * cotizacion)
     }
 
     calcularPrecioConIva() {
-        return this.calcularSubtotal() * 1.21;
+        return this.calcularSubtotal() * 1.21
     }
 }
 
@@ -32,8 +32,8 @@ const agregarCatalogo = () => {
     let agregarPrecioDolares = parseInt(prompt("Por favor, ingrese el precio en dolares"))
 
     if (isNaN(agregarCantidad) || isNaN(agregarPrecioDolares) || agregarCantidad <= 0 || agregarPrecioDolares <= 0) {
-        alert("Los valores ingresados no son válidos. Intente de nuevo.");
-        return;
+        alert("Los valores ingresados no son válidos. Intente de nuevo.")
+        return
     }else {
         const agregarCelular = new Celular(agregarMarca, agregarModelo, agregarCantidad, agregarPrecioDolares)
         productos.push(agregarCelular)
@@ -43,7 +43,7 @@ const agregarCatalogo = () => {
 
 const verCatalogo = () => {
     if (productos.length === 0) {
-        alert("No hay productos agregados al catálogo.");
+        alert("No hay productos agregados al catálogo.")
         return
     }else {
         productos.forEach(producto => {
@@ -53,7 +53,7 @@ const verCatalogo = () => {
 }
 
 const menuPrincipal = () => {
-    let opcion;
+    let opcion
   
 
     do {
