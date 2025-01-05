@@ -55,7 +55,6 @@ const verCatalogo = () => {
 const menuPrincipal = () => {
     let opcion
   
-
     do {
         opcion = parseInt(prompt("Bienvenido al menú de administrador:\n" + "1. Agregar un celular al catálogo\n" + "2. Ver catálogo\n" + "3. Salir"))
 

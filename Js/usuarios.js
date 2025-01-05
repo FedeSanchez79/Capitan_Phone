@@ -26,11 +26,13 @@ let usuarioCorreo = prompt("Ingrese su correo electrónico")
 let usuarioUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo)
 registroUsuario.push(usuarioUsuario)
 
-if(usuarioNombre === "Federico" && usuarioApellido === "Sanchez" && usuarioCorreo === "fedesanchez@gmail.com"){
-    alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador`)
-}else {
-    alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`)
-}
+    if(usuarioNombre === "Federico" && usuarioApellido === "Sanchez" && usuarioCorreo === "fedesanchez@gmail.com"){
+        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador`)
+    }else if(usuarioNombre === "" || usuarioApellido === "" || usuarioCorreo === ""){
+        alert(`Debe completar todos los campos`)
+    }else {
+        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`)
+    }
 }
 
 SignInUsuario()
