@@ -2,15 +2,26 @@
 
 # Proyecto Comisión 65350
 
+
+
 <img src="./assets/images/banner_comision.jpg" alt="Imagen del logo de Coderhouse y el numero de comisión">
 
 ## Capitan Phone
 
+
+
 <img src="./assets/images/banner_capitan.jpg" alt="Imagen del logo de Capitan Phone">
+
+</div>
+
 
 Una web dedicada a la venta y distribución de celulares. En la misma podras accedera las últimas novedades, nuestro catálogo de productos, conocer más sobre nosotros y nuestro equipo, y finalmente contactarnos por cualquier consulta.
 
+<div align="center" width="100">
+
 ### Estructura del Desarrollo
+
+</div>
 
 1. Inicio
 2. Catálogo
@@ -19,7 +30,12 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 5. Contacto
 6. Construcción
 
+<div align="center" width="100">
+
 ### Herramientas utilizadas
+
+</div>
+
 
  <p align="center">
       <table>
@@ -40,18 +56,25 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
       </table>
     </p>
 
+<div align="center" width="100">
+
 ### Opciones de navegación
+
+</div>    
+
 
 1. Inicio de Sesión / Registro de usuario
 
-<img src="./assets/images/banner_usuario.jpg" alt="Imagen de ingreso de usuario">
+
+<div align="center" width="100"><img src="./assets/images/banner_usuario.jpg" alt="Imagen de ingreso de usuario"></div>   
 
 2. Acceso a la Web con catálogo y opcion de compra a través del carrito
 
-<img src="./assets/images/banner_carrito.jpg" alt="Imagen del carrito de compras">
+
+<div align="center" width="100"><img src="./assets/images/banner_carrito.jpg" alt="Imagen del carrito de compras"></div>   
 
 3. Para el ADMIN posibilidad de editar el catálogo
 
-<img src="./assets/images/banner_admin_catalogo.jpg" alt="Imagen del panel de administrador del catálogo">
 
-</div>
+<div align="center" width="100"><img src="./assets/images/banner_admin_catalogo.jpg" alt="Imagen del panel de administrador del catálogo"></div>   
+
