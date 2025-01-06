@@ -32,7 +32,7 @@ do{
         break;
     }
 }while(registroUsuario.length === 0){
-    alert(`Debe completar todos los campos`);
+    alert(`Registro finalizado`);
 }
 
     if(esAdmin()){
