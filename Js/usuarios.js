@@ -6,7 +6,7 @@
 
 // SIGNIN USUARIOS
 
-const registroUsuario = []
+const registroUsuario = [];
 
 SignInUsuario = () => {
 class DatosUsuario {
@@ -14,26 +14,35 @@ class DatosUsuario {
         this.nombre = nombre,
         this.apellido = apellido,
         this.correo = correo
+    };
+    esAdmin(){
+        return this.nombre === "Federico" && this.apellido === "Sanchez" && this.correo === "fedesanchez@gmail.com";
+    };
+};
+
+do{
+    let usuarioNombre = prompt("Ingrese su nombre");
+    let usuarioApellido = prompt("Ingrese su apellido");
+    let usuarioCorreo = prompt("Ingrese su correo electrónico");
+    let usuarioUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo);
+    registroUsuario.push(usuarioUsuario);
+    alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`);
+    let respuesta = prompt("¿Desea registrarse nuevamente? (si/no)");
+    if(respuesta === "no"){
+        break;
     }
+}while(registroUsuario.length === 0){
+    alert(`Debe completar todos los campos`);
 }
 
-let usuarioNombre = prompt("Ingrese su nombre")
-
-let usuarioApellido = prompt("Ingrese su apellido")
-
-let usuarioCorreo = prompt("Ingrese su correo electrónico")
-
-let usuarioUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo)
-registroUsuario.push(usuarioUsuario)
-
-    if(usuarioNombre === "Federico" && usuarioApellido === "Sanchez" && usuarioCorreo === "fedesanchez@gmail.com"){
-        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador`)
+    if(esAdmin()){
+        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador`);
     }else if(usuarioNombre === "" || usuarioApellido === "" || usuarioCorreo === ""){
-        alert(`Debe completar todos los campos`)
+        alert(`Debe completar todos los campos`);
     }else {
-        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`)
-    }
-}
+        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`);
+    };
+};
 
 SignInUsuario()
 
