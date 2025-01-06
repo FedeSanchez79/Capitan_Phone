@@ -27,12 +27,9 @@ do{
     let usuarioUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo);
     registroUsuario.push(usuarioUsuario);
     alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`);
-    let respuesta = prompt("¿Desea registrarse nuevamente? (si/no)");
-    if(respuesta === "no"){
-        break;
-    }
-}while(registroUsuario.length === 0){
-    alert(`Registro finalizado`);
+
+    }while(registroUsuario.length === 0){
+        alert(`Registro finalizado`);
 }
 
     if(esAdmin()){
