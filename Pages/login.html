@@ -1,17 +1,22 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JS -->
     <script defer src="../Js/main.js"></script>
+    <!-- comentado para que no se ejecute el script hasta pasar la clase nº7 -->
+    <!-- <script defer src="../Js/usuarios.js"></script>   -->
     <!-- CSS -->
     <link rel="stylesheet" href="../Style/style.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <title>Contacto</title>
+    <!-- ICONOS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Login</title>
 </head>
 <body>
     <header>
@@ -48,32 +53,19 @@
             <div class="logOut"></div>
         </div>
     </header>
-    <main id="mainContacto">
-        <section id="info">
-            <h1 id="tituloContacto">Contacto</h1>
-            <h3 id="tituloContacto2">¿Tenes alguna pregunta?</h3>
-            <p id="parrafoContacto">Estamos acá para ayudarte a encontrar el celular perfecto para vos. Completa el formulario de contacto y uno de nuestros asesores se pondrá en contacto con vos a la brevedad. Ya sea que necesites asesoramiento en el modelo ideal, consultar precios, o conocer nuestras opciones de envío,</p>
-            <p id="estamos">¡Estamos a tu disposición!</p>
-        </section>
-        <section>
-            <form action="" method="post">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <br>       
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-                <br>      
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <br>    
-                <label for="telefono">Teléfono (opcional):</label>
-                <input type="tel" id="telefono" name="telefono">
-                <br>       
-                <label for="mensaje">Mensaje:</label>
-                <br>
-                <textarea id="mensaje" name="mensaje" rows="10" required></textarea>
-                <br>
-                <button id="enviar" type="submit">Enviar</button>
+    <main>
+        <section class="formulario">
+            <form class="formularioLogin" action="" method="post">
+                <h2 class="tituloLogin">Bienvenido</h2>
+                <div class="form">            
+                <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                </div>
+                <div class="form">
+                <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                </div>
+                <button class="botonLogin">Ingresar</button>
+                <p class="textoLogin"><a href="">¿Perdiste la contraseña?</a></p>
+                <p class="textoLogin"><a href="./registro.html">¿No tienes cuenta? Registrate</a></p>
             </form>
         </section>
     </main>

@@ -84,6 +84,12 @@ header{
 .menuPrincipalLista a:hover::before {
   transform: scaleX(1);
 }
+
+.botonLog a {
+  text-decoration: none;
+  color: var(--clr-black);
+}
+
 ul li {
     list-style: none;
 }
@@ -722,6 +728,59 @@ position: relative;
 
 .disabled {
   display: none;
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* LOGIN *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+.form {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.tituloLogin {
+  padding-bottom: 10px;
+}
+
+.formularioLogin{
+ height: 80vh;
+}
+
+.formularioLogin input {
+  width: 250px;
+  height: 40px;
+  background-color: var(--clr-pale);
+  border: 2px solid var(--clr-grey);
+}
+
+.formularioLogin input:focus {
+  outline: none;
+}
+
+.textoLogin{
+  padding: 10px 0;
+}
+
+.textoLogin a{
+  text-decoration: none;
+  color: var(--clr-black);
+}
+
+.botonLogin {
+  border: 2px solid var(--clr-grey);
+  border-radius: 5px;
+  background-color:var(--clr-grey);
+  color: var(--clr-pale);
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.botonLogin:hover {
+  background-color: var(--clr-pale);
+  color: var(--clr-black);
+  transition: background-color .2s, color .2s;
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
