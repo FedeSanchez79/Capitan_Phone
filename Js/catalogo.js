@@ -1,9 +1,12 @@
 // CATALOGO:
 // 1. Permitir ingresar tipo de producto, modelo, precio en pesos y dolares
+//                   ***TERMINADO***
+
 // 2. Unir el catalogo con un carrito de compras
+//                  ***EN PROCESO***
 
 
-const cotizacion = 1100
+const cotizacion = prompt("Ingrese la cotizacion del dolar de la fecha"); //dato ingresado por el Admin
 
 class Celular {
     static id = 0
@@ -15,7 +18,7 @@ class Celular {
         this.precio = precio
     };       
     calcularSubtotal() {
-        return this.cantidad * (this.precio * cotizacion)
+        return this.cantidad * this.precio
     };
 
     calcularPrecioConIva() {
@@ -29,13 +32,13 @@ const agregarCatalogo = () => {
     let agregarMarca = prompt("Por favor, ingrese la marca del teléfono");
     let agregarModelo = prompt("Por favor, ingrese el modelo");
     let agregarCantidad = parseInt(prompt("Por favor, ingrese la cantidad"));
-    let agregarPrecioDolares = parseInt(prompt("Por favor, ingrese el precio en dolares"));
+    let agregarPrecio = parseInt(prompt("Por favor, ingrese el precio en pesos"));
 
-    if (isNaN(agregarCantidad) || isNaN(agregarPrecioDolares) || agregarCantidad <= 0 || agregarPrecioDolares <= 0) {
+    if (isNaN(agregarCantidad) || isNaN(agregarPrecio) || agregarCantidad <= 0 || agregarPrecio <= 0) {
         alert("Los valores ingresados no son válidos. Intente de nuevo.");
         return;
     }else {
-        const agregarCelular = new Celular(agregarMarca, agregarModelo, agregarCantidad, agregarPrecioDolares);
+        const agregarCelular = new Celular(agregarMarca, agregarModelo, agregarCantidad, agregarPrecio);
         productos.push(agregarCelular);
         alert(`Producto agregado: ${agregarMarca} ${agregarModelo}`);
     }    
@@ -47,8 +50,17 @@ const verCatalogo = () => {
         return;
     }else {
         productos.forEach(producto => {
-        alert(`ID: ${producto.id}\n` + `Marca: ${producto.marca}\n` + `Modelo: ${producto.modelo}\n` + `Cantidad: ${producto.cantidad}\n` + `Precio en dólares: ${producto.precio}\n` + `Subtotal en pesos: ${producto.calcularSubtotal()} \n` + `Precio con IVA: ${producto.calcularPrecioConIva()}`);
+        alert(`ID: ${producto.id}\n` + `Marca: ${producto.marca}\n` + `Modelo: ${producto.modelo}\n` + `Cantidad: ${producto.cantidad}\n` + `Precio en pesos: $${producto.precio}\n` + `Subtotal: $${producto.calcularSubtotal()} \n` + `Precio con IVA: $${producto.calcularPrecioConIva()}`);
         });
+        let productoDolares = prompt("Desea pasar los valores a dólares?")
+        if(productoDolares === "si"){
+            productos.map((producto) => {
+                producto.precio = producto.precio / cotizacion;
+                alert(`Precio en dolares: u$s${producto.precio}`);
+            });
+        }else {
+            alert("No se ha modificado la cotización");
+        }
     };
 };
 
