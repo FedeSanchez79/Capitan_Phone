@@ -33,6 +33,7 @@ const agregarCatalogo = () => {
     let agregarModelo = prompt("Por favor, ingrese el modelo");
     let agregarCantidad = parseInt(prompt("Por favor, ingrese la cantidad"));
     let agregarPrecio = parseInt(prompt("Por favor, ingrese el precio en pesos"));
+    Math.round(agregarPrecio);
 
     if (isNaN(agregarCantidad) || isNaN(agregarPrecio) || agregarCantidad <= 0 || agregarPrecio <= 0) {
         alert("Los valores ingresados no son válidos. Intente de nuevo.");
@@ -56,6 +57,7 @@ const verCatalogo = () => {
         if(productoDolares === "si"){
             productos.map((producto) => {
                 producto.precio = producto.precio / cotizacion;
+                Math.round(producto.precio);
                 alert(`Precio en dolares: u$s${producto.precio}`);
             });
         }else {
