@@ -6,9 +6,9 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -43,18 +43,18 @@ header{
 }
 
 .menuPrincipal {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
 }
 
 .menuPrincipal img {
-    align-items: center;
+  align-items: center;
 }
 
 .menuPrincipalLista{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .menuPrincipalLista li {
@@ -91,14 +91,14 @@ header{
 }
 
 ul li {
-    list-style: none;
+  list-style: none;
 }
 
 ul li a {
-    text-decoration: none;
-    list-style: none;
-    color: var(--clr-black);
-    text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+  color: var(--clr-black);
+  text-transform: uppercase;
 }
 
 .selected a {
@@ -189,7 +189,7 @@ ul li a {
 
 
 .nombre {
-    color: var(--clr-black);
+  color: var(--clr-black);
 }
 
 .cabecera {
@@ -514,12 +514,12 @@ aside {
 }
 
 .botonMenu.active {
-background-color: var(--clr-white);
-color: var(--clr-black);
-width: 100%;
-border-top-left-radius: 30px;
-border-bottom-left-radius: 30px;
-position: relative;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: relative;
 }
 
 .botonMenu.active::before{
@@ -621,12 +621,13 @@ position: relative;
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .agregar:hover {
-  background-color: var(--clr-pale);
   color: var(--clr-black);
-  transition: background-color .2s, color .2s;
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CARRITO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -743,7 +744,7 @@ position: relative;
 }
 
 .formularioLogin{
- height: 80vh;
+  height: 80vh;
 }
 
 .formularioLogin input {
@@ -751,6 +752,7 @@ position: relative;
   height: 40px;
   background-color: var(--clr-pale);
   border: 2px solid var(--clr-grey);
+  padding-left: 5px;
 }
 
 .formularioLogin input:focus {
@@ -775,12 +777,13 @@ position: relative;
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .botonLogin:hover {
-  background-color: var(--clr-pale);
   color: var(--clr-black);
-  transition: background-color .2s, color .2s;
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
