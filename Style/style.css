@@ -26,8 +26,6 @@ html, body {
   }
 
 body {
-    height: 100vh;
-    margin: 0;
     background-color: var(--clr-pale);
 }
 
@@ -249,6 +247,8 @@ ul li a {
   border-radius: 15px;
 }
 
+
+
 #publicidad img:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
@@ -319,6 +319,10 @@ ul li a {
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* FOOTER *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+footer{
+  width: 100%;
+}
 
 .footer {
   display: flex;
@@ -801,12 +805,15 @@ aside {
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
-@media screen and (min-width: 1201px) {
-
-}
-
-@media screen and (max-width: 1200px) {
-  
+@media screen and (max-width: 1201px) {
+ #publicidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #uno {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -814,18 +821,20 @@ aside {
 }
 
 @media screen and (max-width: 768px) {
-
-  .menuPrincipal {
+  .menuPrincipal{
     display: none;
   }
 
   .menuHidden {
-    display: initial;
+    display: block;
+    background-color: var(--clr-pale);
+    width: 100%;
+    margin: 0;
+    padding: 5px 0; 
   }
 
   .menuHidden label {
     display: initial;
-    padding-left: 20px; 
   }
 
   .menuHidden .menu {
@@ -834,28 +843,28 @@ aside {
     right: 0;
     display: none;
     padding: 0;
-    margin-top: 0;
-    background-color: var(--clr-pale); 
-  }  
+    margin: 0 0 0 30px;
+  }
 
   .menuHidden .menu ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 2rem;
-    background-color: transparent; 
+    justify-content: space-evenly;
+
+    height: 100%; 
   }
 
-  .menuHidden .menu ul li {
-    width: 100%;
-    margin: 0; 
+  .menuHidden .toggle:checked + label + .menu {
+    display: block;
   }
 
-  header .toggle:checked ~ .menu {
-    display: block; 
+  .titulo{
+    padding-left: 100px;
+    font-size: 2.5rem;
   }
-
+  .seccion{
+    margin-left: 100px;
+  }
 }
 
 @media screen and (max-width: 600px) {
