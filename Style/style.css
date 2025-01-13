@@ -3,6 +3,7 @@
   --clr-pale:rgb(224, 224, 224);
   --clr-black:rgb(0, 0, 0);
   --clr-grey:rgb(128, 126, 126);
+  --clr-darkGrey: rgb(53, 53, 53);
 }
 
 * {
@@ -14,6 +15,9 @@
 html, body {
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -22,6 +26,8 @@ html, body {
   }
 
 body {
+    height: 100vh;
+    margin: 0;
     background-color: var(--clr-pale);
 }
 
@@ -318,7 +324,7 @@ ul li a {
   display: flex;
   justify-content: space-evenly;
   height: 150px;
-  background-color: rgb(53, 53, 53);
+  background-color: var(--clr-darkGrey);
   align-items: center;
 }
 
@@ -406,7 +412,6 @@ h5:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 95vh;
 }
 
 #info {
@@ -414,8 +419,14 @@ h5:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(53, 53, 53);
-  border-top-right-radius: 1rem;
+  background-color: var(--clr-darkGrey);
+  border-radius: 1rem;
+  margin-left: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#info:hover{
+  box-shadow: 5px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 #tituloContacto {
@@ -469,7 +480,7 @@ textarea {
   cursor: pointer; 
   border-radius: 5px; 
   margin: 5px;
-  background-color: rgb(53, 53, 53);
+  background-color: var(--clr-darkGrey);
   transition: box-shadow 0.3s ease-in-out;
 }
 
