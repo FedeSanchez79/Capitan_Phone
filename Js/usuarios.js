@@ -11,45 +11,51 @@
 
 // SIGNIN USUARIOS
 
-let ingresar = document.getElementsByClassName(`botonLog`)[0];
-ingresar.addEventListener(`click`, function(){
-    const registroUsuario = [];
 
-    SignInUsuario = () => {
+let ingresar = document.getElementsByClassName(`botonLogin`)[0];const registroUsuario = [];
+
     class DatosUsuario {
-        constructor (nombre, apellido, correo){
-            this.nombre = nombre,
-            this.apellido = apellido,
-            this.correo = correo
+        constructor (nombre, apellido, usuario, contrasena){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.usuario = usuario;
+            this.contrasena = contrasena;
         };
         esAdmin(){
-            return this.nombre === "Federico" && this.apellido === "Sanchez" && this.correo === "fedesanchez@gmail.com";
+            return this.nombre === "Federico" && this.apellido === "Sanchez" && this.usuario === "fedesanchez@gmail.com";
         };
     };
-    
-    do{
-        let usuarioNombre = prompt("Ingrese su nombre");
-        let usuarioApellido = prompt("Ingrese su apellido");
-        let usuarioCorreo = prompt("Ingrese su correo electrónico");
-        let usuarioUsuario = new DatosUsuario (usuarioNombre, usuarioApellido, usuarioCorreo);
-        registroUsuario.push(usuarioUsuario);
-        alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`);
-    
-        }while(registroUsuario.length === 0){
-            alert(`Registro finalizado`);
-    }
-    
-        if(esAdmin()){
-            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador`);
-        }else if(usuarioNombre === "" || usuarioApellido === "" || usuarioCorreo === ""){
-            alert(`Debe completar todos los campos`);
-        }else {
-            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted esta registrado correctamente`);
-        };
-    };
-    
-    SignInUsuario()
-    
-    console.log(registroUsuario)
 
-});
+        ingresar.addEventListener("click", function(){
+        let usuarioNombre = document.getElementById("nombre").value.trim();
+        let usuarioApellido = document.getElementById("apellido").value.trim();
+        let usuarioUsuario = document.getElementById("usuario").value.trim();
+        let usuarioContrasena = document.getElementById("contrasena").value.trim();
+        let usuarioRepetirContrasena = document.getElementById("repetirContrasena").value.trim();
+
+        if (usuarioContrasena !== usuarioRepetirContrasena) {
+            alert("Las contraseñas no coinciden.");
+            return;
+        };
+            
+        const nuevoUsuario = new DatosUsuario(
+            usuarioNombre,
+            usuarioApellido,
+            usuarioUsuario,
+            usuarioContrasena
+        );
+
+        registroUsuario.push(nuevoUsuario);
+
+        if (nuevoUsuario.esAdmin()){
+            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador.`);
+        }else {
+            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted está registrado correctamente.`);
+        }
+
+        console.log("Usuarios registrados:", registroUsuario);
+
+    });
+        
+
+

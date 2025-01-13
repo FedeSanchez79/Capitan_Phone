@@ -52,7 +52,7 @@
         </div>
     </header>
     <main>
-        <section class="formulario">
+        <section id="formulario">
             <form class="formularioLogin" action="" method="post">
                 <h2 class="tituloLogin">Registro nuevo Usuario</h2>
                 <div class="form">            
@@ -65,13 +65,13 @@
                     <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
                 </div>
                 <div class="form">
-                    <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                 </div>
                 <div class="form">
-                    <input type="text" id="contrasena" name="contrasena" placeholder="Repita la contraseña" required>
+                    <input type="password" id="repetirContrasena" name="contrasena" placeholder="Repita la contraseña" required>
                 </div>
-                <button class="botonLogin">Registrarse</button>
             </form>
+            <button class="botonLogin" type="submit">Registrarse</button>
         </section>
     </main>
     <footer>
