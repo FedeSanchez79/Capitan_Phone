@@ -584,11 +584,29 @@ aside {
 }
 
 #items {
+  display: flex;
+  flex-direction: row;
   background-color: var(--clr-white);
   margin: 10px;
   margin-left: 0;
   border-radius: 20px;
   padding: 20px 0;
+}
+
+#items div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#items p{
+  padding: 5px 5px 0 5px;
+}
+
+#items button{
+  margin: 0 5px 0 5px;
+  padding: 6px;
 }
 
 #tituloCatalogo {
