@@ -1,3 +1,17 @@
+// -DOM y Eventos
+
+// -NADA de console, prompt y alert
+
+// -localstorage(guardar, recuperar, modificar, borrar)
+
+// -CSS básico
+
+// -Arrays de objetos
+
+// -MINIMO 2 funciones de orden superior DIFERENTES
+
+// -NADA de JS en el html
+
 productos = []; //ingresar los productos del catalogo a este array
 
 

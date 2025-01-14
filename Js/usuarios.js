@@ -1,18 +1,22 @@
-// USUARIOS:
-// 1. Crear un registro de usuario
-//       ***TERMINADO***
+// -DOM y Eventos
 
-// 2. Una vez creado darle la posibilidad de ser admin o usuario normal
-//       ***TERMINADO***
+// -NADA de console, prompt y alert
 
-// 3. Si es admin darle acceso a modificar el catalogo, acceso a la base de datos y a la tabla de usuarios
-//       ***EN PROCESO***
+// -localstorage(guardar, recuperar, modificar, borrar)
+
+// -CSS básico
+
+// -Arrays de objetos
+
+// -MINIMO 2 funciones de orden superior DIFERENTES
+
+// -NADA de JS en el html
 
 
 // SIGNIN USUARIOS
 
 
-let ingresar = document.getElementsByClassName(`botonLogin`)[0];const registroUsuario = [];
+const registroUsuario = [];
 
     class DatosUsuario {
         constructor (nombre, apellido, usuario, contrasena){
@@ -48,13 +52,12 @@ let ingresar = document.getElementsByClassName(`botonLogin`)[0];const registroUs
         registroUsuario.push(nuevoUsuario);
 
         if (nuevoUsuario.esAdmin()){
-            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted es Administrador.`);
+            let admin = document.getElementsByClassName("botonLog");
+            admin.innerText = `${registroUsuario.nombre}`
         }else {
-            alert(`Bienvenido ${usuarioNombre} ${usuarioApellido}, usted está registrado correctamente.`);
+            let usuarioNoAdmin = document.getElementsByClassName("botonLog");
+            usuarioNoAdmin.innerText = `${registroUsuario.nombre}`
         }
-
-        console.log("Usuarios registrados:", registroUsuario);
-
     });
         
 

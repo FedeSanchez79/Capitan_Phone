@@ -583,7 +583,7 @@ aside {
   gap: 0.5rem;
 }
 
-.items {
+#items {
   background-color: var(--clr-white);
   margin: 10px;
   margin-left: 0;
@@ -591,13 +591,13 @@ aside {
   padding: 20px 0;
 }
 
-.tituloCatalogo {
+#tituloCatalogo {
   padding: 30px 0 30px 40px;
   color: var(--clr-grey);
   text-transform: uppercase;
 }
 
-.contenedorProductos {
+#contenedorProductos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -605,12 +605,12 @@ aside {
   margin: 0 30px;
 }
 
-.productoImagen {
+#productoImagen {
   max-width: 100%;
   border-radius: 30px;
 }
 
-.productoInfo {
+#productoInfo {
   background-color: var(--clr-pale);
   color: var(--clr-black);
   padding: 10px;
@@ -622,15 +622,15 @@ aside {
   flex-direction: column;
 }
 
-.modelo {
+#modelo {
   padding-bottom: 3px;
 }
 
-.precio {
+#precio {
   padding-bottom: 7px;
 }
 
-.agregar {
+#agregar {
   border: 2px solid var(--clr-grey);
   border-radius: 30px;
   background-color:var(--clr-grey);
@@ -641,7 +641,7 @@ aside {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.agregar:hover {
+#agregar:hover {
   color: var(--clr-black);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
