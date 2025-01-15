@@ -585,7 +585,7 @@ aside {
 
 #items {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: var(--clr-white);
   margin: 10px;
   margin-left: 0;
@@ -595,13 +595,13 @@ aside {
 
 #items div{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-#items p{
-  padding: 5px 5px 0 5px;
+#items input{
+  margin: 0 5px;
 }
 
 #items button{
@@ -646,6 +646,11 @@ aside {
 
 #precio {
   padding-bottom: 7px;
+}
+
+#menuCargaCatalogo{
+  display: flex;
+  flex-direction: row;
 }
 
 #agregar {
