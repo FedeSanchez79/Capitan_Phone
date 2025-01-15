@@ -1,18 +1,18 @@
 // -DOM y Eventos
 
-// -NADA de console, prompt y alert
+// -NADA de console, prompt y alert (LISTO)
 
 // -localstorage(guardar, recuperar, modificar, borrar)
 
-// -CSS básico
+// -CSS básico (LISTO)
 
-// -Arrays de objetos
+// -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES
+// -MINIMO 2 funciones de orden superior DIFERENTES (Use .map y .forEach en catalogo y .reduce en carrito pero no esta en ejecución todavia)
 
-// -NADA de JS en el html
+// -NADA de JS en el html (LISTO)
 
-
+//CREAR UN FORM
 
 const items = document.getElementById("items");
 const menuCarga = document.createElement("div");
@@ -25,18 +25,29 @@ menuCarga.innerHTML = ` <form id="menuCargaCatalogo" action="" method="post">
                         </form> `;                        
 items.appendChild(menuCarga);
 
+//CREAR UN ARRAY DE OBJETOS USANDO FUNCION CONSTRUCTORA
+
 const productos = []
 
 class datoProducto {
+    static id = 0
     constructor (marca, modelo, precio){
+        this.id = ++datoProducto.id;
         this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;
     };
 };
-  
-const catalogo = document.getElementById('contenedorProductos');  
-catalogo.innerHTML = `<h3>Marca: 
+
+const nuevoProducto = new datoProducto(marca, modelo, precio);
+productos.push(nuevoProducto);
+console.log(productos)
+
+//CREAR UN ELEMENTO PARA PODER INCLUIR LOS DATOS DEL ARRAY CREADO ANTERIORMENTE
+
+const catalogoCard = document.getElementById('contenedorProductos');  
+const card = document.createElement("div")
+card.innerHTML = `<h3>Marca: 
                         ${productos.map(producto => `${producto.marca}`)}
                         </h3>
                         <p>Modelo: 
@@ -45,26 +56,20 @@ catalogo.innerHTML = `<h3>Marca:
                         <p>Precio: $ 
                         ${productos.map(producto => `${producto.precio}`)}
                         </p>`
-catalogo.appendChild(card)
+catalogoCard.appendChild(card)
 
-    const nuevoProducto = new datoProducto(marca, modelo, precio);
-    productos.push(nuevoProducto);
-    console.log(productos)
-
-
-// agregarProducto(productos)
-// console.log(productos)
+//CREAR UN EVENTO DONDE PODAMOS INGRESAR DATOS AL ARRAY Y QUE SE MUESTREN EN EL HTML
+   
+function agregarItem () {
+     addButton = document.querySelectorAll("#agregar")
+        addButton.forEach(button => {
+            button.onclick = (e) => {
+                const idItem = e.currentTarget.id
+                const itemElegido = productos.find(producto => producto.id == idItem)
+                productos.push(itemElegido)
+                console.log(productos)
     
-// function agregarItem () {
-//      addButton = document.querySelectorAll("#agregar")
-//         addButton.forEach(button => {
-//             button.onclick = (e) => {
-//                 const idItem = e.currentTarget.id
-//                 const itemElegido = productos.find(producto => producto.id == idItem)
-//                 productos.push(itemElegido)
-//                 console.log(productos)
-    
-//                 localStorage.setItem("productos", JSON.stringify(productos))
-//             }
-//         })
-//     }
+                localStorage.setItem("productos", JSON.stringify(productos))
+            }
+        })
+    }

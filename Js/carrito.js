@@ -1,16 +1,16 @@
 // -DOM y Eventos
 
-// -NADA de console, prompt y alert
+// -NADA de console, prompt y alert (LISTO)
 
 // -localstorage(guardar, recuperar, modificar, borrar)
 
-// -CSS básico
+// -CSS básico (LISTO)
 
-// -Arrays de objetos
+// -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES
+// -MINIMO 2 funciones de orden superior DIFERENTES (Use .map y .forEach en catalogo y .reduce en carrito pero no esta en ejecución todavia)
 
-// -NADA de JS en el html
+// -NADA de JS en el html (LISTO)
 
 productos = []; //ingresar los productos del catalogo a este array
 
