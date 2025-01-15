@@ -58,7 +58,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 </p>
 
 
-### Opciones de navegación  
+### Opciones de navegación  previo a DOM
 
 </br>
 
@@ -79,4 +79,22 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 </br>
 
 <img src="./assets/images/banner_admin_catalogo.jpg" alt="Imagen del panel de administrador del catálogo">  
+
+### Opciones de navegación con DOM
+
+</br>
+
+1. Inicio de Sesión / Registro de usuario
+
+</br>
+
+<img src="./assets/images/registro.jpg" alt="imagen de Registro de usuario">
+
+2. Agregar productos al Catálogo
+
+</br>
+
+<img src="./assets/images/agregar_productos.jpg" alt="imagen de formulario para agregar productos">
+
+
 
