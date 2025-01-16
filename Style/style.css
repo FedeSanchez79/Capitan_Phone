@@ -639,6 +639,14 @@ aside {
   margin: 0 30px;
 }
 
+#contenedorProductos div h3{
+  margin: 5px;
+}
+
+#contenedorProductos div p{
+  margin: 2px 5px;
+}
+
 #productoImagen {
   max-width: 100%;
   border-radius: 30px;
@@ -681,6 +689,22 @@ aside {
 }
 
 #agregar:hover {
+  color: var(--clr-black);
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.botonEliminar {
+  border: 2px solid var(--clr-grey);
+  background-color:var(--clr-grey);
+  color: var(--clr-pale);
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.botonEliminar:hover {
   color: var(--clr-black);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
