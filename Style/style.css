@@ -577,10 +577,26 @@ aside {
   border-radius: .25rem;
 }
 
-.marcas {
+#marcas {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+#marcas li {
+  background-color: transparent;
+  color: var(--clr-black);
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 20px;
 }
 
 #items {

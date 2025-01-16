@@ -79,3 +79,13 @@ botonAgregar.onclick = (e) => {agregarProducto();};
 // 1. Crear una funcion que tome el array de productos y la funcion de agregar o quitar (falta desarrollar)
 // 2. En la funcion crear un switch case para poder ejecutar: agregarProducto(), eliminarProducto(**EN DESARROLLO**), mostrarProducto(), editarProducto(**EN DESARROLLO**)
 // 3. Dentro del switch case ver de incluir setItem, getItem, removeItem y editar el producto
+
+//USO DE FOR OF
+
+const marcas = ["iphone", "motorola", "xiaomi", "samsung"];
+const listaMarcas = document.getElementById("marcas")
+for (const marca of marcas){
+    let marcaTelefonos = document.createElement("li")
+    marcaTelefonos.innerHTML = marca
+    listaMarcas.appendChild(marcaTelefonos)                            
+}
