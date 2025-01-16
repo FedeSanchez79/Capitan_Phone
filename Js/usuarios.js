@@ -40,7 +40,7 @@ const registroUsuario = [];
             
     const nuevoUsuario = new DatosUsuario(usuarioNombre, usuarioApellido, usuarioUsuario, usuarioContrasena);
     registroUsuario.push(nuevoUsuario);
-    localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));
+    localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario)); // ver como tomar del localStorage
 });
         
 

@@ -52,7 +52,7 @@ function agregarProducto() {
     const precio = parseInt(document.getElementById("precio").value);
     const nuevoProducto = new datoProducto(marca, modelo, precio);
     productos.push(nuevoProducto);
-    localStorage.setItem("productos", JSON.stringify(productos));
+    localStorage.setItem("productos", JSON.stringify(productos)); 
     mostrarProductos();
 };
 
@@ -73,3 +73,9 @@ function mostrarProductos() {
 
 const botonAgregar = document.getElementById("agregar");
 botonAgregar.onclick = (e) => {agregarProducto();};
+
+//FUNCION DE ORDEN SUPERIOR
+
+// 1. Crear una funcion que tome el array de productos y la funcion de agregar o quitar (falta desarrollar)
+// 2. En la funcion crear un switch case para poder ejecutar: agregarProducto(), eliminarProducto(**EN DESARROLLO**), mostrarProducto(), editarProducto(**EN DESARROLLO**)
+// 3. Dentro del switch case ver de incluir setItem, getItem, removeItem y editar el producto
