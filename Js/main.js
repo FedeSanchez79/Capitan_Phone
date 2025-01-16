@@ -1,4 +1,4 @@
-// -DOM y Eventos
+// -DOM y Eventos (LISTO)
 
 // -NADA de console, prompt y alert (LISTO)
 
@@ -8,11 +8,10 @@
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (Use .map y .forEach en catalogo y .reduce en carrito pero no esta en ejecución todavia)
+// -MINIMO 2 funciones de orden superior DIFERENTES (PENDIENTE)
 
 // -NADA de JS en el html (LISTO)
 
-//usando el metodo getElementById
 
 let tituloPrincipal = document.getElementById(`titulo`);
 tituloPrincipal.innerHTML = `Capitan Phone`;

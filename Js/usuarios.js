@@ -1,14 +1,14 @@
-// -DOM y Eventos
+// -DOM y Eventos (LISTO)
 
 // -NADA de console, prompt y alert (LISTO)
 
-// -localstorage(guardar, recuperar, modificar, borrar)
+// -localstorage(guardar LISTO(en usuarios.js), recuperar LISTO(en catalogo.js), modificar, borrar)
 
 // -CSS básico (LISTO)
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (Use .map y .forEach en catalogo y .reduce en carrito pero no esta en ejecución todavia)
+// -MINIMO 2 funciones de orden superior DIFERENTES (PENDIENTE)
 
 // -NADA de JS en el html (LISTO)
 
@@ -35,14 +35,11 @@ const registroUsuario = [];
     let usuarioRepetirContrasena = document.getElementById("repetirContrasena").value;
 
     if (usuarioContrasena !== usuarioRepetirContrasena) {
-        alert("Las contraseñas no coinciden.");
         return;
     };
             
     const nuevoUsuario = new DatosUsuario(usuarioNombre, usuarioApellido, usuarioUsuario, usuarioContrasena);
-
     registroUsuario.push(nuevoUsuario);
-
     localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));
 });
         
