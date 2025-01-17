@@ -64,7 +64,7 @@ function mostrarProductos() {
         card.innerHTML = `<h3>Marca: ${producto.marca}</h3>
                           <p>Modelo: ${producto.modelo}</p>
                           <p>Precio: $${producto.precio}</p>
-                          <button class="botonEliminar data-id="${producto.id}">Eliminar Item</button>`;
+                          <button class="botonEliminar">Eliminar Item</button>`;
         catalogoCard.appendChild(card);
         const botonEliminar = card.querySelector(".botonEliminar");
         botonEliminar.onclick = () => eliminarDelCatalogo(producto.id);
