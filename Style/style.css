@@ -620,6 +620,21 @@ aside {
   padding: 6px;
 }
 
+.headCatalogo{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.headCatalogo #select1 {
+  margin-right: 20px;
+}
+
+.headCatalogo #select2 {
+  margin-left: 2px;
+}
+
 #tituloCatalogo {
   padding: 30px 0 30px 50px;
   color: var(--clr-grey);
@@ -629,6 +644,8 @@ aside {
 #tituloCatalogoAdmin{
   color: var(--clr-white);
   background-color: var(--clr-darkGrey);
+  padding: 2px;
+  border-radius: 5px;
   text-transform: uppercase;
 }
 
