@@ -8,7 +8,7 @@
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (forEach y filter en catalogo)
+// -MINIMO 2 funciones de orden superior DIFERENTES (forEach en catalogo)
 
 // -NADA de JS en el html (LISTO)
 
