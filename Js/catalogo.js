@@ -48,10 +48,14 @@ function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
     const precio = parseInt(document.getElementById("precio").value);
-    const nuevoProducto = new datoProducto(marca, modelo, precio);
-    productos.push(nuevoProducto);
-    localStorage.setItem("productos", JSON.stringify(productos)); 
-    mostrarProductos();
+        if(marca === "samsung" || marca === "iphone" || marca === "xiaomi" || marca === "motorola"){
+        const nuevoProducto = new datoProducto(marca, modelo, precio);
+        productos.push(nuevoProducto);
+        localStorage.setItem("productos", JSON.stringify(productos)); 
+        mostrarProductos();
+        }else{
+            marcaIncorrecta.innerHTML = `<p>Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o Iphone únicamente</p>`
+        }
 };
 
 //ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCION ANTERIOR
@@ -83,6 +87,10 @@ function eliminarDelCatalogo(id) {
 
 const botonAgregar = document.getElementById("agregar");
 botonAgregar.onclick = (e) => {agregarProducto();};
+
+//INPUT PARA FILTRAR POR PRECIO CON EL MÉTODO FILTER
+
+
 
 //USO DE FOR OF PARA CREAR EL LISTADO DE MARCAS EN EL ASIDE
 
