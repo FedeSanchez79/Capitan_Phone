@@ -77,6 +77,7 @@ function mostrarProductos() {
         const botonEliminar = card.querySelector(".botonEliminar");
         botonEliminar.onclick = () => eliminarDelCatalogo(producto.id);
     });
+    agregarEventoBotones();
 };
 
 //FUNCIÓN PARA ELIMINAR LOS OBJETOS CREADOS PREVIAMENTE USANDO EL EVENTO ONLICK DENTRO DE LA FUNCIÓN mostrarProductos()
@@ -106,4 +107,20 @@ for (const marca of marcas){
     let marcaTelefonos = document.createElement("li")
     marcaTelefonos.innerHTML = marca
     listaMarcas.appendChild(marcaTelefonos)                            
+}
+
+//MODIFICAR EL NUMERO EN CARRITO A MEDIDA QUE AGREGAMOS UN ITEM A CARRITO (Falta ver como evitar que al hacer refresh se borre -- localStorage)
+
+let contadorCarrito = 0;
+const numero = document.getElementById("numero1");
+
+function incrementarCarrito() {
+    contadorCarrito++;
+    numero.textContent = contadorCarrito;
+}
+function agregarEventoBotones() {
+    const botonesAgregar = document.querySelectorAll(".agregar");
+    botonesAgregar.forEach(boton => {
+        boton.onclick = incrementarCarrito;
+    });
 }

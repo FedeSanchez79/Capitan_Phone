@@ -599,6 +599,12 @@ aside {
   padding-left: 20px;
 }
 
+#numero1{
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  padding: 2px;
+}
+
 #items {
   display: flex;
   flex-direction: column;
