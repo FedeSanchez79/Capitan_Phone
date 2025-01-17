@@ -8,7 +8,7 @@
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (forEach en catalogo)
+// -MINIMO 2 funciones de orden superior DIFERENTES (forEach y filter en catalogo)
 
 // -NADA de JS en el html (LISTO)
 
@@ -47,19 +47,19 @@ class datoProducto {
 function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
-    const precio = parseInt(document.getElementById("precio").value);
+    const precio = document.getElementById("precio").value;
     if (["samsung", "iphone", "xiaomi", "motorola"].includes(marca)) {
         const nuevoProducto = new datoProducto(marca, modelo, precio);
         productos.push(nuevoProducto);
         localStorage.setItem("productos", JSON.stringify(productos));
         mostrarProductos();
-        marcaIncorrecta.textContent = ""; // Limpia mensajes de error
+        marcaIncorrecta.textContent = "";
       } else {
         marcaIncorrecta.textContent = "Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o iPhone únicamente.";
       }
 };
 
-//ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCION ANTERIOR
+//ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCIÓN ANTERIOR
 
 function mostrarProductos() {
     const catalogoCard = document.getElementById("contenedorProductosAdmin");
@@ -87,10 +87,12 @@ function eliminarDelCatalogo(id) {
     mostrarProductos();
 };
 
+//EVENTO ONCLICK PARA AGREGAR PRODUCTO
+
 const botonAgregar = document.getElementById("agregar");
 botonAgregar.onclick = (e) => {agregarProducto();};
 
-//INPUT PARA FILTRAR POR PRECIO CON EL MÉTODO FILTER
+//EJECUTO LA FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
 
 mostrarProductos();
 
