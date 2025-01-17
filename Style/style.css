@@ -627,8 +627,8 @@ aside {
 }
 
 #tituloCatalogoAdmin{
-  padding: 30px 0;
-  color: var(--clr-grey);
+  color: var(--clr-white);
+  background-color: var(--clr-darkGrey);
   text-transform: uppercase;
 }
 
@@ -683,26 +683,47 @@ aside {
   flex-direction: row;
 }
 
-#agregar {
+.agregar {
   border: 2px solid var(--clr-grey);
-  background-color:rgb(110, 168, 110);
-  color: var(--clr-black);
+  border-radius: 5px;
+  background-color:var(--clr-grey);
+  color: var(--clr-pale);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.agregar:hover {
+  color: var(--clr-black);
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#agregar {
+  border: 2px solid var(--clr-grey);
+  border-radius: 5px;
+  background-color:rgb(0, 128, 0);
+  color: var(--clr-pale);
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 20px;
   transition: box-shadow 0.3s ease-in-out;
 }
 
 #agregar:hover {
-  color: var(--clr-pale);
-  background-color: rgb(46, 116, 46);
+  color: var(--clr-black);
+  background-color: rgb(159, 255, 167);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .botonEliminar {
   border: 2px solid var(--clr-grey);
-  background-color:rgb(250, 101, 101);
-  color: var(--clr-black);
+  border-radius: 5px;
+  background-color:rgb(253, 48, 48);
+  color: var(--clr-white);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
@@ -711,7 +732,7 @@ aside {
 
 .botonEliminar:hover {
   color: var(--clr-black);
-  background-color: rgb(175, 175, 175);
+  background-color: rgb(255, 139, 139);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 

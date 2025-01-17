@@ -71,7 +71,7 @@ function mostrarProductos() {
         card.innerHTML = `<h3>Marca: ${producto.marca}</h3>
                           <p>Modelo: ${producto.modelo}</p>
                           <p>Precio: $${producto.precio}</p>
-                          <button id="agregar">Agregar al Carrito</button>
+                          <button class="agregar">Comprar</button>
                           <button class="botonEliminar">Eliminar Item</button>`;
         catalogoCard.appendChild(card);
         const botonEliminar = card.querySelector(".botonEliminar");
