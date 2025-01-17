@@ -609,12 +609,12 @@ aside {
   padding: 20px 0;
 }
 
-#items div{
+/* #items div{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-}
+} */
 
 #items input{
   margin: 0 5px;
@@ -631,12 +631,17 @@ aside {
   text-transform: uppercase;
 }
 
-#contenedorProductos div{
+
+#contenedorProductos{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1rem;
   justify-items: center;
-  margin: 0 30px;
+}
+
+#contenedorProductosAdmin{
+  display: flex;
+  flex-direction: row;
 }
 
 #contenedorProductos div h3{
@@ -679,9 +684,8 @@ aside {
 
 #agregar {
   border: 2px solid var(--clr-grey);
-  border-radius: 30px;
-  background-color:var(--clr-grey);
-  color: var(--clr-pale);
+  background-color:rgb(110, 168, 110);
+  color: var(--clr-black);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
@@ -689,15 +693,15 @@ aside {
 }
 
 #agregar:hover {
-  color: var(--clr-black);
-  background-color: rgb(175, 175, 175);
+  color: var(--clr-pale);
+  background-color: rgb(46, 116, 46);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .botonEliminar {
   border: 2px solid var(--clr-grey);
-  background-color:var(--clr-grey);
-  color: var(--clr-pale);
+  background-color:rgb(250, 101, 101);
+  color: var(--clr-black);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;

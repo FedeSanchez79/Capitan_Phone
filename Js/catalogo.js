@@ -33,7 +33,7 @@ items.appendChild(menuCarga);
 const productos = JSON.parse(localStorage.getItem("productos"));
 
 class datoProducto {
-    static id = 0;
+    static id = productos.length;
     constructor(marca, modelo, precio) {
         this.id = ++datoProducto.id;
         this.marca = marca;
@@ -48,26 +48,28 @@ function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
     const precio = parseInt(document.getElementById("precio").value);
-        if(marca === "samsung" || marca === "iphone" || marca === "xiaomi" || marca === "motorola"){
+    if (["samsung", "iphone", "xiaomi", "motorola"].includes(marca)) {
         const nuevoProducto = new datoProducto(marca, modelo, precio);
         productos.push(nuevoProducto);
-        localStorage.setItem("productos", JSON.stringify(productos)); 
+        localStorage.setItem("productos", JSON.stringify(productos));
         mostrarProductos();
-        }else{
-            marcaIncorrecta.innerHTML = `<p>Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o Iphone únicamente</p>`
-        }
+        marcaIncorrecta.textContent = ""; // Limpia mensajes de error
+      } else {
+        marcaIncorrecta.textContent = "Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o iPhone únicamente.";
+      }
 };
 
 //ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCION ANTERIOR
 
 function mostrarProductos() {
-    const catalogoCard = document.getElementById("contenedorProductos");
+    const catalogoCard = document.getElementById("contenedorProductosAdmin");
     catalogoCard.innerHTML = "";
     productos.forEach(producto => {
         const card = document.createElement("div");
         card.innerHTML = `<h3>Marca: ${producto.marca}</h3>
                           <p>Modelo: ${producto.modelo}</p>
                           <p>Precio: $${producto.precio}</p>
+                          <button id="agregar">Agregar al Carrito</button>
                           <button class="botonEliminar">Eliminar Item</button>`;
         catalogoCard.appendChild(card);
         const botonEliminar = card.querySelector(".botonEliminar");
@@ -90,7 +92,7 @@ botonAgregar.onclick = (e) => {agregarProducto();};
 
 //INPUT PARA FILTRAR POR PRECIO CON EL MÉTODO FILTER
 
-
+mostrarProductos();
 
 //USO DE FOR OF PARA CREAR EL LISTADO DE MARCAS EN EL ASIDE
 
