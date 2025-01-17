@@ -46,7 +46,7 @@
         <div class="log">
             <img src="../assets/icons/sesion.png" alt="icono de inicio de sesión">
             <div class="logIn">
-                <button class="botonLog"><a href="./login.html">Iniciar Sesion</a></button>
+                <button class="botonLog"><a id="botonCambiar" href="./login.html">Iniciar Sesion</a></button>
             </div>
             <div class="logOut"></div>
         </div>
@@ -65,12 +65,11 @@
                     <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
                 </div>
                 <div class="form">
-                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-                    <p id="contrasenaIncorrecta"></p>
-
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña entre 8 y 12 numeros" required>
                 </div>
                 <div class="form">
                     <input type="password" id="repetirContrasena" name="contrasena" placeholder="Repita la contraseña" required>
+                    <p id="contrasenaIncorrecta"></p>
                 </div>
             </form>
             <button class="botonLogin" type="submit">Registrarse</button>
