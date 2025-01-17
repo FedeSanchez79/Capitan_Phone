@@ -866,6 +866,16 @@ aside {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contrasenaIncorrecta {
+  font-weight: bold;
+  color: var(--clr-black);
+}
+
 /*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 @media screen and (max-width: 1201px) {
