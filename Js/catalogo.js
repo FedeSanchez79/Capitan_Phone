@@ -8,16 +8,14 @@
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (PENDIENTE)
+// -MINIMO 2 funciones de orden superior DIFERENTES (forEach en catalogo)
 
 // -NADA de JS en el html (LISTO)
 
 
+//PENDIENTE -- AL RECARGAR LA PAGINA SE BORRA EL CONTENIDO 
 
-
-//PENDIENTE -- 1. AL RECARGAR LA PAGINA SE BORRA EL CONTENIDO -- 2.VER COMO RECUPERAR, MODIFICAR Y ELIMINAR DEL LOCALSTORAGE
-
-//CREAR UN FORM
+//CREAR UN FORM USANDO DOM
 
 const items = document.getElementById("items");
 const menuCarga = document.createElement("div");
@@ -32,7 +30,7 @@ items.appendChild(menuCarga);
 
 //FUNCIÓN CONSTRUCTORA PARA CREAR LOS OBJETOS
 
-const productos = [];
+const productos = JSON.parse(localStorage.getItem("productos"));
 
 class datoProducto {
     static id = 0;
@@ -60,27 +58,33 @@ function agregarProducto() {
 
 function mostrarProductos() {
     const catalogoCard = document.getElementById("contenedorProductos");
+    catalogoCard.innerHTML = "";
     productos.forEach(producto => {
         const card = document.createElement("div");
         card.innerHTML = `<h3>Marca: ${producto.marca}</h3>
                           <p>Modelo: ${producto.modelo}</p>
-                          <p>Precio: $${producto.precio}</p>`;
+                          <p>Precio: $${producto.precio}</p>
+                          <button class="botonEliminar data-id="${producto.id}">Eliminar Item</button>`;
         catalogoCard.appendChild(card);
+        const botonEliminar = card.querySelector(".botonEliminar");
+        botonEliminar.onclick = () => eliminarDelCatalogo(producto.id);
     });
 };
 
-//EVENTO CLICK PARA INICIALIZAR LA FUNCIÓN DE AGREGAR PRODUCTOS
+//FUNCIÓN PARA ELIMINAR LOS OBJETOS CREADOS PREVIAMENTE USANDO EL EVENTO ONLICK DENTRO DE LA FUNCIÓN mostrarProductos()
+
+function eliminarDelCatalogo(id) {
+    const nuevoCatalogo = productos.filter(producto => producto.id !== id);
+    productos.length = 0;
+    nuevoCatalogo.forEach(producto => productos.push(producto));
+    localStorage.setItem("productos", JSON.stringify(productos));
+    mostrarProductos();
+};
 
 const botonAgregar = document.getElementById("agregar");
 botonAgregar.onclick = (e) => {agregarProducto();};
 
-//FUNCION DE ORDEN SUPERIOR
-
-// 1. Crear una funcion que tome el array de productos y la funcion de agregar o quitar (falta desarrollar)
-// 2. En la funcion crear un switch case para poder ejecutar: agregarProducto(), eliminarProducto(**EN DESARROLLO**), mostrarProducto(), editarProducto(**EN DESARROLLO**)
-// 3. Dentro del switch case ver de incluir setItem, getItem, removeItem y editar el producto
-
-//USO DE FOR OF
+//USO DE FOR OF PARA CREAR EL LISTADO DE MARCAS EN EL ASIDE
 
 const marcas = ["iphone", "motorola", "xiaomi", "samsung"];
 const listaMarcas = document.getElementById("marcas")
