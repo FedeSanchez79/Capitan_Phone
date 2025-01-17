@@ -44,6 +44,8 @@ class datoProducto {
 
 //ACCESO AL DOM Y ALMACENAR EN LOCALSTORAGE
 
+const marcaIncorrecta = document.getElementById("marcaIncorrecta")
+contenedorProductos.appendChild(marcaIncorrecta)
 function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
