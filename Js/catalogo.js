@@ -133,7 +133,7 @@ function agregarEventoBotones() {
     });
 }
 
-//FUNCIÓN Y MÉTODOS PARA PODER USAR EL SELECT Y FILTRAR POR OPCIÓN ELEGIDA
+//FUNCIÓN Y MÉTODOS PARA PODER USAR EL SELECT Y FILTRAR POR OPCIÓN ELEGIDA (**PENDIENTE**)
 
 let seleccion = JSON.parse(localStorage.getItem("productos"))
 let seleccionMarca = document.getElementById("select1")

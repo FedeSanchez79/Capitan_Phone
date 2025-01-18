@@ -19,6 +19,18 @@
 </br>
 </br>
 
+***EN DESARROLLO**
+
+</br>
+</br>
+
+<img src="./assets/images/standby.png" alt="Imagen de en desarrollo stand by">
+
+</div>
+
+</br>
+</br>
+
 Una web dedicada a la venta y distribución de celulares. En la misma podras accedera las últimas novedades, nuestro catálogo de productos, conocer más sobre nosotros y nuestro equipo, y finalmente contactarnos por cualquier consulta.
 
 
