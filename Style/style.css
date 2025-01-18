@@ -626,10 +626,11 @@ aside {
 }
 
 #contenedorProductos{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #contenedorProductos div h3{
@@ -733,10 +734,11 @@ aside {
 }
 
 #contenedorProductosAdmin{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 #marcaIncorrecta {
