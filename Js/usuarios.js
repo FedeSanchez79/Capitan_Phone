@@ -49,8 +49,3 @@ ingresar.addEventListener("click", function(){
         };
     }
 );
-
-
-        
-
-
