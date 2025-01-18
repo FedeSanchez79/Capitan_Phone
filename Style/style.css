@@ -651,18 +651,6 @@ aside {
   border-radius: 30px;
 }
 
-/* .productoInfo {
-  background-color: var(--clr-pale);
-  color: var(--clr-black);
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid var(--clr-grey);
-  margin-top: -30px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-} */
-
 .modelo {
   padding-bottom: 3px;
   text-transform: uppercase;
@@ -831,9 +819,18 @@ aside {
 
 .carritoProductoEliminar {
   border: 0;
+  border-radius: 5px;
   background-color: transparent;
   color: rgb(255, 0, 0);
   cursor: pointer;
+  background-color: var(--clr-white);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.carritoProductoEliminar:hover {
+  background-color: var(--clr-pale);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .carritoAcciones {
