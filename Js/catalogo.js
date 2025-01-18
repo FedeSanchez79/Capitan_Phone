@@ -78,7 +78,7 @@ function mostrarProductos() {
         card.innerHTML = `<img class="productoImagen" src="../assets/images/iphone_imagen.jpg" alt="imagen de un iphone">
                           <h3 class="modelo">${producto.marca}</h3>
                           <p class="modelo">${producto.modelo}</p>
-                          <p class="precio">$${producto.precio}</p>
+                          <p class="precio">u$s ${producto.precio}</p>
                           <button class="agregar">Comprar</button>
                           <button class="botonEliminar">Eliminar Item</button>`;                 
         catalogoCard.appendChild(card);
