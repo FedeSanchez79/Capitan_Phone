@@ -90,11 +90,14 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 <img src="./assets/images/registro.jpg" alt="imagen de Registro de usuario">
 
-2. Agregar productos al Catálogo
+3. Ver Catalogo (Usuario)
 
 </br>
 
 <img src="./assets/images/agregar_productos.jpg" alt="imagen de formulario para agregar productos">
 
+2. Agregar productos al Catálogo (Admin)
 
+</br>
 
+<img src="./assets/images/agregar_productos2.jpg" alt="imagen de formulario para agregar productos">
