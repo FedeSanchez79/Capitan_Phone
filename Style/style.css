@@ -777,6 +777,10 @@ aside {
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CARRITO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
+#items {
+  background-color: var(--clr-white);
+}
+
 .botonVolver {
   font-size: 1rem;
 }
