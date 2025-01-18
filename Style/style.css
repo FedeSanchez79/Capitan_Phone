@@ -583,28 +583,6 @@ aside {
   gap: 0.5rem;
 }
 
-#marcas li {
-  background-color: transparent;
-  color: var(--clr-black);
-  border: 0;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding-left: 20px;
-}
-
-#numero1{
-  background-color: var(--clr-black);
-  color: var(--clr-white);
-  padding: 2px;
-}
-
 #items {
   display: flex;
   flex-direction: column;
@@ -647,25 +625,11 @@ aside {
   text-transform: uppercase;
 }
 
-#tituloCatalogoAdmin{
-  color: var(--clr-white);
-  background-color: var(--clr-darkGrey);
-  padding: 2px;
-  border-radius: 5px;
-  text-transform: uppercase;
-}
-
-#marcaIncorrecta {
-  color: rgb(255, 0, 0);
-  font-weight: bold;
-}
-
-
 #contenedorProductos{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 50px;
 }
 
 #contenedorProductos div h3{
@@ -676,12 +640,16 @@ aside {
   margin: 2px 5px;
 }
 
-#productoImagen {
+.contenedor {
+  margin-left: 20px;
+}
+
+.productoImagen {
   max-width: 100%;
   border-radius: 30px;
 }
 
-#productoInfo {
+/* .productoInfo {
   background-color: var(--clr-pale);
   color: var(--clr-black);
   padding: 10px;
@@ -691,19 +659,15 @@ aside {
   position: relative;
   display: flex;
   flex-direction: column;
-}
+} */
 
-#modelo {
+.modelo {
   padding-bottom: 3px;
+  text-transform: uppercase;
 }
 
-#precio {
+.precio {
   padding-bottom: 7px;
-}
-
-#menuCargaCatalogo{
-  display: flex;
-  flex-direction: row;
 }
 
 .agregar {
@@ -722,6 +686,67 @@ aside {
   color: var(--clr-black);
   background-color: rgb(175, 175, 175);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/*  *//*  *//*  *//*  *//*  *//*  *//* CATALOGO ADMIN *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+
+#admin {
+  display: flex;
+  flex-direction: column;
+}
+
+#contenedorProductos2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#marcas li {
+  background-color: transparent;
+  color: var(--clr-black);
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+#numero1{
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  padding: 2px;
+}
+
+#tituloCatalogoAdmin{
+  color: var(--clr-white);
+  background-color: var(--clr-darkGrey);
+  margin: 30px 0 30px 50px;
+  padding: 2px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+#contenedorProductosAdmin{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+#marcaIncorrecta {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+#menuCargaCatalogo{
+  display: flex;
+  flex-direction: row;
 }
 
 #agregar {
@@ -757,11 +782,6 @@ aside {
   color: var(--clr-black);
   background-color: rgb(255, 139, 139);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-#admin {
-  display: flex;
-  flex-direction: column;
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CARRITO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */

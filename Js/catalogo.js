@@ -12,9 +12,6 @@
 
 // -NADA de JS en el html (LISTO)
 
-
-//PENDIENTE -- AL RECARGAR LA PAGINA SE BORRA EL CONTENIDO 
-
 //CREAR UN FORM USANDO DOM
 
 const items = document.getElementById("items");
@@ -42,23 +39,32 @@ class datoProducto {
     };
 };
 
-//ACCESO AL DOM Y ALMACENAR EN LOCALSTORAGE
+//ACCESO AL DOM, ALMACENAR EN LOCALSTORAGE Y VERIFICAR QUE LOS DATOS INGRESADOS SEAN CORRECTOS
 
-const marcaIncorrecta = document.getElementById("marcaIncorrecta")
-contenedorProductos.appendChild(marcaIncorrecta)
 function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
     const precio = document.getElementById("precio").value;
+    const catalogoCard = document.getElementById("contenedorProductosAdmin");
+
     if (["samsung", "iphone", "xiaomi", "motorola"].includes(marca)) {
         const nuevoProducto = new datoProducto(marca, modelo, precio);
         productos.push(nuevoProducto);
         localStorage.setItem("productos", JSON.stringify(productos));
         mostrarProductos();
-        marcaIncorrecta.textContent = "";
-      } else {
+        let marcaIncorrecta = document.getElementById("marcaIncorrecta");
+        if (marcaIncorrecta) {
+            marcaIncorrecta.remove();
+        }
+    } else {
+        let marcaIncorrecta = document.getElementById("marcaIncorrecta");
+        if (!marcaIncorrecta) {
+            marcaIncorrecta = document.createElement("div");
+            marcaIncorrecta.id = "marcaIncorrecta";
+            catalogoCard.appendChild(marcaIncorrecta); 
+        }
         marcaIncorrecta.textContent = "Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o iPhone únicamente.";
-      }
+    }
 };
 
 //ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCIÓN ANTERIOR
@@ -67,12 +73,14 @@ function mostrarProductos() {
     const catalogoCard = document.getElementById("contenedorProductosAdmin");
     catalogoCard.innerHTML = "";
     productos.forEach(producto => {
-        const card = document.createElement("div");
-        card.innerHTML = `<h3>Marca: ${producto.marca}</h3>
-                          <p>Modelo: ${producto.modelo}</p>
-                          <p>Precio: $${producto.precio}</p>
+        const card = document.createElement("div"); 
+        card.className = "contenedor"
+        card.innerHTML = `<img class="productoImagen" src="../assets/images/iphone_imagen.jpg" alt="imagen de un iphone">
+                          <h3 class="modelo">${producto.marca}</h3>
+                          <p class="modelo">${producto.modelo}</p>
+                          <p class="precio">$${producto.precio}</p>
                           <button class="agregar">Comprar</button>
-                          <button class="botonEliminar">Eliminar Item</button>`;
+                          <button class="botonEliminar">Eliminar Item</button>`;                 
         catalogoCard.appendChild(card);
         const botonEliminar = card.querySelector(".botonEliminar");
         botonEliminar.onclick = () => eliminarDelCatalogo(producto.id);
@@ -124,3 +132,8 @@ function agregarEventoBotones() {
         boton.onclick = incrementarCarrito;
     });
 }
+
+//FUNCIÓN Y MÉTODOS PARA PODER USAR EL SELECT Y FILTRAR POR OPCIÓN ELEGIDA
+
+let seleccion = JSON.parse(localStorage.getItem("productos"))
+let seleccionMarca = document.getElementById("select1")
