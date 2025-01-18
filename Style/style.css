@@ -581,6 +581,7 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: fixed;
 }
 
 #items {
