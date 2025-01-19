@@ -52,6 +52,7 @@ function agregarProducto() {
         const nuevoProducto = new datoProducto(marca, modelo, precio);
         productos.push(nuevoProducto);
         localStorage.setItem("productos", JSON.stringify(productos));
+        localStorage.setItem("productosCarrito", JSON.stringify(productos));
         mostrarProductos();
         let marcaIncorrecta = document.getElementById("marcaIncorrecta");
         if (marcaIncorrecta) {
@@ -104,6 +105,17 @@ function eliminarDelCatalogo(id) {
 const botonAgregar = document.getElementById("agregar");
 botonAgregar.onclick = (e) => {agregarProducto();};
 
+
+function carritoAgregar(marca, precio){
+const carritoMarca = productos.filter(producto => producto.marca !== marca)
+productos.length = 0;
+carritoMarca.forEach(producto => productos.push(producto))
+const carritoPrecio = productos.filter(producto => producto.precio !== precio)
+productos.length = 0;
+carritoPrecio.forEach(producto => productos.push(producto))
+localStorage.setItem("productosCarrito", JSON.stringify(productos));
+mostrarProductos();
+}
 //EJECUTO LA FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
 
 mostrarProductos();
