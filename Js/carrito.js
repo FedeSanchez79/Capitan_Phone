@@ -59,6 +59,8 @@ function eliminarDelCarrito(id) {
     mostrarProductos();
 };
 
+//USO DE REDUCE PARA EL TOTAL DEL CARRITO
+
 const totalCarrito = document.getElementById("items");
 const inputTotal = document.createElement("div");
 inputTotal.innerHTML = `<h4>Total:</h4>
