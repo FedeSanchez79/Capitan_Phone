@@ -2,13 +2,13 @@
 
 // -NADA de console, prompt y alert (LISTO)
 
-// -localstorage(guardar LISTO(en usuarios.js), recuperar LISTO(en catalogo.js), modificar, borrar)
+// -localstorage(guardar (LISTO), recuperar (LISTO), modificar, borrar)
 
 // -CSS básico (LISTO)
 
 // -Arrays de objetos (Use funcion contructora - LISTO)
 
-// -MINIMO 2 funciones de orden superior DIFERENTES (forEach en catalogo)
+// -MINIMO 2 funciones de orden superior DIFERENTES (LISTO)
 
 // -NADA de JS en el html (LISTO)
 

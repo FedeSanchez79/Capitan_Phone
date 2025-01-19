@@ -1,7 +1,7 @@
 
 
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
-console.log(productos)
+
 
 //HACER UN FILTER PARA PODER TRAER LOS ELEMENTO DE ACUERDO A LA LLAMADA
 
