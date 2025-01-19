@@ -19,7 +19,7 @@
 </br>
 </br>
 
-***EN DESARROLLO**
+**EN DESARROLLO**
 
 </br>
 </br>
@@ -69,30 +69,9 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
     </table>
 </p>
 
+ 
 
-### Opciones de navegación  previo a DOM
-
-</br>
-
-1. Inicio de Sesión / Registro de usuario
-
-</br>
-
-<img src="./assets/images/banner_usuario.jpg" alt="Imagen de ingreso de usuario">  
-
-2. Acceso a la Web con catálogo y opcion de compra a través del carrito
-
-</br>
-
-<img src="./assets/images/banner_carrito.jpg" alt="Imagen del carrito de compras">  
-
-3. Para el ADMIN posibilidad de editar el catálogo
-
-</br>
-
-<img src="./assets/images/banner_admin_catalogo.jpg" alt="Imagen del panel de administrador del catálogo">  
-
-### Opciones de navegación con DOM
+### Opciones de navegación con DOM 
 
 </br>
 
@@ -113,3 +92,21 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 </br>
 
 <img src="./assets/images/agregar_productos2.jpg" alt="imagen de formulario para agregar productos">
+
+3. Incremento de numero en Carrito cuando se utiliza el botón comprar
+
+</br>
+
+<img src="./assets/images/numero_carrito.jpg" alt="imagen de formulario para agregar productos">
+
+4. Carrito de compras vacio
+
+</br>
+
+<img src="./assets/images/carrito_vacio.jpg" alt="imagen de formulario para agregar productos">
+
+5. Carrito de compras con items
+
+</br>
+
+<img src="./assets/images/carrito_items.jpg" alt="imagen de formulario para agregar productos">
