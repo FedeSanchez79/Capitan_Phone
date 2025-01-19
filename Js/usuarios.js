@@ -14,7 +14,7 @@
 
 // SIGNIN USUARIOS
 
-let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario"));
+let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
 
     class DatosUsuario {
         constructor (nombre, apellido,mail, usuario, contrasena){
