@@ -782,11 +782,15 @@ aside {
 }
 
 #items h4 {
-  margin: 10px 40px;
+  margin: 40px 40px 10px 40px;
+  color: var(--clr-black);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 #items #total {
   margin: 0 40px;
+  color: rgb(255, 116, 116);
 }
 
 .botonVolver {
@@ -822,6 +826,15 @@ aside {
   padding: .5rem;
   padding-right: 1.5rem;
   border-radius: 10px;
+}
+
+.carritoProducto div {
+  width: 100%;
+}
+
+.carritoProducto div small {
+  color: var(--clr-black);
+  font-weight: bold;
 }
 
 .carritoImagen {
