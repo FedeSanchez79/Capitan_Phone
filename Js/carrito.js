@@ -35,11 +35,11 @@ for(const producto of productos){
     carritoCard.appendChild(carritoProductoCantidad);  
     let carritoProductoPrecio = document.createElement("div");
     carritoProductoPrecio.innerHTML = `<small>Precio</small>
-                                    <p>${producto.precio}</p>`;
+                                    <p>u$s ${producto.precio}</p>`;
     carritoCard.appendChild(carritoProductoPrecio);
     let carritoProductoSubtotal = document.createElement("div");
     carritoProductoSubtotal.innerHTML = `<small>Subtotal</small>
-                                        <p></p>`;
+                                        <p>u$s </p>`;
     carritoCard.appendChild(carritoProductoSubtotal);
     let botonEliminarCarrito = document.createElement("button");
     botonEliminarCarrito.className = "carritoProductoEliminar"
