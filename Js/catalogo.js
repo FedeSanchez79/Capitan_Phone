@@ -27,7 +27,8 @@ items.appendChild(menuCarga);
 
 //FUNCIÓN CONSTRUCTORA PARA CREAR LOS OBJETOS
 
-const productos = JSON.parse(localStorage.getItem("productos"));
+const productos = JSON.parse(localStorage.getItem("productos")) || [];
+console.log(productos)
 
 class datoProducto {
     static id = productos.length;
