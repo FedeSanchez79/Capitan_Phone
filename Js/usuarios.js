@@ -44,9 +44,19 @@ ingresar.addEventListener("click", function(){
             contrasenaIncorrecta.innerHTML = `<p>Acceso denegado vuelva a intentarlo.</p>`;
             return;
         }else{
+            function usuarioNuevo(){
             let cambiarBoton = document.getElementById("botonCambiar");
             cambiarBoton.innerHTML = usuarioUsuario;
+            registroUsuario.push(usuarioUsuario)
+            localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));
+            };
         };
+        const usuarioActual = JSON.parse(localStorage.getItem("registroUsuario")) || [];
+        registroUsuario.push(usuarioActual)
+        usuarioNuevo()
+
+        //LOGRO QUE EN EL LOCALSTORAGE SE ALMACENE EL USUARIO, PERO NO LOGRO QUE QUEDE AL REFRESCAR LA PAGINA.
+        //LA LOGICA DEBE ESTAR MAL, VER SI USANDO FILTER U OTRO METODO PUEDO LOGRARLO.
     }
 );
 
