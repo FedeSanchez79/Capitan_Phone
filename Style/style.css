@@ -781,6 +781,14 @@ aside {
   background-color: var(--clr-white);
 }
 
+#items h4 {
+  margin: 10px 40px;
+}
+
+#items #total {
+  margin: 0 40px;
+}
+
 .botonVolver {
   font-size: 1rem;
 }
