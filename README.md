@@ -31,7 +31,7 @@
 </br>
 </br>
 
-Una web dedicada a la venta y distribución de celulares. En la misma podras accedera las últimas novedades, nuestro catálogo de productos, conocer más sobre nosotros y nuestro equipo, y finalmente contactarnos por cualquier consulta.
+Una web dedicada a la venta y distribución de celulares. En la misma podras acceder a las últimas novedades, nuestro catálogo de productos, conocer más sobre nosotros y nuestro equipo, y finalmente contactarnos por cualquier consulta.
 
 
 ### Estructura del Desarrollo
@@ -81,7 +81,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 <img src="./assets/images/registro.jpg" alt="imagen de Registro de usuario">
 
-3. Ver Catalogo (Usuario)
+3. Ver Catálogo (Usuario)
 
 </br>
 
@@ -93,19 +93,19 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 <img src="./assets/images/agregar_productos2.jpg" alt="imagen de formulario para agregar productos">
 
-3. Incremento de numero en Carrito cuando se utiliza el botón comprar
+3. Incremento de número en Carrito cuando se utiliza el botón comprar
 
 </br>
 
 <img src="./assets/images/numero_carrito.jpg" alt="imagen de formulario para agregar productos">
 
-4. Carrito de compras vacio
+4. Carrito de compras vacío 
 
 </br>
 
 <img src="./assets/images/carrito_vacio.jpg" alt="imagen de formulario para agregar productos">
 
-5. Carrito de compras con items
+5. Carrito de compras con ítems
 
 </br>
 
