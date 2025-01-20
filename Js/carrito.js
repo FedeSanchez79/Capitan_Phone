@@ -1,6 +1,5 @@
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-
 //HACER UN FILTER PARA PODER TRAER LOS ELEMENTO DE ACUERDO A LA LLAMADA
 
 if (productos.length === 0){
@@ -71,3 +70,25 @@ function actualizarTotal() {
     document.getElementById("total").value = `u$s ${total}`;
 }
 actualizarTotal();
+
+//USO DE REMOVE LOCALSTORAGE PARA LIMPIAR EL CARRITO (DEBO CORREGIR PARA QUE NO LIMPIE EL CATALOGO)
+
+const limpiarCarrito = document.getElementById("items");
+const botonVaciar = document.createElement("div");
+botonVaciar.innerHTML = `<button id="vaciar">Vaciar carrito</button>`;
+limpiarCarrito.appendChild(botonVaciar);
+
+function limpiarLocal() {
+    localStorage.removeItem("productos"); 
+    productos.length = 0; 
+    actualizarVistaCarrito(); 
+    actualizarTotal(); 
+}
+
+const vaciar = document.getElementById("vaciar")
+vaciar.addEventListener("click", limpiarLocal);
+
+function actualizarVistaCarrito() {
+    const carritoListado = document.getElementsByClassName("contenedorCarrito")[0];
+    carritoListado.innerHTML = `<p class="carritoVacio">Tu carrito está vacío <i class="bi bi-emoji-frown"></i></p>`;
+}
