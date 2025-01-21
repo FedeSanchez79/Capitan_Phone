@@ -1,6 +1,12 @@
 // SIGNIN USUARIOS
 
-let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
+//ESTABLEZCO 5 MINUTOS PARA REGISTRO DE USUARIO
+
+// 1. Crear una función estilo reloj (a través de alguna Api?)
+// 2. Crear un Temporizador ()
+
+
+    let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
 
     class DatosUsuario {
         constructor (nombre, apellido,mail, usuario, contrasena){
@@ -46,3 +52,29 @@ ingresar.addEventListener("click", function(){
     }
 );
 
+//VER SI SE PUEDE HACER A TRAVES DE UNA API
+
+let tiempoTotalSegundos = 5 * 60; 
+
+function contador(segundos) {
+    const minutes = Math.floor(segundos / 60);
+    const segundosRestantes = segundos % 60;
+    return `${minutes}:${segundosRestantes.toString().padStart(2, '0')}`;
+}
+
+function conteo() {
+    const reloj = document.getElementById(`reloj`);
+
+    const intervalo = setInterval(() => {
+        if (tiempoTotalSegundos <= 0) {
+            clearInterval(intervalo);
+           reloj.textContent = "0:00";
+            alert("¡El tiempo se acabó! Vuelva a ingresar sus datos");
+        } else {
+            reloj.textContent = contador(tiempoTotalSegundos);
+            tiempoTotalSegundos--;
+        }
+    }, 1000);
+}
+
+conteo()
