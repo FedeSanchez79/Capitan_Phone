@@ -31,28 +31,38 @@ function agregarProducto() {
     const marca = document.getElementById("marca").value;
     const modelo = document.getElementById("modelo").value;
     const precio = document.getElementById("precio").value;
-    const catalogoCard = document.getElementById("contenedorProductosAdmin");
-
-    if (["samsung", "iphone", "xiaomi", "motorola"].includes(marca)) {
-        const nuevoProducto = new datoProducto(marca, modelo, precio);
-        productos.push(nuevoProducto);
-        localStorage.setItem("productos", JSON.stringify(productos));
-        localStorage.setItem("productosCarrito", JSON.stringify(productos));
-        mostrarProductos();
-        let marcaIncorrecta = document.getElementById("marcaIncorrecta");
-        if (marcaIncorrecta) {
-            marcaIncorrecta.remove();
-        }
-    } else {
-        let marcaIncorrecta = document.getElementById("marcaIncorrecta");
-        if (!marcaIncorrecta) {
-            marcaIncorrecta = document.createElement("div");
-            marcaIncorrecta.id = "marcaIncorrecta";
-            catalogoCard.appendChild(marcaIncorrecta); 
-        }
-        marcaIncorrecta.textContent = "Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o iPhone únicamente.";
-    }
+    const nuevoProducto = new datoProducto(marca, modelo, precio);
+    productos.push(nuevoProducto);
+    localStorage.setItem("productos", JSON.stringify(productos));
+    localStorage.setItem("productosCarrito", JSON.stringify(productos));
+    tryFunction()
 };
+
+//ASINCRONISMO Y PROMESAS
+
+function tryFunction(){
+    const catalogoCard = document.getElementById("contenedorProductosAdmin");
+    marcaIncorrecta = document.createElement("div");
+    marcaIncorrecta.id = "marcaIncorrecta";
+    let marcaIncorrecta = document.getElementById("marcaIncorrecta");
+    catalogoCard.appendChild(marcaIncorrecta);
+
+    
+    function modeloChecker(modelo){
+        return new Promise(resolve, reject) 
+    }
+        // try{
+        //     if (productos.marca === "xiaomi" || productos.marca === "motorola" || productos.marca === "iphone" || productos.marca === "samsung"){
+        //         marcaIncorrecta.textContent = "Marca ingresada de forma correcta";
+        //     }else{
+        //         throw new Error("Marca ingresada incorrecta. Ingrese: Samsung, Motorola, Xiaomi o iPhone únicamente.")
+        //     }       
+        // }catch(err){
+        //     marcaIncorrecta = err
+        // }finally{
+        //     mostrarProductos();
+        // }   
+}
 
 //ACCESO AL DOM Y MÉTODO FOREACH PARA PODER MOSTRAR CADA PRODUCTO AGREGADO EN LA FUNCIÓN ANTERIOR
 
@@ -74,6 +84,7 @@ function mostrarProductos() {
     });
     agregarEventoBotones();
 };
+
 
 //FUNCIÓN PARA ELIMINAR LOS OBJETOS CREADOS PREVIAMENTE USANDO EL EVENTO ONLICK DENTRO DE LA FUNCIÓN mostrarProductos()
 
