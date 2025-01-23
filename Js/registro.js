@@ -35,9 +35,8 @@ ingresar.addEventListener("click", function(){
         }else{
             function usuarioNuevo(){
             let cambiarBoton = document.getElementById("botonCambiar");
-            cambiarBoton.innerHTML = `
-                                        <button class="botonLog"></button>
-                                        <a href="./login.html">HOLA${usuarioUsuario}</a>`;
+            cambiarBoton.innerHTML = `<button class="botonLog"></button>
+                                      <a href="./login.html">${usuarioUsuario}</a>`;
             registroUsuario.push(usuarioUsuario)
             localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));    
             };
