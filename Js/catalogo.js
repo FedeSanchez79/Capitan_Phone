@@ -165,16 +165,6 @@ for (const marca of marcas){
 
 // mostrarProductos();
 
-// //USO DE FOR OF PARA CREAR EL LISTADO DE MARCAS EN EL ASIDE
-
-// const marcas = ["iphone", "motorola", "xiaomi", "samsung"];
-// const listaMarcas = document.getElementById("marcas")
-// for (const marca of marcas){
-//     let marcaTelefonos = document.createElement("li")
-//     marcaTelefonos.innerHTML = marca
-//     listaMarcas.appendChild(marcaTelefonos)                            
-// }
-
 // //FUNCIÓN Y MÉTODOS PARA PODER USAR EL SELECT Y FILTRAR POR OPCIÓN ELEGIDA (**PENDIENTE**)
 
 // let seleccion = JSON.parse(localStorage.getItem("productos"))
