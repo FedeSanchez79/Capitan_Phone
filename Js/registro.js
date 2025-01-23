@@ -2,9 +2,6 @@
 
 //ESTABLEZCO 5 MINUTOS PARA REGISTRO DE USUARIO
 
-// 1. Crear una función estilo reloj (a través de alguna Api?)
-// 2. Crear un Temporizador ()
-
 
     let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
 
@@ -38,13 +35,13 @@ ingresar.addEventListener("click", function(){
         }else{
             function usuarioNuevo(){
             let cambiarBoton = document.getElementById("botonCambiar");
-            cambiarBoton.innerHTML = usuarioUsuario;
+            cambiarBoton.innerHTML = `
+                                        <button class="botonLog"></button>
+                                        <a href="./login.html">HOLA${usuarioUsuario}</a>`;
             registroUsuario.push(usuarioUsuario)
-            localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));
+            localStorage.setItem("registroUsuario", JSON.stringify(registroUsuario));    
             };
         };
-        const usuarioActual = JSON.parse(localStorage.getItem("registroUsuario")) || [];
-        registroUsuario.push(usuarioActual)
         usuarioNuevo()
 
         //LOGRO QUE EN EL LOCALSTORAGE SE ALMACENE EL USUARIO, PERO NO LOGRO QUE QUEDE AL REFRESCAR LA PAGINA.
@@ -53,6 +50,9 @@ ingresar.addEventListener("click", function(){
 );
 
 //VER SI SE PUEDE HACER A TRAVES DE UNA API
+
+// 1. Crear una función estilo reloj (a través de alguna Api?)
+// 2. Crear un Temporizador ()
 
 let tiempoTotalSegundos = 5 * 60; 
 
