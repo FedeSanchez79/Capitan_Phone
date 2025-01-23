@@ -34,7 +34,7 @@ function agregarItem (item){
         <div class="productoInfo">
         <h3 class="modelo">${itemNuevo.marca}</h3>
         <p class="modelo">${itemNuevo.modelo}</p>
-        <p class="precio">${itemNuevo.precio}</p>
+        <p class="precio">u$s ${itemNuevo.precio}</p>
         <button class="agregar">Agregar</button>`;
 listado.appendChild(card)                  
 })

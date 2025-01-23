@@ -94,19 +94,3 @@ function actualizarVistaCarrito() {
     const carritoListado = document.getElementsByClassName("contenedorCarrito")[0];
     carritoListado.innerHTML = `<p class="carritoVacio">Tu carrito está vacío <i class="bi bi-emoji-frown"></i></p>`;
 }
-
-
-let botonInicio = document.getElementById("botonCambiar")
-
-let usuarioStorage = localStorage.getItem("registroUsuario")
-usuarioStorage = JSON.parse(usuarioStorage)
-
-function logIn (usuario) {
-    usuario.forEach((registroUsuario) => {
-        let cambiarBoton = document.getElementById("botonCambiar");
-            cambiarBoton.innerHTML = `<button class="botonLog"></button>
-                                      <a href="./login.html">${registroUsuario.usuarioUsuario}</a>`;
-        botonInicio.appendChild(cambiarBoton)
-    })
-}
-renderCarrito(usuarioStorage)
