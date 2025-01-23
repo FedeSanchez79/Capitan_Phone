@@ -7,19 +7,19 @@ const productos = [
         precio: 600
     },
     {
-        id: 0,
+        id: 1,
         marca: "Motorola",
         modelo: "G84",
         precio: 400
     },
     {
-        id: 0,
-        marca: "SAmsung",
+        id: 2,
+        marca: "Samsung",
         modelo: "A15",
         precio: 350
     },
     {
-        id: 0,
+        id: 3,
         marca: "Xiaomi",
         modelo: "Redmi 13C",
         precio: 300
@@ -36,7 +36,8 @@ function agregarItem (item){
         <p class="modelo">${itemNuevo.modelo}</p>
         <p class="precio">u$s ${itemNuevo.precio}</p>
         <button class="agregar">Agregar</button>`;
-listado.appendChild(card)                  
+listado.appendChild(card)  
+localStorage.setItem("carrito", JSON.stringify(catalogoProductos))
 })
 agregarEventoBotones()
 }
@@ -45,16 +46,22 @@ agregarItem(productos)
 let contadorCarrito = 0;
 const numero = document.getElementById("numero1");
 
+function agregarEventoBotones() {
+    const botonesAgregar = document.querySelectorAll(".agregar");
+    botonesAgregar.forEach((boton, index) => {
+        boton.onclick = () => {
+            const productoSeleccionado = productos[index];
+            const carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+            carritoActual.push(productoSeleccionado);
+            localStorage.setItem("carrito", JSON.stringify(carritoActual));
+            incrementarCarrito();
+        };
+    });
+}
+
 function incrementarCarrito() {
     contadorCarrito++;
     numero.textContent = contadorCarrito;
-}
-
-function agregarEventoBotones() {
-    const botonesAgregar = document.querySelectorAll(".agregar");
-    botonesAgregar.forEach(boton => {
-        boton.onclick = incrementarCarrito;
-    });
 }
 
 const marcas = ["iphone", "motorola", "xiaomi", "samsung"];
