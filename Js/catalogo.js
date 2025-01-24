@@ -24,6 +24,90 @@ const productos = [
         modelo: "Redmi 13C",
         precio: 300
     },
+    {
+        id: 4,
+        marca: "Motorola",
+        modelo: "A15",
+        precio: 310
+    },
+    {
+        id: 5,
+        marca: "Iphone",
+        modelo: "13",
+        precio: 900
+    },
+    {
+        id: 6,
+        marca: "Samsung",
+        modelo: "A35",
+        precio: 650
+    },
+    {
+        id: 7,
+        marca: "Iphone",
+        modelo: "12",
+        precio: 900
+    },
+    {
+        id: 8,
+        marca: "Samsung",
+        modelo: "A06",
+        precio: 210
+    },
+    {
+        id: 9,
+        marca: "Motorola",
+        modelo: "G04",
+        precio: 120
+    },
+    {
+        id: 10,
+        marca: "Xiaomi",
+        modelo: "A3",
+        precio: 310
+    },
+    {
+        id: 11,
+        marca: "Iphone",
+        modelo: "15",
+        precio: 1600
+    },
+    {
+        id: 12,
+        marca: "Samsung",
+        modelo: "S24",
+        precio: 1500
+    },
+    {
+        id: 13,
+        marca: "Xiaomi",
+        modelo: "Note 13",
+        precio: 510
+    },
+    {
+        id: 14,
+        marca: "Motorola",
+        modelo: "A35",
+        precio: 680
+    },
+    {
+        id: 15,
+        marca: "Iphone",
+        modelo: "12",
+        precio: 1100
+    },
+    {
+        id: 16,
+        marca: "Motorola",
+        modelo: "Edge 50",
+        precio: 1600
+    },
+    {
+        id: 17,
+        marca: "Samsung",
+        modelo: "A55",
+        precio: 820
+    },
 ];
 let catalogoProductos = [];
 let listado = document.getElementById("contenedorProductos");
@@ -31,11 +115,11 @@ function agregarItem (item){
     item.forEach((itemNuevo) => {
         const card = document.createElement("div");
           card.innerHTML = `<img class="productoImagen" src="../assets/images/iphone_imagen.jpg" alt="imagen de un iphone">
-        <div class="productoInfo">
-        <h3 class="modelo">${itemNuevo.marca}</h3>
-        <p class="modelo">${itemNuevo.modelo}</p>
-        <p class="precio">u$s ${itemNuevo.precio}</p>
-        <button class="agregar">Agregar</button>`;
+                            <div class="productoInfo">
+                            <h3 class="modelo">${itemNuevo.marca}</h3>
+                            <p class="modelo">${itemNuevo.modelo}</p>
+                            <p class="precio">u$s ${itemNuevo.precio}</p>
+                            <button class="agregar">Agregar</button>`;
 listado.appendChild(card)  
 localStorage.setItem("carrito", JSON.stringify(catalogoProductos))
 })

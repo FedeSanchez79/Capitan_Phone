@@ -530,39 +530,6 @@ aside {
   font-weight: 600;
 }
 
-.botonMenu.active {
-  background-color: var(--clr-white);
-  color: var(--clr-black);
-  width: 100%;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  position: relative;
-}
-
-.botonMenu.active::before{
-  content: " ";
-  position: absolute;
-  width: 1rem;
-  height: 2rem;
-  bottom: 100%;
-  right: 0;
-  background-color: transparent;
-  border-bottom-right-radius: 0.5rem;
-  box-shadow: 0 1rem 0 var(--clr-white);
-}
-
-.botonMenu.active::after{
-  content: " ";
-  position: absolute;
-  width: 1rem;
-  height: 2rem;
-  top: 100%;
-  right: 0;
-  background-color: transparent;
-  border-top-right-radius: 1rem;
-  box-shadow: 0 -1rem 0 var(--clr-white);
-}
-
 .botonCarrito {
   font-size: 1.1rem;
   font-weight: 800;
@@ -570,7 +537,7 @@ aside {
   margin-top: 2rem;
 }
 
-.numero {
+#numero1 {
   background-color: var(--clr-black);
   color: var(--clr-pale);
   padding: .25rem;
@@ -582,6 +549,17 @@ aside {
   flex-direction: column;
   gap: 0.5rem;
   position: fixed;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#marcas p {
+  color: rgb(253, 48, 48);
+  margin: 50px 0 20px 0;
+}
+
+#marcas li {
+  cursor: pointer;
 }
 
 #items {
@@ -632,6 +610,7 @@ aside {
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
+  justify-items: center;
 }
 
 #contenedorProductos div h3{
@@ -726,10 +705,19 @@ aside {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-#vaciar:hover{
-  color: var(--clr-black);
-  background-color: rgb(255, 139, 139);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+#items div{
+  text-align: center;
+}
+
+.itemCarrito {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.itemCarrito div {
+  width: 100%;
 }
 
 .botonVolver {
@@ -743,8 +731,7 @@ aside {
   margin: 0 40px;
 }
 
-.carritoVacio,
-.carritoGracias {
+.carritoVacio {
   font-size: 1.5rem;
   color: var(--clr-grey);
   font-weight: 400;
@@ -776,11 +763,6 @@ aside {
   font-weight: bold;
 }
 
-.carritoImagen {
-  width: 4rem;
-  border-radius: 5px;
-}
-
 .carritoProductoEliminar {
   border: 0;
   border-radius: 5px;
@@ -797,56 +779,9 @@ aside {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.carritoAcciones {
-  display: flex;
-  justify-content: space-between;
-}
-
-.carritoAccionesVaciar {
-  border: 0;
-  background-color: var(--clr-pale);
-  padding: 1rem;
-  border-radius: 10px;
-  color: var(--clr-grey);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.carritoAccionesDerecha {
-  display: flex;
-}
-
-.carritoAccionesTotal {
-  display: flex;
-  border: 0;
-  background-color: var(--clr-pale);
-  padding: 1rem;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  color: var(--clr-grey);
-  text-transform: uppercase;
-  cursor: pointer;
-  gap: 1rem;
-}
-
-.carritoAccionesComprar {
-  border: 0;
-  background-color: var(--clr-black);
-  padding: 1rem;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: var(--clr-pale);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 #total {
   color: var(--clr-black);
   font-weight: 900;
-}
-
-.disabled {
-  display: none;
 }
 
 #tituloCantidad {

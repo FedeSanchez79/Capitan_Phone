@@ -8,16 +8,17 @@ function mostrarCarrito(carritoItems) {
     }
     carritoItems.forEach((listadoItems) => {
         const items = document.createElement("div");
-        items.innerHTML = `
-            <small>Celular</small>
-            <h3>${listadoItems.marca}</h3>
-            <small id="tituloCantidad">Cantidad</small></br> 
-            <input type="number" value="1"></input>
-            <small>Precio</small>
-            <p>u$s ${listadoItems.precio}</p>
-            <small>Subtotal</small>
-            <p>u$s </p>
-            <i class="bi bi-trash"></i>`;
+        items.className = "itemCarrito"
+        items.innerHTML = `<div><small>Celular</small>
+                           <h3>${listadoItems.marca}</h3></div>
+
+            <div><small id="tituloCantidad">Cantidad</small></br> 
+            <input type="number" value="1"></input></div>
+            <div><small>Precio</small>
+            <p>u$s ${listadoItems.precio}</p></div>
+            <div><small>Subtotal</small>
+            <p>u$s </p></div>
+            <div><i class="bi bi-trash"></i></div>`;
         carrito.appendChild(items);
     });
 }
