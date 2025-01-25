@@ -11,14 +11,13 @@ function mostrarCarrito(carritoItems) {
         items.className = "itemCarrito"
         items.innerHTML = `<div><small>Celular</small>
                            <h3>${listadoItems.marca}</h3></div>
-
-            <div><small id="tituloCantidad">Cantidad</small></br> 
-            <input type="number" value="1"></input></div>
-            <div><small>Precio</small>
-            <p>u$s ${listadoItems.precio}</p></div>
-            <div><small>Subtotal</small>
-            <p>u$s </p></div>
-            <div><i class="bi bi-trash"></i></div>`;
+                           <div><small id="tituloCantidad">Cantidad</small></br> 
+                           <p>${listadoItems.cantidad}</p></div>
+                           <div><small>Precio</small>
+                           <p>u$s ${listadoItems.precio}</p></div>
+                           <div><small>Subtotal</small>
+                           <p id="subtotal">u$s ${listadoItems.cantidad * listadoItems.precio} </p></div>
+                           <div><i class="bi bi-trash"></i></div>`;
         carrito.appendChild(items);
     });
 }
@@ -29,11 +28,16 @@ const totalCarrito = document.getElementById("items");
 const inputTotal = document.createElement("div");
 inputTotal.innerHTML = `<h4>Total:</h4>
                         <input id="total" placeholder="Total"></input>`
-totalCarrito.appendChild(inputTotal)                        
+totalCarrito.appendChild(inputTotal)  
+
 function actualizarTotal() {
-    const total = itemsCatalogo.reduce((acumulador, producto) => acumulador + parseInt(producto.precio), 0);
-    document.getElementById("total").value = `u$s ${total}`;
+    let total = 0;
+    total = itemsCatalogo.reduce((acumulador, producto) => {
+        return acumulador + (producto.cantidad * producto.precio);
+    }, 0);
+    document.getElementById("total").value = `u$s ${total.toFixed(2)}`;
 }
+
 actualizarTotal();
 
 function limpiarLocal() {
