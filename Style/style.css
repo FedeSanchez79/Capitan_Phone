@@ -563,6 +563,10 @@ aside {
   cursor: pointer;
 }
 
+.marca-item:hover {
+  background-color: var(--clr-white);
+}
+
 #items {
   display: flex;
   flex-direction: column;
