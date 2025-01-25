@@ -4,6 +4,7 @@
   --clr-black:rgb(0, 0, 0);
   --clr-grey:rgb(128, 126, 126);
   --clr-darkGrey: rgb(53, 53, 53);
+  --clr-red: rgb(253, 48, 48);
 }
 
 * {
@@ -554,7 +555,7 @@ aside {
 }
 
 #marcas p {
-  color: rgb(253, 48, 48);
+  color: var(--clr-red);
   margin: 50px 0 20px 0;
 }
 
@@ -576,6 +577,7 @@ aside {
 
 #items input{
   margin: 0 5px;
+  width: 30%;
 }
 
 #items button{
@@ -657,23 +659,6 @@ aside {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.botonEliminar {
-  border: 2px solid var(--clr-grey);
-  border-radius: 5px;
-  background-color:rgb(253, 48, 48);
-  color: var(--clr-white);
-  padding: 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.botonEliminar:hover {
-  color: var(--clr-black);
-  background-color: rgb(255, 139, 139);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 /*  *//*  *//*  *//*  *//*  *//*  *//* PAGINA CARRITO *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 #items {
@@ -690,19 +675,28 @@ aside {
 #items #total {
   margin: 0 40px;
   color: rgb(255, 116, 116);
+  width: fit-content;
+  text-align: center;
 }
+
 
 #items #vaciar{
   margin: 40px 40px 10px 40px;
   border: 2px solid var(--clr-grey);
   border-radius: 5px;
-  background-color:rgb(253, 48, 48);
+  background-color:var(--clr-red);
   color: var(--clr-pale);
   padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease-in-out;
+}
+
+#items #vaciar:hover {
+  color: var(--clr-black);
+  background-color: rgb(255, 139, 139);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #items div{
@@ -735,6 +729,7 @@ aside {
   font-size: 1.5rem;
   color: var(--clr-grey);
   font-weight: 400;
+  margin-left: 50px;
 }
 
 .carritoProductos {
@@ -782,10 +777,23 @@ aside {
 #total {
   color: var(--clr-black);
   font-weight: 900;
+  caret-color: transparent;
+  user-select: none; 
+  pointer-events: none;
 }
 
-#tituloCantidad {
-  margin: 0 5px;
+#deleteCarrito {
+  color: var(--clr-white);
+  background-color: var(--clr-red);
+  padding: 2px;
+  border-radius: 3px;
+  border: 1px solid var(--clr-dark);
+}
+
+#deleteCarrito:hover {
+  color: var(--clr-red);
+  background-color: var(--clr-pale);
+  box-shadow: 0px 8px 16px rgba(243, 40, 40, 0.3);
 }
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* LOGIN *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
@@ -871,7 +879,7 @@ aside {
   margin: 0 5px;
   font-weight: bold;
   font-size: large;
-  color: rgb(255, 98, 98);
+  color: var(--clr-red);
 }
 
 

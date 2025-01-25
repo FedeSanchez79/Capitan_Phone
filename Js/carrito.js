@@ -4,7 +4,7 @@ let itemsCatalogo = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function mostrarCarrito(carritoItems) {
     if (!carritoItems || carritoItems.length === 0) {
-        return;
+        return actualizarVistaCarrito();;
     }
     carritoItems.forEach((listadoItems) => {
         const items = document.createElement("div");
@@ -17,44 +17,46 @@ function mostrarCarrito(carritoItems) {
                            <p>u$s ${listadoItems.precio}</p></div>
                            <div><small>Subtotal</small>
                            <p id="subtotal">u$s ${listadoItems.cantidad * listadoItems.precio} </p></div>
-                           <div><i class="bi bi-trash"></i></div>`;
+                           <div><i id="deleteCarrito" class="bi bi-trash"></i></div>`;
         carrito.appendChild(items);
+
+        //TOTAL DE CARRITO
+
+        const totalCarrito = document.getElementById("items");
+        const inputTotal = document.createElement("div");
+        inputTotal.innerHTML = `<h4>Total:</h4>
+                                <input id="total" placeholder="Total"></input>`
+        totalCarrito.appendChild(inputTotal)  
+
+        function actualizarTotal() {
+        let total = 0;
+        total = itemsCatalogo.reduce((acumulador, producto) => {
+            return acumulador + (producto.cantidad * producto.precio);
+            }, 0);
+        const elementoTotal = document.getElementById("total");
+            if (elementoTotal) {
+            elementoTotal.value = `u$s ${total.toFixed(2)}`;
+            }
+        }
+        actualizarTotal();
     });
+    const limpiarCarrito = document.getElementById("items");
+        if (limpiarCarrito) {
+            const botonVaciar = document.createElement("div");
+            botonVaciar.innerHTML = `<button id="vaciar">Vaciar carrito</button>`;
+            limpiarCarrito.appendChild(botonVaciar);
+            const vaciar = document.getElementById("vaciar");
+            vaciar.addEventListener("click", limpiarLocal);
+        }
 }
 mostrarCarrito(itemsCatalogo)
 
-
-const totalCarrito = document.getElementById("items");
-const inputTotal = document.createElement("div");
-inputTotal.innerHTML = `<h4>Total:</h4>
-                        <input id="total" placeholder="Total"></input>`
-totalCarrito.appendChild(inputTotal)  
-
-function actualizarTotal() {
-    let total = 0;
-    total = itemsCatalogo.reduce((acumulador, producto) => {
-        return acumulador + (producto.cantidad * producto.precio);
-    }, 0);
-    document.getElementById("total").value = `u$s ${total.toFixed(2)}`;
-}
-
-actualizarTotal();
 
 function limpiarLocal() {
     localStorage.removeItem("carrito");
     itemsCatalogo.length = 0;
     actualizarVistaCarrito();
     actualizarTotal();
-}
-
-const limpiarCarrito = document.getElementById("items");
-if (limpiarCarrito) {
-    const botonVaciar = document.createElement("div");
-    botonVaciar.innerHTML = `<button id="vaciar">Vaciar carrito</button>`;
-    limpiarCarrito.appendChild(botonVaciar);
-
-    const vaciar = document.getElementById("vaciar");
-    vaciar.addEventListener("click", limpiarLocal);
 } 
 
 function actualizarVistaCarrito() {
