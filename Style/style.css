@@ -677,7 +677,7 @@ aside {
 }
 
 #items #total {
-  margin: 0 40px;
+  margin: 0 10px 0 40px;
   color: rgb(255, 116, 116);
   width: fit-content;
   text-align: center;
@@ -701,10 +701,6 @@ aside {
   color: var(--clr-black);
   background-color: rgb(255, 139, 139);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-#items div{
-  text-align: center;
 }
 
 .itemCarrito {
@@ -801,7 +797,7 @@ aside {
 }
 
 #finalizarCompra {
-  background-color: rgb(1, 59, 184);
+  background-color: rgb(11, 24, 146);
   padding: 2px;
   border-radius: 3px;
   border: 1px solid var(--clr-dark);
