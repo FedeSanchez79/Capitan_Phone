@@ -75,23 +75,18 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-1. Inicio de Sesión / Registro de usuario
+1. Inicio de Sesión / Registro de usuario 
 
 </br>
 
-<img src="./assets/images/registro.jpg" alt="imagen de Registro de usuario">
+<img src="./assets/images/imagen_login.jpg" alt="imagen de Registro de usuario">
 
-3. Ver Catálogo (Usuario)
-
-</br>
-
-<img src="./assets/images/agregar_productos.jpg" alt="imagen de formulario para agregar productos">
-
-2. Agregar productos al Catálogo (Admin)
+2. Ver Catálogo
 
 </br>
 
-<img src="./assets/images/agregar_productos2.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/imagen_catalogo.jpg" alt="imagen de formulario para agregar productos">
+
 
 3. Incremento de número en Carrito cuando se utiliza el botón comprar
 
@@ -109,4 +104,4 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-<img src="./assets/images/carrito_items.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/imagen_carrito.jpg" alt="imagen de formulario para agregar productos">

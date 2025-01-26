@@ -45,7 +45,7 @@ function mostrarProductos(productos) {
     agregarEventoBotones();
 }
 
-//CREO UNA FUNCION 
+//CREO UNA FUNCION PARA LA CANTIDAD AGREGADA
 
 function agregarEventoCantidad() {
     productos.forEach((producto) => {
@@ -127,6 +127,8 @@ function agregarEventoBotones() {
     });
 }
 
+//FILTRO POR MARCA, RESTA DARLE FUNCIONALIDAD PARA UNIR CON EL CARRITO
+
 const marcas = ["Iphone", "Motorola", "Xiaomi", "Samsung"];
 const listaMarcas = document.getElementById("marcas");
 
@@ -137,7 +139,6 @@ marcas.forEach((marca) => {
     marcaItem.onclick = () => {
         const productosFiltrados = productos.filter((producto) => producto.marca.toLowerCase() === marca.toLowerCase());
         mostrarProductos(productosFiltrados);
-        incrementarCarrito()
     };
     listaMarcas.appendChild(marcaItem);
 });
