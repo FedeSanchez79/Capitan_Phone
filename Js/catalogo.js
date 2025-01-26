@@ -1,24 +1,24 @@
 //CREO UN ARRAY DE OBJETOS PARA EL CATALOGO
 
 const productos = [
-    { id: 0, marca: "Iphone", modelo: "11", precio: 600, cantidad: 0},
-    { id: 1, marca: "Motorola", modelo: "G84", precio: 400, cantidad: 0},
-    { id: 2, marca: "Samsung", modelo: "A15", precio: 350, cantidad: 0},
-    { id: 3, marca: "Xiaomi", modelo: "Redmi 13C", precio: 300, cantidad: 0},
-    { id: 4, marca: "Motorola", modelo: "A15", precio: 310, cantidad: 0},
-    { id: 5, marca: "Iphone", modelo: "13", precio: 900, cantidad: 0},
-    { id: 6, marca: "Samsung", modelo: "A35", precio: 650, cantidad: 0},
-    { id: 7, marca: "Iphone", modelo: "12", precio: 900, cantidad: 0},
-    { id: 8, marca: "Samsung", modelo: "A06", precio: 210, cantidad: 0},
-    { id: 9, marca: "Motorola", modelo: "G04", precio: 120, cantidad: 0},
-    { id: 10, marca: "Xiaomi", modelo: "A3", precio: 310, cantidad: 0},
-    { id: 11, marca: "Iphone", modelo: "15", precio: 1600, cantidad: 0},
-    { id: 12, marca: "Samsung", modelo: "S24", precio: 1500, cantidad: 0},
-    { id: 13, marca: "Xiaomi", modelo: "Note 13", precio: 510, cantidad: 0},
-    { id: 14, marca: "Motorola", modelo: "A35", precio: 680, cantidad: 0},
-    { id: 15, marca: "Iphone", modelo: "12", precio: 1100, cantidad: 0},
-    { id: 16, marca: "Motorola", modelo: "Edge 50", precio: 1600, cantidad: 0},
-    { id: 17, marca: "Samsung", modelo: "A55", precio: 820, cantidad: 0},
+    {id: 1, marca: "Motorola", modelo: "G84", precio: 400},
+    {id: 0, marca: "Iphone", modelo: "11", precio: 600},
+    {id: 2, marca: "Samsung", modelo: "A15", precio: 350},
+    {id: 3, marca: "Xiaomi", modelo: "Redmi 13C", precio: 300},
+    {id: 4, marca: "Motorola", modelo: "A15", precio: 310},
+    {id: 5, marca: "Iphone", modelo: "13", precio: 900},
+    {id: 6, marca: "Samsung", modelo: "A35", precio: 650},
+    {id: 7, marca: "Iphone", modelo: "12", precio: 900},
+    {id: 8, marca: "Samsung", modelo: "A06", precio: 210},
+    {id: 9, marca: "Motorola", modelo: "G04", precio: 120},
+    {id: 10, marca: "Xiaomi", modelo: "A3", precio: 310},
+    {id: 11, marca: "Iphone", modelo: "15", precio: 1600},
+    {id: 12, marca: "Samsung", modelo: "S24", precio: 1500},
+    {id: 13, marca: "Xiaomi", modelo: "Note 13", precio: 510},
+    {id: 14, marca: "Motorola", modelo: "A35", precio: 680},
+    {id: 15, marca: "Iphone", modelo: "12", precio: 1100},
+    {id: 16, marca: "Motorola", modelo: "Edge 50", precio: 1600},
+    {id: 17, marca: "Samsung", modelo: "A55", precio: 820},
 ];
 
 //A PARTIR DEL LISTADO, CREO UNA FUNCION PARA MOSTRAR LOS PRODUCTOS USANDO DOM
@@ -30,42 +30,53 @@ function mostrarProductos(productos) {
     productos.forEach((producto) => {
         const card = document.createElement("div");
         card.classList.add("producto-card");
-        card.innerHTML = `<img class="productoImagen" src="../assets/images/iphone_imagen.jpg" alt="imagen de un producto">
-                          <div class="productoInfo">
-                          <h3 class="modelo">${producto.marca}</h3>
-                          <p class="modelo">${producto.modelo}</p>
-                          <p class="precio">u$s ${producto.precio}</p>
-                          <button class="agregar" idInfo="${producto.id}">Agregar</button>
-                          <p>Cantidad: </p>
-                          <input type="number" id="cantidad-${producto.id}" min="1" value="${producto.cantidad}" placeholder="Ingrese la cantidad"></div>`;
+        card.innerHTML = `
+            <img class="productoImagen" src="../assets/images/iphone_imagen.jpg" alt="imagen de un producto">
+            <div class="productoInfo">
+                <h3 class="modelo">${producto.marca}</h3>
+                <p class="modelo">${producto.modelo}</p>
+                <p class="precio">u$s ${producto.precio}</p>
+                <button class="agregar" idInfo="${producto.id}">Agregar</button>
+                <p>Cantidad: </p>
+                <input type="number" id="cantidad-${producto.id}" min="1" value="0" placeholder="0">
+            </div>`;
         listado.appendChild(card);
     });
 
-    agregarEventoCantidad();
-    agregarEventoBotones();
+    agregarEventoCantidad(); // Solo agrega eventos para los productos visibles
+    agregarEventoBotones(); // Asegura que los botones también tengan eventos
 }
+
+mostrarProductos(productos); 
 
 //CREO UNA FUNCION PARA LA CANTIDAD AGREGADA
 
 function agregarEventoCantidad() {
     productos.forEach((producto) => {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
-        const mensajeError = document.createElement("p"); 
-        mensajeError.id = `error-${producto.id}`;
-        inputCantidad.parentNode.appendChild(mensajeError); 
-
-        if (inputCantidad) {
-            inputCantidad.addEventListener("change", (e) => {
-                const nuevaCantidad = e.target.value;
-                if (nuevaCantidad === 0 || isNaN(nuevaCantidad)) {
-                    mensajeError.textContent = "Agregue cantidad";
-                    producto.cantidad = 0; 
-                } else {
-                    mensajeError.textContent = "";
-                    producto.cantidad = nuevaCantidad; 
-                }
-            });
+        
+        if (!inputCantidad) {
+            return;
         }
+
+        let mensajeError = document.getElementById(`error-${producto.id}`);
+        
+        if (!mensajeError) {
+            mensajeError = document.createElement("p");
+            mensajeError.id = `error-${producto.id}`;
+            inputCantidad.parentNode.appendChild(mensajeError);
+        }
+
+        inputCantidad.addEventListener("change", (e) => {
+            const nuevaCantidad = parseInt(e.target.value, 10);
+            if (isNaN(nuevaCantidad) || nuevaCantidad <= 0) {
+                mensajeError.textContent = "Agregue cantidad válida.";
+                producto.cantidad = 0;
+            } else {
+                mensajeError.textContent = "";
+                producto.cantidad = nuevaCantidad;
+            }
+        });
     });
 }
 
@@ -84,6 +95,8 @@ function cargarCarrito() {
     contadorCarrito = carritoGuardado.length;
     numero.textContent = contadorCarrito;
 }
+
+cargarCarrito();
 
 function agregarEventoBotones() {
     const botonesAgregar = document.querySelectorAll(".agregar");
@@ -129,19 +142,28 @@ function agregarEventoBotones() {
 
 //FILTRO POR MARCA, RESTA DARLE FUNCIONALIDAD PARA UNIR CON EL CARRITO
 
-const marcas = ["Iphone", "Motorola", "Xiaomi", "Samsung"];
-const listaMarcas = document.getElementById("marcas");
+let listaMarcas = document.getElementById("marcas");
 
-marcas.forEach((marca) => {
+// Filtrar marcas únicas utilizando indexOf
+
+const marcasUnicas = [];
+for (let i = 0; i < productos.length; i++) {
+    const marca = productos[i].marca;
+    if (!marcasUnicas.includes(marca)) {
+        marcasUnicas.push(marca);
+    }
+}
+
+
+marcasUnicas.forEach((marca) => {
     const marcaItem = document.createElement("li");
     marcaItem.textContent = marca;
     marcaItem.classList.add("marca-item");
+
     marcaItem.onclick = () => {
         const productosFiltrados = productos.filter((producto) => producto.marca.toLowerCase() === marca.toLowerCase());
         mostrarProductos(productosFiltrados);
     };
+
     listaMarcas.appendChild(marcaItem);
 });
-
-cargarCarrito(); 
-mostrarProductos(productos); 
