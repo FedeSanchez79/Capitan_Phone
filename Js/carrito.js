@@ -1,5 +1,12 @@
+// 1. CREO LA FUNCION MOSTRAR CARRITO QUE INCLUYE UN CONDICIONAL PARA VER SI HAY ALGUN PRODUCTO, SI NO ES ASI USA LA FUNCION actualizarVistaCarrito().
+// 2. SI HAY UN OBJETO, SE CREA UN ITEM USANDO DOM PARA ACTUALIZAR LAS CANTIDADES INRESADAS, EL SUBTOTAL.
+// 3. A MEDIDA QUE SE AGREGAN MAS PRODUCTOS ESTA LA FUNCION actualizarTotal() PARA IR SUMANDO LOS SUBTOTALES Y LAS CANTIDADES DEL TOTAL DE PRODUCTOS.
+// 4. AL AGREGAR PRODUCTOS SE MUESTRA EL BOTON VACIAR CARRITO, QUE AL HACER CLICK MUESTRA UN TEMPORIZADOR Y UN BOTON DE CANCELAR.
+// 5. SI SE APRETA EL BOTON CANCELAR, A TRAVES DEL EVENTO CLICK, SE CANCELA LA FUNCION limpiarLocal(). SI NO SE APRETA, LUEGO DE QUE SE CUMPLA EL TIEMPO DEL SETTIMEOUT,
+// SE EJECUTA LA FUNCION limpiarLocal().
+// ***RESTA DARLE FUNCIONALIDAD A LOS BOTONES DE ELIMINAR CADA ITEM CREADO***
+
 let carrito = document.getElementById("items");
-let mensajeCarrito = document.getElementById("mensajeCarrito");
 let menuTotal = document.getElementById("menuTotal");
 
 let itemsCatalogo = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -8,7 +15,6 @@ function mostrarCarrito(carritoItems) {
     if (!carritoItems || carritoItems.length === 0) {
         return actualizarVistaCarrito();
     }
-
     carritoItems.forEach((listadoItems) => {
         const items = document.createElement("div");
         items.className = "itemCarrito";
@@ -29,6 +35,18 @@ function mostrarCarrito(carritoItems) {
                             <input id="total" placeholder="Total" readonly></input>
                             <button id="finalizarCompra"><a href="./construccion.html">Finalizar Compra</button>`;
     menuTotal.appendChild(inputTotal);
+
+    function actualizarTotal() {
+        let total = 0;
+        total = itemsCatalogo.reduce((acumulador, producto) => {
+            return acumulador + (producto.cantidad * producto.precio);
+        }, 0);
+        
+        const elementoTotal = document.getElementById("total");
+        if (elementoTotal) {
+            elementoTotal.value = `u$s ${total.toFixed(2)}`;
+        }
+    }
 
     actualizarTotal();
 
@@ -62,24 +80,14 @@ function mostrarCarrito(carritoItems) {
 
 }
 
-function actualizarTotal() {
-    let total = 0;
-    total = itemsCatalogo.reduce((acumulador, producto) => {
-        return acumulador + (producto.cantidad * producto.precio);
-    }, 0);
-    
-    const elementoTotal = document.getElementById("total");
-    if (elementoTotal) {
-        elementoTotal.value = `u$s ${total.toFixed(2)}`;
-    }
-}
-
 function limpiarLocal() {
     localStorage.removeItem("carrito");
     itemsCatalogo.length = 0;
     actualizarVistaCarrito();
     actualizarTotal();
 }
+
+let mensajeCarrito = document.getElementById("mensajeCarrito");
 
 function actualizarVistaCarrito() {
     mensajeCarrito.innerHTML = "";

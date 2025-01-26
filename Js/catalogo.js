@@ -1,4 +1,14 @@
-//CREO UN ARRAY DE OBJETOS PARA EL CATALOGO
+// 1. CREO UN ARRAY DE OBJETOS PARA EL CATALOGO
+// 2. A PARTIR DEL ARRAY, CREO LA FUNCION mostrarProductos() PARA MOSTRAR LOS PRODUCTOS USANDO DOM.
+// 3. EN mostrarProductos() INCLUYO LA FUNCION agregarEventoCantidad() PARA QUE AGREGUE A CADA OBJETO CREADO UNA CANTIDAD Y PODER APLICARLA EN LA SIGUIENTE FUNCION.
+// 4. A CONTINUACION SE EJECUTA agregarEventoBotones(), LA CUAL A TRAVES DE UN EVENTO CLICK TOMA LA CANTIDAD INGRESADA (SI NO LO HAY DA EL MENSAJE DE ERROR), Y A TRAVES
+// DEL SEGUNDO CONDICIONAL CREA UN NUEVO OBJETO POR CADA CLAICK Y LO AGREGA AL LOCALSTORAGE
+// 5. DENTRO DE ESTA FUNCION SE EJECUTA LA FUNCION incrementarCarrito() QUE A TRAVES DE DOM TOMA EL ELEMENTO NUMERO 1 Y LO VA INCREMENTANDO POR CADA CLICK HECHO.
+// 6. CREO UN ARRAY LLAMADO marcasUnicas PARA PODER, PRIMERO A TARVES DE UN INCLUDES PODER PUSHEAR LOS OBJETOS ENCONTRADOS Y LUEGO A TRAVES DE UN FOREACH FILTRAR ESOS
+// PRODUCTOS Y ESTABLECERLOS COMO PARAMETROS EN LA FUNCION mostrarProductos().
+
+
+//***1***//
 
 const productos = [
     {id: 1, marca: "Motorola", modelo: "G84", precio: 400},
@@ -21,7 +31,8 @@ const productos = [
     {id: 17, marca: "Samsung", modelo: "A55", precio: 820},
 ];
 
-//A PARTIR DEL LISTADO, CREO UNA FUNCION PARA MOSTRAR LOS PRODUCTOS USANDO DOM
+
+//***2***//
 
 const listado = document.getElementById("contenedorProductos");
 
@@ -43,13 +54,13 @@ function mostrarProductos(productos) {
         listado.appendChild(card);
     });
 
-    agregarEventoCantidad(); // Solo agrega eventos para los productos visibles
-    agregarEventoBotones(); // Asegura que los botones también tengan eventos
+    agregarEventoCantidad(); 
+    agregarEventoBotones(); 
 }
 
 mostrarProductos(productos); 
 
-//CREO UNA FUNCION PARA LA CANTIDAD AGREGADA
+//***3***//
 
 function agregarEventoCantidad() {
     productos.forEach((producto) => {
@@ -80,7 +91,7 @@ function agregarEventoCantidad() {
     });
 }
 
-//USANDO LAS FUNCIONES DE INCREMENTAR, CARGAR Y AGREGAR MODIFICO EL INDICADOR DE CARRITO Y ACTUALIZO EL CARRITO
+//***5***//
 
 const numero = document.getElementById("numero1");
 let contadorCarrito = 0;
@@ -97,6 +108,8 @@ function cargarCarrito() {
 }
 
 cargarCarrito();
+
+//***4***//
 
 function agregarEventoBotones() {
     const botonesAgregar = document.querySelectorAll(".agregar");
@@ -140,7 +153,7 @@ function agregarEventoBotones() {
     });
 }
 
-//FILTRO POR MARCA 
+//***6***//
 
 let listaMarcas = document.getElementById("marcas");
 

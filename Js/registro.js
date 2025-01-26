@@ -1,4 +1,10 @@
-//REGISTRO DE USUARIO NUEVO CON LA FUNCION CONTRUCTORA
+
+// 1. REGISTRO DE USUARIO NUEVO CON LA FUNCION CONTRUCTORA.
+// 2. EVENTO PARA TOMAR LOS VALORES, SUBIRLOS AL LOCALSTORAGE, CON UN CONDICIONAL PARA VALIDAR LOS DATOS INGRESADOS.
+// 3. TOMO DEL LOCALSTORAGE EL USUARIO NUEVO Y LOS MUESTRO EN EL BOTON DE INICIO DE SESION. APARECE EL BOTON DE CERRAR FUNCION.
+// 4. HAGO UN BOTON DE CERRAR SESION QUE LIMPIA EL LOCALSTORAGE (VER COMO ELIMINAR INDIVIDUALMENTE CADA USUARIO)
+
+//***1***//
 
 let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
 
@@ -12,7 +18,7 @@ class DatosUsuario {
     };
 }
 
-// EVENTO PARA TOMAR LOS VALORES, SUBIRLOS AL LOCALSTORAGE, CON UN CONDICIONAL PARA VALIDAR LOS DATOS INGRESADOS
+//***2***//
 
 let ingresar = document.getElementsByClassName(`botonLogin`)[0];
 
@@ -41,7 +47,7 @@ ingresar.addEventListener("click", function registro() {
     }
 });
 
-// TOMO DEL LOCALSTORAGE EL USUARIO NUEVO Y LOS MUESTRO EN EL BOTON DE INICIO DE SESION. APARECE EL BOTON DE CERRAR FUNCION
+//***3***//
 
 function mostrarUsuarioLogueado() {
     const usuarioLogueado = localStorage.getItem("usuarioLogueado");
@@ -55,6 +61,8 @@ function mostrarUsuarioLogueado() {
 }
 
 mostrarUsuarioLogueado();
+
+//***4***//
 
 function cerrarSesion() {
     localStorage.removeItem("usuarioLogueado");
