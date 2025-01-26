@@ -883,27 +883,21 @@ aside {
   color: var(--clr-black);
 }
 
-#temporizador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-#temporizador p {
-  color: var(--clr-darkGrey);
-  padding: 2px;
+#logoutBoton{
+  border: 1px solid var(--clr-grey);
   border-radius: 5px;
-  font-weight: bold;
+  background-color:var(--clr-darkGrey);
+  color: var(--clr-pale);
+  padding: 1px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-#reloj {
-  margin: 0 5px;
-  font-weight: bold;
-  font-size: large;
-  color: var(--clr-red);
+#logoutBoton:hover {
+  color: var(--clr-black);
+  background-color: rgb(175, 175, 175);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
-
 
 /*  *//*  *//*  *//*  *//*  *//*  *//* MEDIA QUERIES *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 

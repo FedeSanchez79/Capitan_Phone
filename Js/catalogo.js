@@ -1,3 +1,5 @@
+//CREO UN ARRAY DE OBJETOS PARA EL CATALOGO
+
 const productos = [
     { id: 0, marca: "Iphone", modelo: "11", precio: 600, cantidad: 0},
     { id: 1, marca: "Motorola", modelo: "G84", precio: 400, cantidad: 0},
@@ -19,9 +21,9 @@ const productos = [
     { id: 17, marca: "Samsung", modelo: "A55", precio: 820, cantidad: 0},
 ];
 
+//A PARTIR DEL LISTADO, CREO UNA FUNCION PARA MOSTRAR LOS PRODUCTOS USANDO DOM
+
 const listado = document.getElementById("contenedorProductos");
-const numero = document.getElementById("numero1");
-let contadorCarrito = 0;
 
 function mostrarProductos(productos) {
     listado.innerHTML = "";
@@ -33,7 +35,7 @@ function mostrarProductos(productos) {
                           <h3 class="modelo">${producto.marca}</h3>
                           <p class="modelo">${producto.modelo}</p>
                           <p class="precio">u$s ${producto.precio}</p>
-                          <button class="agregar" data-id="${producto.id}">Agregar</button>
+                          <button class="agregar" idInfo="${producto.id}">Agregar</button>
                           <p>Cantidad: </p>
                           <input type="number" id="cantidad-${producto.id}" min="1" value="${producto.cantidad}" placeholder="Ingrese la cantidad"></div>`;
         listado.appendChild(card);
@@ -43,17 +45,18 @@ function mostrarProductos(productos) {
     agregarEventoBotones();
 }
 
+//CREO UNA FUNCION 
+
 function agregarEventoCantidad() {
     productos.forEach((producto) => {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const mensajeError = document.createElement("p"); 
         mensajeError.id = `error-${producto.id}`;
-        mensajeError.style.color = "red"; 
         inputCantidad.parentNode.appendChild(mensajeError); 
 
         if (inputCantidad) {
             inputCantidad.addEventListener("change", (e) => {
-                const nuevaCantidad = parseInt(e.target.value);
+                const nuevaCantidad = e.target.value;
                 if (nuevaCantidad === 0 || isNaN(nuevaCantidad)) {
                     mensajeError.textContent = "Agregue cantidad";
                     producto.cantidad = 0; 
@@ -65,6 +68,11 @@ function agregarEventoCantidad() {
         }
     });
 }
+
+//USANDO LAS FUNCIONES DE INCREMENTAR, CARGAR Y AGREGAR MODIFICO EL INDICADOR DE CARRITO Y ACTUALIZO EL CARRITO
+
+const numero = document.getElementById("numero1");
+let contadorCarrito = 0;
 
 function incrementarCarrito() {
     contadorCarrito++;
@@ -81,7 +89,7 @@ function agregarEventoBotones() {
     const botonesAgregar = document.querySelectorAll(".agregar");
     botonesAgregar.forEach((boton) => {
         boton.onclick = () => {
-            const productoId = parseInt(boton.getAttribute("data-id"));
+            const productoId = parseInt(boton.getAttribute("idInfo"));
             const productoSeleccionado = productos.find((p) => p.id === productoId);
             const cantidadProducto = productoSeleccionado.cantidad;
 
@@ -97,7 +105,20 @@ function agregarEventoBotones() {
             if (productoEnCarrito) {
                 productoEnCarrito.cantidad += productoSeleccionado.cantidad;
             } else {
-                carritoActual.push({ ...productoSeleccionado });
+                class Producto {
+                    constructor(marca, precio, cantidad) {
+                        this.marca = marca;
+                        this.precio = precio;
+                        this.cantidad = cantidad;
+                    }
+                }
+                
+                let copiaProducto = new Producto(
+                    productoSeleccionado.marca,
+                    productoSeleccionado.precio,
+                    productoSeleccionado.cantidad
+                );
+                carritoActual.push(copiaProducto);
             }
 
             localStorage.setItem("carrito", JSON.stringify(carritoActual));
@@ -116,6 +137,7 @@ marcas.forEach((marca) => {
     marcaItem.onclick = () => {
         const productosFiltrados = productos.filter((producto) => producto.marca.toLowerCase() === marca.toLowerCase());
         mostrarProductos(productosFiltrados);
+        incrementarCarrito()
     };
     listaMarcas.appendChild(marcaItem);
 });

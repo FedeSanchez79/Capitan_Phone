@@ -1,3 +1,5 @@
+//REGISTRO DE USUARIO NUEVO CON LA FUNCION CONTRUCTORA
+
 let registroUsuario = JSON.parse(localStorage.getItem("registroUsuario")) || [];
 
 class DatosUsuario {
@@ -9,24 +11,10 @@ class DatosUsuario {
         this.contrasena = contrasena;
     };
 }
+
+// EVENTO PARA TOMAR LOS VALORES, SUBIRLOS AL LOCALSTORAGE, CON UN CONDICIONAL PARA VALIDAR LOS DATOS INGRESADOS
+
 let ingresar = document.getElementsByClassName(`botonLogin`)[0];
-
-function mostrarUsuarioLogueado() {
-    const usuarioLogueado = localStorage.getItem("usuarioLogueado");
-    if (usuarioLogueado) {
-        let cambiarBoton = document.getElementById("botonCambiar");
-        cambiarBoton.innerHTML = `<button class="botonLog">${usuarioLogueado}</button>
-                                  <button id="logoutBtn" class="botonLog">Cerrar sesión</button>`;
-        const logoutBtn = document.getElementById("logoutBtn");
-        logoutBtn.addEventListener("click", cerrarSesion);
-    }
-}
-
-function cerrarSesion() {
-    localStorage.removeItem("usuarioLogueado");
-    let cambiarBoton = document.getElementById("botonCambiar");
-    cambiarBoton.innerHTML = `<button class="botonLog"><a href="./login.html">Iniciar sesión</a></button>`;
-}
 
 ingresar.addEventListener("click", function registro() {
     let usuarioNombre = document.getElementById("nombre").value;
@@ -46,11 +34,31 @@ ingresar.addEventListener("click", function registro() {
         localStorage.setItem("usuarioLogueado", usuarioUsuario);
         let cambiarBoton = document.getElementById("botonCambiar");
         cambiarBoton.innerHTML = `<button class="botonLog">${usuarioUsuario}</button>
-                                  <button id="logoutBtn" class="botonLog">Cerrar sesión</button>`;
-
-        const logoutBtn = document.getElementById("logoutBtn");
-        logoutBtn.addEventListener("click", cerrarSesion);
+                                  <button id="logoutBoton" class="botonLog">Cerrar sesión</button>`;                          
+        contrasenaIncorrecta.innerHTML = `<p>Bienvenido ${usuarioUsuario}, registro exitoso !!!</p>`;
+        const logoutBoton = document.getElementById("logoutBoton");
+        logoutBoton.addEventListener("click", cerrarSesion);
     }
 });
 
+// TOMO DEL LOCALSTORAGE EL USUARIO NUEVO Y LOS MUESTRO EN EL BOTON DE INICIO DE SESION. APARECE EL BOTON DE CERRAR FUNCION
+
+function mostrarUsuarioLogueado() {
+    const usuarioLogueado = localStorage.getItem("usuarioLogueado");
+    if (usuarioLogueado) {
+        let cambiarBoton = document.getElementById("botonCambiar");
+        cambiarBoton.innerHTML = `<button class="botonLog">${usuarioLogueado}</button>
+                                  <button id="logoutBoton">Cerrar sesión</button>`;
+        const logoutBoton = document.getElementById("logoutBoton");
+        logoutBoton.addEventListener("click", cerrarSesion);
+    }
+}
+
 mostrarUsuarioLogueado();
+
+function cerrarSesion() {
+    localStorage.removeItem("usuarioLogueado");
+    let cambiarBoton = document.getElementById("botonCambiar");
+    cambiarBoton.innerHTML = `<button class="botonLog"><a href="./login.html">Iniciar sesión</a></button>`;
+}
+
