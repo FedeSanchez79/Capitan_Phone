@@ -140,11 +140,9 @@ function agregarEventoBotones() {
     });
 }
 
-//FILTRO POR MARCA, RESTA DARLE FUNCIONALIDAD PARA UNIR CON EL CARRITO
+//FILTRO POR MARCA 
 
 let listaMarcas = document.getElementById("marcas");
-
-// Filtrar marcas únicas utilizando indexOf
 
 const marcasUnicas = [];
 for (let i = 0; i < productos.length; i++) {
@@ -153,7 +151,6 @@ for (let i = 0; i < productos.length; i++) {
         marcasUnicas.push(marca);
     }
 }
-
 
 marcasUnicas.forEach((marca) => {
     const marcaItem = document.createElement("li");

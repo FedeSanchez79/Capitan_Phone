@@ -36,8 +36,30 @@ function mostrarCarrito(carritoItems) {
     botonVaciar.innerHTML = `<button id="vaciar">Vaciar carrito</button>`;
     menuTotal.appendChild(botonVaciar);
 
+    const botonCancelar = document.createElement("div");
+    botonCancelar.style.display = "none";
+    botonCancelar.innerHTML = `<img src="../assets/images/Timer.gif" alt="Cuenta regresiva" width="100" height="50">
+                               <button id="cancelar">Cancelar</button>`;
+    menuTotal.appendChild(botonCancelar);
+
+    let temporizador;
+
     const vaciar = document.getElementById("vaciar");
-    vaciar.addEventListener("click", limpiarLocal);
+    const cancelar = botonCancelar.querySelector("#cancelar");
+
+    vaciar.addEventListener("click", () => {
+        botonCancelar.style.display = "flex";
+        temporizador = setTimeout(() => {
+            limpiarLocal();
+            botonCancelar.style.display = "none";
+        }, 9700);
+    });
+
+    cancelar.addEventListener("click", () => {
+        clearTimeout(temporizador);
+        botonCancelar.style.display = "none";
+    });
+
 }
 
 function actualizarTotal() {
