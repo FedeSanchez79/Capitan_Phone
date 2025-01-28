@@ -70,8 +70,10 @@ function mostrarCarrito(carritoItems) {
             text: "¡¡Tenemos muchas promociones y descuentos!!",
             icon: "warning",
             showCancelButton: true,
+            color:"rgb(255, 255, 255)",
+            background:"rgb(0, 0, 0)",
             confirmButtonColor: "rgb(253, 48, 48)",
-            cancelButtonColor: "rgb(53, 53, 53)",
+            cancelButtonColor: "rgb(117, 116, 116)",
             confirmButtonText: "Vaciar Carrito"
           }).then((result) => {
             if (result.isConfirmed) {
@@ -79,7 +81,9 @@ function mostrarCarrito(carritoItems) {
               Swal.fire({
                 title: "Carrito vacio",
                 text: "Tenemos mas ofertas para vos",
-                icon: "success"
+                icon: "info",
+                color: "rgb(255, 255, 255)",
+                background: "rgb(53, 53, 53)"
               });
               function limpiarLocal() {
                 localStorage.removeItem("carrito");

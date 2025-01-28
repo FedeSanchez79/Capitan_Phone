@@ -107,7 +107,7 @@ fetch("../Db/data.json")
                             duration: 1500,
                             destination: "",
                             newWindow: true,
-                            gravity: "top", 
+                            gravity: "bottom", 
                             position: "center",
                             stopOnFocus: true, 
                             style: {
@@ -139,6 +139,26 @@ fetch("../Db/data.json")
                         );
                         carritoActual.push(copiaProducto);
                     }
+                      Swal.fire({
+                        title: "Producto agregado al carrito",
+                        color:"rgb(255, 255, 255)",
+                        background:"rgb(53, 53, 53)",
+                        showClass: {
+                          popup: `
+                            animate__animated
+                            animate__fadeInUp
+                            animate__faster
+                          `
+                        },
+                        hideClass: {
+                          popup: `
+                            animate__animated
+                            animate__fadeOutDown
+                            animate__faster
+                          `
+                        },
+                        timer: 1200
+                      });
 
                     localStorage.setItem("carrito", JSON.stringify(carritoActual));
                     incrementarCarrito();
