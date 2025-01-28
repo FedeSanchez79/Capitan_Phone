@@ -102,19 +102,26 @@ fetch("../Db/data.json")
                     const cantidadProducto = productoSeleccionado.cantidad;
 
                     if (cantidadProducto === 0 || isNaN(cantidadProducto)) {
-                        Toastify({
-                            text: "Ingrese una cantidad",
-                            duration: 1500,
-                            destination: "",
-                            newWindow: true,
-                            gravity: "bottom", 
-                            position: "center",
-                            stopOnFocus: true, 
-                            style: {
-                            background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
+                        Swal.fire({
+                            title: "Ingrese una cantidad",
+                            color:"rgb(255, 255, 255)",
+                            background:"linear-gradient(to right,rgb(255, 97, 97),rgb(255, 0, 0))",
+                            showClass: {
+                              popup: `
+                                animate__animated
+                                animate__fadeInUp
+                                animate__faster
+                              `
                             },
-                            onClick: function(){}
-                        }).showToast();
+                            hideClass: {
+                              popup: `
+                                animate__animated
+                                animate__fadeOutDown
+                                animate__faster
+                              `
+                            },
+                            timer: 1200
+                          });    
                         return; 
                     }
 
@@ -139,26 +146,20 @@ fetch("../Db/data.json")
                         );
                         carritoActual.push(copiaProducto);
                     }
-                      Swal.fire({
-                        title: "Producto agregado al carrito",
+                    Toastify({
+                        text: "Producto agregado al carrito",
+                        duration: 1500,
+                        destination: "",
+                        newWindow: true,
+                        gravity: "bottom", 
+                        position: "center",
+                        stopOnFocus: true, 
+                        style: {
                         color:"rgb(255, 255, 255)",
                         background:"rgb(53, 53, 53)",
-                        showClass: {
-                          popup: `
-                            animate__animated
-                            animate__fadeInUp
-                            animate__faster
-                          `
                         },
-                        hideClass: {
-                          popup: `
-                            animate__animated
-                            animate__fadeOutDown
-                            animate__faster
-                          `
-                        },
-                        timer: 1200
-                      });
+                        onClick: function(){}
+                    }).showToast();
 
                     localStorage.setItem("carrito", JSON.stringify(carritoActual));
                     incrementarCarrito();
