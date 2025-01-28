@@ -1,38 +1,12 @@
-// 1. CREO UN ARRAY DE OBJETOS PARA EL CATALOGO
-// 2. A PARTIR DEL ARRAY, CREO LA FUNCION mostrarProductos() PARA MOSTRAR LOS PRODUCTOS USANDO DOM.
-// 3. EN mostrarProductos() INCLUYO LA FUNCION agregarEventoCantidad() PARA QUE AGREGUE A CADA OBJETO CREADO UNA CANTIDAD Y PODER APLICARLA EN LA SIGUIENTE FUNCION.
-// 4. A CONTINUACION SE EJECUTA agregarEventoBotones(), LA CUAL A TRAVES DE UN EVENTO CLICK TOMA LA CANTIDAD INGRESADA (SI NO LO HAY DA EL MENSAJE DE ERROR), Y A TRAVES
+// 1. A PARTIR DEL ARRAY, CREO LA FUNCION mostrarProductos() PARA MOSTRAR LOS PRODUCTOS USANDO DOM.
+// 2. EN mostrarProductos() INCLUYO LA FUNCION agregarEventoCantidad() PARA QUE AGREGUE A CADA OBJETO CREADO UNA CANTIDAD Y PODER APLICARLA EN LA SIGUIENTE FUNCION.
+// 3. A CONTINUACION SE EJECUTA agregarEventoBotones(), LA CUAL A TRAVES DE UN EVENTO CLICK TOMA LA CANTIDAD INGRESADA (SI NO LO HAY DA EL MENSAJE DE ERROR), Y A TRAVES
 // DEL SEGUNDO CONDICIONAL CREA UN NUEVO OBJETO POR CADA CLAICK Y LO AGREGA AL LOCALSTORAGE
-// 5. DENTRO DE ESTA FUNCION SE EJECUTA LA FUNCION incrementarCarrito() QUE A TRAVES DE DOM TOMA EL ELEMENTO NUMERO 1 Y LO VA INCREMENTANDO POR CADA CLICK HECHO.
-// 6. CREO UN ARRAY LLAMADO marcasUnicas PARA PODER, PRIMERO A TARVES DE UN INCLUDES PODER PUSHEAR LOS OBJETOS ENCONTRADOS Y LUEGO A TRAVES DE UN FOREACH FILTRAR ESOS
+// 4. DENTRO DE ESTA FUNCION SE EJECUTA LA FUNCION incrementarCarrito() QUE A TRAVES DE DOM TOMA EL ELEMENTO NUMERO 1 Y LO VA INCREMENTANDO POR CADA CLICK HECHO.
+// 5. CREO UN ARRAY LLAMADO marcasUnicas PARA PODER, PRIMERO A TARVES DE UN INCLUDES PODER PUSHEAR LOS OBJETOS ENCONTRADOS Y LUEGO A TRAVES DE UN FOREACH FILTRAR ESOS
 // PRODUCTOS Y ESTABLECERLOS COMO PARAMETROS EN LA FUNCION mostrarProductos().
 
-
 //***1***//
-
-const productos = [
-    {id: 1, marca: "Motorola", modelo: "G84", precio: 400},
-    {id: 0, marca: "Iphone", modelo: "11", precio: 600},
-    {id: 2, marca: "Samsung", modelo: "A15", precio: 350},
-    {id: 3, marca: "Xiaomi", modelo: "Redmi 13C", precio: 300},
-    {id: 4, marca: "Motorola", modelo: "A15", precio: 310},
-    {id: 5, marca: "Iphone", modelo: "13", precio: 900},
-    {id: 6, marca: "Samsung", modelo: "A35", precio: 650},
-    {id: 7, marca: "Iphone", modelo: "12", precio: 900},
-    {id: 8, marca: "Samsung", modelo: "A06", precio: 210},
-    {id: 9, marca: "Motorola", modelo: "G04", precio: 120},
-    {id: 10, marca: "Xiaomi", modelo: "A3", precio: 310},
-    {id: 11, marca: "Iphone", modelo: "15", precio: 1600},
-    {id: 12, marca: "Samsung", modelo: "S24", precio: 1500},
-    {id: 13, marca: "Xiaomi", modelo: "Note 13", precio: 510},
-    {id: 14, marca: "Motorola", modelo: "A35", precio: 680},
-    {id: 15, marca: "Iphone", modelo: "12", precio: 1100},
-    {id: 16, marca: "Motorola", modelo: "Edge 50", precio: 1600},
-    {id: 17, marca: "Samsung", modelo: "A55", precio: 820},
-];
-
-
-//***2***//
 
 const listado = document.getElementById("contenedorProductos");
 
@@ -60,7 +34,7 @@ function mostrarProductos(productos) {
 
 mostrarProductos(productos); 
 
-//***3***//
+//***2***//
 
 function agregarEventoCantidad() {
     productos.forEach((producto) => {
@@ -91,7 +65,7 @@ function agregarEventoCantidad() {
     });
 }
 
-//***5***//
+//***4***//
 
 const numero = document.getElementById("numero1");
 let contadorCarrito = 0;
@@ -109,7 +83,7 @@ function cargarCarrito() {
 
 cargarCarrito();
 
-//***4***//
+//***3***//
 
 function agregarEventoBotones() {
     const botonesAgregar = document.querySelectorAll(".agregar");
@@ -120,8 +94,19 @@ function agregarEventoBotones() {
             const cantidadProducto = productoSeleccionado.cantidad;
 
             if (cantidadProducto === 0 || isNaN(cantidadProducto)) {
-                const mensajeError = document.getElementById(`error-${productoId}`);
-                mensajeError.textContent = "Agregue cantidad";
+                Toastify({
+                    text: "Ingrese una cantidad",
+                    duration: 1500,
+                    destination: "",
+                    newWindow: true,
+                    gravity: "top", 
+                    position: "center",
+                    stopOnFocus: true, 
+                    style: {
+                      background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
+                    },
+                    onClick: function(){}
+                  }).showToast();
                 return; 
             }
 
@@ -153,7 +138,7 @@ function agregarEventoBotones() {
     });
 }
 
-//***6***//
+//***5***//
 
 let listaMarcas = document.getElementById("marcas");
 

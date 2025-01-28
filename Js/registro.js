@@ -1,8 +1,7 @@
-
 // 1. REGISTRO DE USUARIO NUEVO CON LA FUNCION CONTRUCTORA.
 // 2. EVENTO PARA TOMAR LOS VALORES, SUBIRLOS AL LOCALSTORAGE, CON UN CONDICIONAL PARA VALIDAR LOS DATOS INGRESADOS.
 // 3. TOMO DEL LOCALSTORAGE EL USUARIO NUEVO Y LOS MUESTRO EN EL BOTON DE INICIO DE SESION. APARECE EL BOTON DE CERRAR FUNCION.
-// 4. HAGO UN BOTON DE CERRAR SESION QUE LIMPIA EL LOCALSTORAGE (VER COMO ELIMINAR INDIVIDUALMENTE CADA USUARIO)
+// 4. HAGO UN BOTON DE CERRAR SESION QUE LIMPIA EL LOCALSTORAGE (VER COMO ELIMINAR INDIVIDUALMENTE CADA USUARIO).
 
 //***1***//
 
@@ -31,7 +30,20 @@ ingresar.addEventListener("click", function registro() {
     let usuarioRepetirContrasena = document.getElementById("repetirContrasena").value;
 
     if (usuarioNombre === "" || usuarioApellido === "" || usuarioMail === "" || usuarioUsuario === "" || usuarioContrasena.length < 8 || usuarioContrasena.length > 12 || usuarioContrasena !== usuarioRepetirContrasena) {
-        contrasenaIncorrecta.innerHTML = `<p>Acceso denegado, vuelva a intentarlo.</p>`;
+        Toastify({
+            text: "Datos ingresados de forma incorrecta",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", 
+            position: "center", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();;
         return;
     } else {
         const nuevoUsuario = new DatosUsuario(usuarioNombre, usuarioApellido, usuarioMail, usuarioUsuario, usuarioContrasena);
@@ -41,7 +53,13 @@ ingresar.addEventListener("click", function registro() {
         let cambiarBoton = document.getElementById("botonCambiar");
         cambiarBoton.innerHTML = `<button class="botonLog">${usuarioUsuario}</button>
                                   <button id="logoutBoton" class="botonLog">Cerrar sesión</button>`;                          
-        contrasenaIncorrecta.innerHTML = `<p>Bienvenido ${usuarioUsuario}, registro exitoso !!!</p>`;
+        Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: `Bienvenido ${usuarioUsuario}`,
+                    showConfirmButton: false,
+                    timer: 2000
+                    });;
         const logoutBoton = document.getElementById("logoutBoton");
         logoutBoton.addEventListener("click", cerrarSesion);
     }
@@ -69,4 +87,3 @@ function cerrarSesion() {
     let cambiarBoton = document.getElementById("botonCambiar");
     cambiarBoton.innerHTML = `<button class="botonLog"><a href="./login.html">Iniciar sesión</a></button>`;
 }
-
