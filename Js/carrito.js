@@ -54,38 +54,37 @@ function mostrarCarrito(carritoItems) {
     botonVaciar.innerHTML = `<button id="vaciar">Vaciar carrito</button>`;
     menuTotal.appendChild(botonVaciar);
 
-    const botonCancelar = document.createElement("div");
-    botonCancelar.style.display = "none";
-    botonCancelar.innerHTML = `<img src="../assets/images/Timer.gif" alt="Cuenta regresiva" width="100" height="50">
-                               <button id="cancelar">Cancelar</button>`;
-    menuTotal.appendChild(botonCancelar);
-
-    let temporizador;
-
     const vaciar = document.getElementById("vaciar");
-    const cancelar = botonCancelar.querySelector("#cancelar");
 
     vaciar.addEventListener("click", () => {
-        botonCancelar.style.display = "flex";
-        temporizador = setTimeout(() => {
-            limpiarLocal();
-            botonCancelar.style.display = "none";
-        }, 9700);
-    });
+        Swal.fire({
+            title: "Estas seguro?",
+            text: "¡¡Tenemos muchas promociones y descuentos!!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "rgb(253, 48, 48)",
+            cancelButtonColor: "rgb(53, 53, 53)",
+            confirmButtonText: "Vaciar Carrito"
+          }).then((result) => {
+            if (result.isConfirmed) {
 
-    cancelar.addEventListener("click", () => {
-        clearTimeout(temporizador);
-        botonCancelar.style.display = "none";
+              Swal.fire({
+                title: "Carrito vacio",
+                text: "Tenemos mas ofertas para vos",
+                icon: "success"
+              });
+              function limpiarLocal() {
+                localStorage.removeItem("carrito");
+                itemsCatalogo.length = 0;
+                actualizarVistaCarrito();
+                actualizarTotal();
+            }
+            limpiarLocal()            
+            }
+          });
     });
-
 }
 
-function limpiarLocal() {
-    localStorage.removeItem("carrito");
-    itemsCatalogo.length = 0;
-    actualizarVistaCarrito();
-    actualizarTotal();
-}
 
 let mensajeCarrito = document.getElementById("mensajeCarrito");
 
