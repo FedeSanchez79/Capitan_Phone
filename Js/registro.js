@@ -68,15 +68,14 @@ ingresar.addEventListener("click", function registro() {
                 background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
             }
         }).showToast();
-    }finally {
-        Swal.fire({
+    }
+    Swal.fire({
             position: "center",
             icon: "success",
             title: `Bienvenido ${usuarioUsuario}`,
             showConfirmButton: false,
             timer: 2000
           });
-    }
 });
 
 //***3***//
@@ -99,5 +98,8 @@ mostrarUsuarioLogueado();
 function cerrarSesion() {
     localStorage.removeItem("usuarioLogueado");
     let cambiarBoton = document.getElementById("botonCambiar");
-    cambiarBoton.innerHTML = `<button class="botonLog"><a href="./login.html">Iniciar sesión</a></button>`;
+    cambiarBoton.innerHTML = `<button class="botonLog"><a href="../index.html">Iniciar sesión</a></button>`;
 }
+
+//LOGIN
+

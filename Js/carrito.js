@@ -77,7 +77,6 @@ function mostrarCarrito(carritoItems) {
             confirmButtonText: "Vaciar Carrito"
           }).then((result) => {
             if (result.isConfirmed) {
-
               Swal.fire({
                 title: "Carrito vacio",
                 text: "Tenemos mas ofertas para vos",
