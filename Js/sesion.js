@@ -1,4 +1,4 @@
-//FUNCION PARA MOSTRAR LOS USUARIOS INGRESADOS EN EL LOCALSTORAGE Y EL BOTON CERRAR SESION
+//FUNCION PARA MOSTRAR LOS USUARIOS INGRESADOS EN EL LOCALSTORAGE Y EL BOTON CERRAR SESION EN LAS PAGINAS (carrito, catálogo, contacto y nosotros)
 
 function mostrarUsuarioLogueado() {
     const usuarioLogueado = localStorage.getItem("usuarioLogueado");
@@ -14,7 +14,7 @@ function mostrarUsuarioLogueado() {
 function cerrarSesion() {
     localStorage.removeItem("usuarioLogueado");
     let cambiarBoton = document.getElementById("botonCambiar");
-    cambiarBoton.innerHTML = `<button class="botonLog"><a href="./login.html">Iniciar sesión</a></button>`;
+    cambiarBoton.innerHTML = `<button class="botonLog"><a href="../index.html">Iniciar sesión</a></button>`;
 }
 
 mostrarUsuarioLogueado();
