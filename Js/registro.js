@@ -29,6 +29,7 @@ ingresar.addEventListener("click", function registro() {
     let usuarioContrasena = document.getElementById("contrasena").value;
     let usuarioRepetirContrasena = document.getElementById("repetirContrasena").value;
 
+    try{
     if (usuarioNombre === "" || usuarioApellido === "" || usuarioMail === "" || usuarioUsuario === "" || usuarioContrasena.length < 8 || usuarioContrasena.length > 12 || usuarioContrasena !== usuarioRepetirContrasena) {
         Toastify({
             text: "Datos ingresados de forma incorrecta",
@@ -42,7 +43,7 @@ ingresar.addEventListener("click", function registro() {
             style: {
               background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
             },
-            onClick: function(){} // Callback after click
+            onClick: function(){}
           }).showToast();;
         return;
     } else {
@@ -53,15 +54,28 @@ ingresar.addEventListener("click", function registro() {
         let cambiarBoton = document.getElementById("botonCambiar");
         cambiarBoton.innerHTML = `<button class="botonLog">${usuarioUsuario}</button>
                                   <button id="logoutBoton" class="botonLog">Cerrar sesión</button>`;                          
-        Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: `Bienvenido ${usuarioUsuario}`,
-                    showConfirmButton: false,
-                    timer: 2000
-                    });;
         const logoutBoton = document.getElementById("logoutBoton");
         logoutBoton.addEventListener("click", cerrarSesion);
+    }
+    }catch(error){
+        console.error(error);
+        Toastify({
+            text: error.message,
+            duration: 2000,
+            gravity: "bottom",
+            position: "center",
+            style: {
+                background: "linear-gradient(to right,rgb(253, 104, 104),rgb(184, 0, 0))",
+            }
+        }).showToast();
+    }finally {
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `Bienvenido ${usuarioUsuario}`,
+            showConfirmButton: false,
+            timer: 2000
+          });
     }
 });
 
