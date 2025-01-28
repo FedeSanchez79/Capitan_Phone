@@ -100,6 +100,3 @@ function cerrarSesion() {
     let cambiarBoton = document.getElementById("botonCambiar");
     cambiarBoton.innerHTML = `<button class="botonLog"><a href="../index.html">Iniciar sesión</a></button>`;
 }
-
-//LOGIN
-

@@ -192,5 +192,3 @@ fetch("../Db/data.json")
         });
 
     })
-
-
