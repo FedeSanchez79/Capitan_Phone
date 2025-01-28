@@ -4,7 +4,7 @@
         "marca": "Motorola", 
         "modelo": "G84", 
         "precio": 400, 
-        "url": "../assets/images/motorola_imagen.jpg"
+        "url": "../assets/images/motorola_imagen.png"
     },
     {
         "id": 0, 
@@ -25,14 +25,14 @@
         "marca": "Xiaomi", 
         "modelo": "Redmi 13C", 
         "precio": 300, 
-        "url": "../assets/images/xiaomi_imagen.jpg"
+        "url": "../assets/images/xiaomi_imagen.png"
     },
     {
         "id": 4, 
         "marca": "Motorola", 
         "modelo": "A15", 
         "precio": 310, 
-        "url": "../assets/images/motorola_imagen.jpg"
+        "url": "../assets/images/motorola_imagen.png"
     },
     {
         "id": 5, 
@@ -67,14 +67,14 @@
         "marca": "Motorola", 
         "modelo": "G04", 
         "precio": 120, 
-        "url": "../assets/images/motorola_imagen.jpg"
+        "url": "../assets/images/motorola_imagen.png"
     },
     {
         "id": 10, 
         "marca": "Xiaomi", 
         "modelo": "A3", 
         "precio": 310, 
-        "url": "../assets/images/xiaomi_imagen.jpg"
+        "url": "../assets/images/xiaomi_imagen.png"
     },
     {
         "id": 11, 
@@ -95,14 +95,14 @@
         "marca": "Xiaomi", 
         "modelo": "Note 13", 
         "precio": 510, 
-        "url": "../assets/images/xiaomi_imagen.jpg"
+        "url": "../assets/images/xiaomi_imagen.png"
     },
     {
         "id": 14, 
         "marca": "Motorola", 
         "modelo": "A35", 
         "precio": 680, 
-        "url": "../assets/images/motorola_imagen.jpg"
+        "url": "../assets/images/motorola_imagen.png"
     },
     {
         "id": 15, 
@@ -116,7 +116,7 @@
         "marca": "Motorola", 
         "modelo": "Edge 50", 
         "precio": 1600, 
-        "url": "../assets/images/motorola_imagen.jpg"
+        "url": "../assets/images/motorola_imagen.png"
     },
     {
         "id": 17, 
