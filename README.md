@@ -17,9 +17,9 @@
 </br>
 </br>
 
+
 **DESARROLLO TERMINADO**
 
-</br>
 </br>
 
 <img src="./assets/images/done.jpg" alt="Imagen de trabajo hecho">
@@ -32,6 +32,9 @@
 Una web dedicada a la venta y distribución de celulares. En la misma podras acceder a las últimas novedades, nuestro catálogo de productos, conocer más sobre nosotros y nuestro equipo, y finalmente contactarnos por cualquier consulta.
 
 
+### IMPORTANTE !!! (POR ERROR CON POLITICA CORS, el proyecto debe ser inciado en Live Server de VSC o Pages de Github)
+
+
 ### Estructura del Desarrollo
 
 </br>
@@ -41,7 +44,8 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 3. Carrito
 4. Sobre nosotros
 5. Contacto
-6. Construcción
+6. Registro
+7. Construcción
 
 
 ### Herramientas utilizadas
@@ -73,13 +77,13 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-1. Inicio de Sesión / Registro de usuario 
+1. Registro de usuario (En esta sección sólo se podran inresar los datos para modificar el botón "Iniciar sesión" por el usuario ingresado)
 
 </br>
 
 <img src="./assets/images/imagen_login.jpg" alt="imagen de Registro de usuario">
 
-2. Ver Catálogo
+2. Ver Catálogo 
 
 </br>
 
@@ -89,9 +93,9 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 3. Incremento de número en Carrito cuando se utiliza el botón comprar
 
 </br>
-
+<div align="center" width="100">
 <img src="./assets/images/numero_carrito.jpg" alt="imagen de formulario para agregar productos">
-
+</div>
 4. Carrito de compras vacío 
 
 </br>
