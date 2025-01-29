@@ -683,7 +683,6 @@ aside {
   text-align: center;
 }
 
-
 #items #vaciar{
   margin: 40px 40px 10px 40px;
   border: 2px solid var(--clr-grey);
@@ -782,15 +781,16 @@ aside {
   pointer-events: none;
 }
 
-#deleteCarrito {
+.deleteCarrito {
   color: var(--clr-white);
   background-color: var(--clr-red);
   padding: 2px;
   border-radius: 3px;
   border: 1px solid var(--clr-dark);
+  cursor: pointer;
 }
 
-#deleteCarrito:hover {
+.deleteCarrito:hover {
   color: var(--clr-red);
   background-color: var(--clr-pale);
   box-shadow: 0px 8px 16px rgba(243, 40, 40, 0.3);
