@@ -14,8 +14,6 @@
 
 <img src="./assets/images/banner_capitan.jpg" alt="Imagen del logo de Capitan Phone">
 
-</div>
-
 </br>
 </br>
 
@@ -24,7 +22,7 @@
 </br>
 </br>
 
-<img src="./assets/images/standby.png" alt="Imagen de en desarrollo stand by">
+<img src="./assets/images/done.jpg" alt="Imagen de trabajo hecho">
 
 </div>
 
