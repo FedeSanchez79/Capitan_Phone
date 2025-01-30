@@ -99,6 +99,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 <img src="./assets/images/numero_carrito.jpg" alt="imagen de formulario para agregar productos">
 </div>
 
+
 4. Carrito de compras vacío 
 
 </br>

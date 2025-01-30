@@ -190,5 +190,4 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
 
             listaMarcas.appendChild(marcaItem);
         });
-
     })

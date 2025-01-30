@@ -39,7 +39,7 @@ function mostrarCarrito() {
     inputTotal.innerHTML = `
         <h4>Total:</h4>
         <input id="total" placeholder="Total" readonly>
-        <button id="finalizarCompra"><a href="./construccion.html">Finalizar Compra</a></button>
+        <button id="finalizarCompra"><a href="https://www.mercadopago.com.ar/">Finalizar Compra</a></button>
     `;
     menuTotal.appendChild(inputTotal);
 

@@ -75,7 +75,7 @@ ingresar.addEventListener("click", function registro() {
             title: `Bienvenido ${usuarioUsuario}`,
             showConfirmButton: false,
             timer: 2000
-          });
+        });
 });
 
 //***3***//
