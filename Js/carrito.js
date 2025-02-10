@@ -27,7 +27,14 @@ function mostrarCarrito() {
         const item = document.createElement("div");
         item.className = "itemCarrito";
         item.innerHTML = `<div><small>Celular</small><h3>${producto.marca}</h3></div>
-                          <div><small id="tituloCantidad">Cantidad</small><p>${producto.cantidad}</p></div>
+                          <div>
+                            <small id="tituloCantidad">Cantidad</small>
+                            <div class="modificarCantidad">
+                                <button class="disminuir" data-indice="${indice}">-</button>
+                                <p class="cantidad" data-indice="${indice}">${producto.cantidad}</p>
+                                <button class="incrementar" data-indice="${indice}">+</button>
+                            </div>
+                          </div>
                           <div><small>Precio</small><p>u$s ${producto.precio}</p></div>
                           <div><small>Subtotal</small><p id="subtotal">u$s ${producto.cantidad * producto.precio}</p></div>
                           <div><i class="deleteCarrito bi bi-trash" indice="${indice}"></i></div>
@@ -50,6 +57,27 @@ function mostrarCarrito() {
     menuTotal.appendChild(botonVaciar);
 
     document.getElementById("vaciar").addEventListener("click", vaciarCarrito);
+    document.querySelectorAll(".incrementar").forEach(btn => btn.addEventListener("click", incrementarCantidad));
+    document.querySelectorAll(".disminuir").forEach(btn => btn.addEventListener("click", decrementarCantidad));
+}
+
+function incrementarCantidad(event) {
+    const indice = event.target.getAttribute("data-indice");
+    itemsCatalogo[indice].cantidad++;
+    actualizarCarrito();
+}
+
+function decrementarCantidad(event) {
+    const indice = event.target.getAttribute("data-indice");
+    if (itemsCatalogo[indice].cantidad > 1) {  
+        itemsCatalogo[indice].cantidad--;
+        actualizarCarrito();
+    }
+}
+
+function actualizarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(itemsCatalogo));
+    mostrarCarrito();
 }
 
 // ***3***

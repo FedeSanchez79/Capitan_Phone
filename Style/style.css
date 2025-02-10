@@ -836,6 +836,25 @@ aside {
   box-shadow: none;
 }
 
+.modificarCantidad{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.disminuir, .incrementar{
+  background-color: rgb(68, 89, 109);
+  color: var(--clr-white);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cantidad{
+  font-weight: 900;
+  color: var(--clr-red);
+}
+
 /*  *//*  *//*  *//*  *//*  *//*  *//* LOGIN *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 .form {
