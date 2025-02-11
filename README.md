@@ -43,10 +43,11 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 1. Inicio
 2. Catálogo
 3. Carrito
-4. Sobre nosotros
-5. Contacto
-6. Registro
-7. Construcción
+4. Ticket
+5. Sobre nosotros
+6. Contacto
+7. Registro
+8. Construcción
 
 
 ### Herramientas utilizadas
@@ -78,7 +79,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-1. Registro de usuario (En esta sección sólo se podran inresar los datos para modificar el botón "Iniciar sesión" por el usuario ingresado)
+1. Registro de usuario (En esta sección se debe acceder antes de finalizar una compra)
 
 </br>
 
@@ -88,7 +89,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-<img src="./assets/images/imagen_catalogo.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/imagen_catalogo.jpg" alt="imagen de catálogo">
 
 
 3. Incremento de número en Carrito cuando se utiliza el botón comprar
@@ -96,7 +97,7 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 </br>
 
 <div align="center" width="100">
-<img src="./assets/images/numero_carrito.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/numero_carrito.jpg" alt="imagen de carrito">
 </div>
 
 
@@ -104,10 +105,16 @@ Una web dedicada a la venta y distribución de celulares. En la misma podras acc
 
 </br>
 
-<img src="./assets/images/carrito_vacio.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/carrito_vacio.jpg" alt="imagen de carrito vacio">
 
 5. Carrito de compras con ítems
 
 </br>
 
-<img src="./assets/images/imagen_carrito.jpg" alt="imagen de formulario para agregar productos">
+<img src="./assets/images/imagen_carrito.jpg" alt="imagen de carrito con items">
+
+6. Ticket de compra (ejemplo)
+
+</br>
+
+<img src="./assets/images/ticket_ejemplo.jpg" alt="imagen de ticket">
