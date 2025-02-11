@@ -797,21 +797,14 @@ aside {
   padding: 2px;
   border-radius: 3px;
   border: 1px solid var(--clr-dark);
+  color: var(--clr-white);
 }
 
 #finalizarCompra:hover {
   color: var(--clr-darkGrey);
   background-color: rgb(38, 84, 184);
   box-shadow: 0px 8px 16px rgba(243, 40, 40, 0.3);
-}
-
-#finalizarCompra a {
-  text-decoration: none;
-  color: var(--clr-white);
-}
-
-#finalizarCompra a:hover {
-  color: var(--clr-white);
+  color: var(--clr-pale);
 }
 
 #menuTotal div {

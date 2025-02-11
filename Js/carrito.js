@@ -37,8 +37,8 @@ function mostrarCarrito() {
                           </div>
                           <div><small>Precio</small><p>u$s ${producto.precio}</p></div>
                           <div><small>Subtotal</small><p id="subtotal">u$s ${producto.cantidad * producto.precio}</p></div>
-                          <div><i class="deleteCarrito bi bi-trash" indice="${indice}"></i></div>
-        `;
+                          <div><i class="deleteCarrito bi bi-trash" indice="${indice}"></i></div>`;
+
         mensajeCarrito.appendChild(item);
     });
 
@@ -55,12 +55,12 @@ function mostrarCarrito() {
         
         if (!usuarioLogueado) {
             Swal.fire({
-                title: "¡Debe iniciar sesión!",
-                text: "Por favor, inicie sesión para realizar la compra.",
+                title: "¡Debe registrarse!",
+                text: "Por favor, registrarse para realizar la compra.",
                 icon: "warning",
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Iniciar sesión",
+                confirmButtonText: "Regístrese",
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = "../Pages/registro.html"; 
