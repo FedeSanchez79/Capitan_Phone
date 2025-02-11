@@ -46,10 +46,40 @@ function mostrarCarrito() {
     inputTotal.innerHTML = `
         <h4>Total:</h4>
         <input id="total" placeholder="Total" readonly>
-        <button id="finalizarCompra"><a href="https://www.mercadopago.com.ar/">Finalizar Compra</a></button>
-    `;
+        <button id="finalizarCompra">Finalizar Compra</button>`;
+
     menuTotal.appendChild(inputTotal);
 
+    document.getElementById("finalizarCompra").addEventListener("click", function() {
+        const usuarioLogueado = localStorage.getItem("usuarioLogueado");
+        
+        if (!usuarioLogueado) {
+            Swal.fire({
+                title: "¡Debe iniciar sesión!",
+                text: "Por favor, inicie sesión para realizar la compra.",
+                icon: "warning",
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Iniciar sesión",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "../Pages/registro.html"; 
+                }
+            });
+        } else {
+            const usuario = JSON.parse(localStorage.getItem("registroUsuario")).find(user => user.usuario === usuarioLogueado);
+            const datosCompra = {
+                usuario: usuario,
+                productos: itemsCatalogo,
+                total: itemsCatalogo.reduce((acumulador, producto) => acumulador + (producto.cantidad * producto.precio), 0)
+            };
+
+            localStorage.setItem("datosCompra", JSON.stringify(datosCompra));
+            window.location.href = "../Pages/ticket.html"; 
+        }
+        
+    });
+    
     actualizarTotal();
 
     const botonVaciar = document.createElement("div");
