@@ -27,6 +27,7 @@ function mostrarCarrito() {
         const item = document.createElement("div");
         item.className = "itemCarrito";
         item.innerHTML = `<div><small>Celular</small><h3>${producto.marca}</h3></div>
+                          <div><small>Modelo</small><h3>${producto.modelo}</h3></div>
                           <div>
                             <small id="tituloCantidad">Cantidad</small>
                             <div class="modificarCantidad">
