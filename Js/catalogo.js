@@ -131,8 +131,9 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
                         productoEnCarrito.cantidad += productoSeleccionado.cantidad;
                     } else {
                         class Producto {
-                            constructor(marca, precio, cantidad) {
+                            constructor(marca, modelo, precio, cantidad) {
                                 this.marca = marca;
+                                this.modelo = modelo;
                                 this.precio = precio;
                                 this.cantidad = cantidad;
                             }
@@ -140,6 +141,7 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
                         
                         let copiaProducto = new Producto(
                             productoSeleccionado.marca,
+                            productoSeleccionado.modelo,
                             productoSeleccionado.precio,
                             productoSeleccionado.cantidad
                         );
