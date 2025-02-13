@@ -19,7 +19,13 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
 
         function mostrarProductos(productos) {
             listado.innerHTML = "";
+        
+            const carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+        
             productos.forEach((producto) => {
+                const productoEnCarrito = carritoActual.find((p) => p.id === producto.id);
+                const cantidadGuardada = productoEnCarrito ? productoEnCarrito.cantidad : 0;
+        
                 const card = document.createElement("div");
                 card.classList.add("producto-card");
                 card.innerHTML = `
@@ -30,15 +36,14 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
                         <p class="precio">u$s ${producto.precio}</p>
                         <button class="agregar" idInfo="${producto.id}">Agregar</button>
                         <p>Cantidad: </p>
-                        <input type="number" id="cantidad-${producto.id}" min="1" value="0" placeholder="0">
+                        <input type="number" id="cantidad-${producto.id}" min="1" value="${cantidadGuardada}" placeholder="0">
                     </div>`;
                 listado.appendChild(card);
             });
-
+        
             agregarCantidad(); 
             agregarBotones(); 
         }
-
         mostrarProductos(productos); 
 
         //***3***//
@@ -77,9 +82,11 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
         const numero = document.getElementById("numero1");
         let contadorCarrito = 0;
 
-        function incrementarCarrito() {
-            contadorCarrito++;
-            numero.textContent = contadorCarrito;
+        function incrementarCarrito(esProductoNuevo) {
+            if (esProductoNuevo) {
+                contadorCarrito++;
+                numero.textContent = contadorCarrito;
+            }
         }
 
         function cargarCarrito() {
@@ -94,80 +101,60 @@ fetch("../Db/data.json")  //ERROR CON POLITICA CORS (Alternativas: usar Live Ser
 
         function agregarBotones() {
             const botonesAgregar = document.querySelectorAll(".agregar");
+        
             botonesAgregar.forEach((boton) => {
                 boton.onclick = () => {
                     const productoId = parseInt(boton.getAttribute("idInfo"));
-                    const productoSeleccionado = productos.find((p) => p.id === productoId);
-                    const cantidadProducto = productoSeleccionado.cantidad;
-
-                    if (cantidadProducto === 0 || isNaN(cantidadProducto)) {
+                    const inputCantidad = document.getElementById(`cantidad-${productoId}`);
+                    const nuevaCantidad = parseInt(inputCantidad.value, 10);
+        
+                    if (isNaN(nuevaCantidad) || nuevaCantidad <= 0) {
                         Swal.fire({
                             title: "Ingrese una cantidad",
-                            color:"rgb(255, 255, 255)",
-                            background:"linear-gradient(to right,rgb(255, 97, 97),rgb(255, 0, 0))",
-                            showClass: {
-                              popup: `
-                                animate__animated
-                                animate__fadeInUp
-                                animate__faster
-                              `
-                            },
-                            hideClass: {
-                              popup: `
-                                animate__animated
-                                animate__fadeOutDown
-                                animate__faster
-                              `
-                            },
+                            color: "rgb(255, 255, 255)",
+                            background: "linear-gradient(to right,rgb(255, 97, 97),rgb(255, 0, 0))",
                             timer: 1200
-                          });    
-                        return; 
+                        });
+                        return;
                     }
-
-                    const carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
-
-                    const productoEnCarrito = carritoActual.find((p) => p.id === productoSeleccionado.id);
+        
+                    let carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
+                    let productoEnCarrito = carritoActual.find((p) => p.id === productoId);
+                    let esProductoNuevo = false;
+                    let productoSeleccionado = productos.find((p) => p.id === productoId);
+        
                     if (productoEnCarrito) {
-                        productoEnCarrito.cantidad += productoSeleccionado.cantidad;
+                        productoEnCarrito.cantidad += nuevaCantidad;
                     } else {
-                        class Producto {
-                            constructor(marca, modelo, precio, cantidad) {
-                                this.marca = marca;
-                                this.modelo = modelo;
-                                this.precio = precio;
-                                this.cantidad = cantidad;
-                            }
-                        }
-                        
-                        let copiaProducto = new Producto(
-                            productoSeleccionado.marca,
-                            productoSeleccionado.modelo,
-                            productoSeleccionado.precio,
-                            productoSeleccionado.cantidad
-                        );
-                        carritoActual.push(copiaProducto);
+                        carritoActual.push({
+                            id: productoSeleccionado.id,
+                            marca: productoSeleccionado.marca,
+                            modelo: productoSeleccionado.modelo,
+                            precio: productoSeleccionado.precio,
+                            cantidad: nuevaCantidad
+                        });
+                        esProductoNuevo = true;
                     }
-                    Toastify({
-                        text: "Producto agregado al carrito",
-                        duration: 1500,
-                        destination: "",
-                        newWindow: true,
-                        gravity: "bottom", 
-                        position: "center",
-                        stopOnFocus: true, 
-                        style: {
-                        color:"rgb(255, 255, 255)",
-                        background:"rgb(53, 53, 53)",
-                        },
-                        onClick: function(){}
-                    }).showToast();
-
+        
                     localStorage.setItem("carrito", JSON.stringify(carritoActual));
-                    incrementarCarrito();
+                    incrementarCarrito(esProductoNuevo);
+        
+                    // 📢 Alerta de Toastify con el producto y cantidad agregada
+                    Toastify({
+                        text: `Agregado: ${productoSeleccionado.marca} ${productoSeleccionado.modelo} (x${nuevaCantidad})`,
+                        duration: 2000,
+                        gravity: "bottom",
+                        position: "center",
+                        stopOnFocus: true,
+                        style: {
+                            color: "rgb(255, 255, 255)",
+                            background: "rgb(53, 53, 53)"
+                        }
+                    }).showToast();
                 };
             });
         }
-
+        
         //***6***//
 
         let listaMarcas = document.getElementById("marcas");
